@@ -4,7 +4,8 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword"
 import Profile from "./components/Profile";
-
+import EditProfile from "./components/EditProfile";
+import ViewProfilePage from "./pages/ViewProfilePage";
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
     //     <Route path="/forgotPassword" element={<ForgotPassword />} />
     //   </Routes>
     // </Router>
-    <Profile/>
+    // <Profile/>
+    // <EditProfile/>
+    <ViewProfilePage/>
   );
 }
 
