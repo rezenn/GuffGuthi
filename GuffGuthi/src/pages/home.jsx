@@ -15,13 +15,12 @@ const Home = ({ activePage, setActivePage }) => {
 
         <div className="search-container">
           <div className="search-bar">
-          <button className="search-button">🔍</button>
             <input
               type="text"
               className="search-input"
               placeholder="Search..."
             />
-            
+            <button className="search-button">🔍</button>
           </div>
           </div>
 
