@@ -34,7 +34,7 @@ function Login(){
                         <br />
                         <Link className="forgotPassword" to="/ForgotPassword">Forgot password </Link>
                         <button className="createAccount" 
-                                type="submit">Change Password
+                                type="submit">Login
                         </button>
                     </form>
                     <p>
