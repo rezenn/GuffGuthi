@@ -22,7 +22,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    box-shadow: 2px 0 5px #e0dfdf(0, 0, 0, 0.5);
+    border: 1px solid #333;
   }
   
   .main-content {
@@ -46,7 +46,6 @@
     position: fixed;
     left: 0;
     top: 0;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .navbar button {
@@ -71,7 +70,7 @@
     color: white; /* White text when active */
 }
 
-.navbar-logo {
+.navbar-logo img {
     width: 100%;
     height: 50px; /* Adjust height based on your image */
     background-image: url('../src/assets/logo.png'); /* Path to your image */
@@ -79,6 +78,7 @@
     background-repeat: no-repeat; /* Prevent repeating the image */
     background-position: center; /* Center the image in the title area */
     margin-bottom: 15px;
+    border-radius: 20px;
 }
 
 #homeButton {
@@ -167,7 +167,6 @@
     display: flex;
     justify-content: center; /* Center the content horizontally */
     padding: 10px 0;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);  /* Light shadow for the search bar */
   }
   
   .search-bar {

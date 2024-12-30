@@ -1,19 +1,13 @@
 import React from "react";
-import "./home.css";
+import "./navbar.css";
 
-const Home = ({ activePage, setActivePage }) => {
+
+const Navbar = ({ activePage, setActivePage }) => {
   return (
     <>
     
-        <div className="home-container">
 
-        
-
-        <div className="chat-container">
-            <div className="chat-header">Chats</div>
-        </div>
-
-        <div className="search-container">
+    <div className="search-container">
           <div className="search-bar">
             <input
               type="text"
@@ -24,22 +18,31 @@ const Home = ({ activePage, setActivePage }) => {
           </div>
           </div>
 
+       
 
-          <div className="post-container">
-    <div className="post">Your Post Content Here</div>
-  </div>
+
+       
 
     <div className="navbar">
       <div className="navbar-logo">
+        <img src="./src/assets/logo.png" alt="" />
       </div>
-
       <button
-        id="homeButton"
-        className={activePage === "home" ? "active" : ""}
-        onClick={() => setActivePage("home")}
-      >
-        Home
-      </button>
+  id="homeButton"
+  className={activePage === "home" ? "active" : ""}
+  onClick={() => setActivePage("home")}
+>
+  <svg
+    src="GuffGuthi/src/assets/send.svg"
+    viewBox="0 0 24 24"
+    width="20px"
+    height="20px"
+    fill="currentColor"
+  >
+    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+  </svg>
+  Home
+</button>
 
 
       <button
@@ -110,11 +113,10 @@ const Home = ({ activePage, setActivePage }) => {
   
 
 
-        </div>
     
 </>
 
   );
 };
 
-export default Home;
+export default Navbar;

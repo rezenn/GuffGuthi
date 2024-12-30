@@ -3,11 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
-import Home from "./pages/home"; // Vertical navbar
+import Navbar from "./components/navbar/Navbar";
+import ViewProfilePage from "./pages/ViewProfilePage";
 
 
 function App() {
-  const [activePage, setActivePage] = useState("home");
+  const [activePage, setActivePage] = useState("Navbar");
 
   const renderContent = () => {
     switch (activePage) {
@@ -53,7 +54,7 @@ function App() {
 //       </Routes>
 //     </Router>
 //   );
-return(<Home/>) 
+return(<Navbar/>) 
 }
 
 export default App;
