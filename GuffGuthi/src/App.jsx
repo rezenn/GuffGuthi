@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
-import Home from "./pages/home"; // Vertical navbar
 import Navbar from "./components/navbar/Navbar";
 import ViewProfilePage from "./pages/ViewProfilePage";
+import CreatePost from "./pages/CreatePost";
 
 
 function App() {
@@ -56,7 +56,7 @@ function App() {
 //     </Router>
 //   );
 // return(<Home/>) 
-return(<Navbar/>) 
+return(<CreatePost/>) 
 }
 
 export default App;
