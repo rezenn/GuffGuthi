@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Anta&family=Basic&family=Baumans&family=Doto:wght@100..900&family=Faculty+Glyphic&family=Marmelad&family=Merienda:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  body{
+    background-color: #e0dfdf;
+  }
+  
+  .navbar {
+    width: 250px; /* Fixed width for the navbar */
+    height: 100vh; /* Full height */
+    background-color: white; /* Set the navbar's background color to white */
+    color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 2px 0 5px #e0dfdf(0, 0, 0, 0.5);
+  }
+  
+  .main-content {
+    margin-left: 200px; /* This ensures the main content takes up the remaining space */
+    padding: 20px;
+    background-color: grey; /* Set the main content area background to grey */
+    min-height: 100vh;
+    color: white; /* Optional: to make text color contrast with grey background */
+  }
+  
+
+.navbar {
+    width: 250px;
+    height: 100vh;
+    background-color: white; /* Changed background to white */
+    color: black; /* Changed default text color to black */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+   
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar button {
+    background: none;
+    border: none;
+    text-align: left;
+    color: black; /* Buttons are black by default */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.navbar button:hover {
+    background-color: #f5f5f5; /* Light grey background on hover */
+}
+
+.navbar button.active {
+    background-color: orange; /* Orange background when active */
+    color: white; /* White text when active */
+}
+
+.navbar-logo {
+    width: 100%;
+    height: 50px; /* Adjust height based on your image */
+    background-image: url('../src/assets/logo.png'); /* Path to your image */
+    background-size: contain; /* Ensure the image fits */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-position: center; /* Center the image in the title area */
+    margin-bottom: 15px;
+}
+
+#homeButton {
+    /*background-color: lightblue; /* Customize Home button */
+    padding-top: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 60px;
+  }
+  
+  #popularButton {
+   /* background-color: lightgreen; /* Customize Popular button */
+   padding-top: 5px;
+   font-size: 12px;
+   font-weight: bold;
+   
+  }
+  
+  #myPostsButton {
+    /*background-color: lightcoral; /* Customize My Posts button */
+    padding-top: 5px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  #requestsButton {
+    /*background-color: lightgoldenrodyellow; /* Customize Requests button */
+    padding-top: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+  
+  #chatButton {
+    /*background-color: lightpink; /* Customize Chat button */
+    padding-top: 5px;
+    font-size: 12px;
+    font-weight: bold;
+ 
+  }
+
+
+  #settingsButton{
+    padding-top: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 290px;
+   
+  }
+
+  #helpButton{
+    padding-top: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 10px;
+
+  }
+
+  #aboutButton{
+    padding-top: 5px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+/* Dashboard styling (main content area) */
+
+.main-content {
+    margin-left: 250px; /* This ensures the main content takes up the remaining space */
+    padding: 20px;
+    background-color: rgb(236, 236, 236); /* Set the main content area background to grey */
+    min-height: 100vh;
+    color: white; /* Optional: to make text color contrast with grey background */
+  }
+
+
+
+
+
+
+
+ /* White Box with Search Bar */
+
+
+ .search-container {
+    width: 100%;
+    background-color: white; /* White background for the search bar container */
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    padding: 10px 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);  /* Light shadow for the search bar */
+  }
+  
+  .search-bar {
+    display: flex;
+    /* align-items: center; */
+    width: 40%; /* Adjust this to make the search bar smaller */
+    max-width: 400px; /* Max width for larger screens */
+    background-color: #f6f6f6;
+    border-radius: 20px;
+    padding: 5px 12px; /* Adjust padding to change height */
+    height: 40px; /* Set a specific height for the search bar */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+
+     /* Move the search bar left or right */
+    margin-left: 20px; /* Adjust this value to move to the right */
+    margin-right: 550px; /* Adjust this value to move to the left */
+  }
+  
+  .search-input {
+    width: 100%; /* Input field takes up all available space within the search bar */
+    padding: 8px 12px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 14px; /* Adjust font size to be smaller */
+    border-radius: 20px;
+    height: 30px; /* Set a specific height for the input field */
+  }
+  
+  .search-input::placeholder {
+    color: #aaa; /* Lighter placeholder text */
+  }
+  
+  .search-button {
+    background: none;
+    border: none;
+    color: #0079d3;
+    font-size: 18px; /* Adjust search button size */
+    cursor: pointer;
+    margin-left: 10px;  /* Space between input and button */
+    height: 30px; /* Match button height with the input field */
+  }
+  
+  .search-button:hover {
+    color: #005fa3;
+  }
+  
+
+
+
+ /* Chat Container */
+.chat-container {
+    width: 300px;
+    height: 75vh; /* Adjust height if you want to limit height */
+    background-color: #f6f6f6;
+    border-radius: 20px;
+    color: black;
+    position: fixed;
+    right: 0;
+    top: auto; /* This will position it from the top. Adjust as needed */
+    bottom: 0px; /* You can also use bottom if you want it fixed at the bottom */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: -2px 0 5px #e0dfdf(0, 0, 0, 0.5);
+}
+    
+  
+  /* Chat Header */
+  .chat-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Chat Messages Area */
+  .chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+  }
+  
+  /* Chat Input and Send Button */
+  .chat-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .chat-input input {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .chat-input button {
+    width: 15%;
+    padding: 8px;
+    background-color: #0079d3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .chat-input button:hover {
+    background-color: #005f8d;
+  }
+
+
+  /* Post Container Styling */
+.post-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 100px; /* Adjust this to move it up or down */
+  }
+  
+  .post {
+    width: 60%; /* Adjust the width of the post box */
+    max-width: 800px; /* Maximum width for larger screens */
+    background-color: white; /* White background for the post box */
+    color: black; /* Text color inside the post box */
+    padding: 20px; /* Space inside the box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
