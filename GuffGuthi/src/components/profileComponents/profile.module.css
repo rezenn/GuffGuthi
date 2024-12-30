@@ -7,8 +7,11 @@
 }
 
 section {
-    margin: 100px;
+    position: absolute;
+    margin: 10px;
+    margin-right: 0px;
     border: 1px solid #504e4e;
+    background-color: #ffffff;
     border-radius: 20px;
     width: 332px;
     height: 541px;
@@ -25,6 +28,7 @@ section {
 
 .profile {
     width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 1px solid #000;
 }
@@ -50,11 +54,20 @@ section {
     color: #504e4e;
 }
 
+.Ocupation {
+    margin-bottom: 5px;
+}
+
 .locationBlock {
     display: grid;
     grid-template-columns: 0.1fr 0.1fr;
-    margin-left: 100px;
+    margin-left: 80px;
     align-items: center;
+}
+
+.locationImg {
+    width: 25px;
+    height: 25px;
 }
 
 .LocationName {
@@ -93,11 +106,16 @@ section {
 
 .editProfile {
     background-color: #242760;
-    color: #fff;
     width: 264px;
     height: 40px;
     border-radius: 20px;
-    margin: 40px 30px;
+    margin: 40px;
+
+}
+
+.link {
+    color: #fff;
     font-family: "Inter", serif;
     font-size: 15px;
+    text-decoration: none;
 }

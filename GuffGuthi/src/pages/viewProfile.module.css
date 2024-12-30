@@ -1,0 +1,40 @@
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    position: relative;
+}
+
+.coverImg {
+    margin: 70px 0 0 280px;
+    grid-row: 1;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-size: cover;
+
+}
+
+.profileAndPost {
+    display: grid;
+    grid-template-columns: 0.3fr 0.1fr;
+    grid-row: 2;
+    gap: 20px;
+    position: relative;
+    top: 180px;
+    left: 20px;
+}
+
+.profile {
+    position: relative;
+    margin: 175px 0 0 280px;
+    z-index: 2;
+    display: block;
+
+
+}
+
+.viewPost {
+    margin: 300px 0 0 350px;
+}
