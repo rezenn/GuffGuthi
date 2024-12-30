@@ -40,6 +40,7 @@ const Home = ({ activePage, setActivePage }) => {
       >
         Home
       </button>
+      {/* </button> */}
 
 
       <button

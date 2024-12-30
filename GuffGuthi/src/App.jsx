@@ -1,59 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import ForgotPassword from "./pages/ForgotPassword";
-import Home from "./pages/home"; // Vertical navbar
+import ForgotPassword from "./pages/ForgotPassword"
+
+
 
 
 function App() {
-  const [activePage, setActivePage] = useState("home");
+  // return (
+  //   <Router>
+  //     <Routes>
+  //       <Route path="/" element={<Login />} />
+  //       <Route path="/login" element={<Login />} />
+  //       <Route path="/register" element={<Register />} />
+  //       <Route path="/forgotPassword" element={<ForgotPassword />} />
+  //     </Routes>
+  //   </Router>
+  // );
 
-  const renderContent = () => {
-    switch (activePage) {
-      case "home":
-        return <div>Welcome to the Home Page</div>;
-      case "popular":
-        return <div>Popular Posts Section</div>;
-      case "my-posts":
-        return <div>My Posts Section</div>;
-      case "requests":
-        return <div>Requests Section</div>;
-      case "chat":
-        return <div>Chat Section</div>;
-      default:
-        return <div>Welcome to the Home Page</div>;
-    }
-  };
+// navbar
 
-//   return (
-//     <Router>
-//       <Routes>
-//         {/* Authentication Routes */}
-//         <Route path="/" element={<Login />} />
-//         <Route path="/login" element={<Login />} />
-//         <Route path="/register" element={<Register />} />
-//         <Route path="/forgotPassword" element={<ForgotPassword />} />
 
-//         {/* Protected Routes */}
-//         <Route
-//           path="/*"
-//           element={
-//             <div style={{ display: "flex" }}>
-//               {/* Vertical Navbar */}
-//               <Home activePage={activePage} setActivePage={setActivePage} />
 
-//               {/* Main Content Area */}
-//               <div style={{ marginLeft: "200px", padding: "20px", flexGrow: 1 }}>
-//                 {renderContent()}
-//               </div>
-//             </div>
-//           }
-//         />
-//       </Routes>
-//     </Router>
-//   );
-return(<Home/>) 
+
+  
 }
+
+
 
 export default App;
