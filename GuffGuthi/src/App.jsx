@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import Navbar from "./components/navbar/Navbar";
 import ViewProfilePage from "./pages/ViewProfilePage";
+import home from "./pages/home";
 
 
 function App() {
