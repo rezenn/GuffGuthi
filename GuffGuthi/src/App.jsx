@@ -5,8 +5,8 @@ import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import Navbar from "./components/navbar/Navbar";
 import ViewProfilePage from "./pages/ViewProfilePage";
+import home from "./pages/home";
 import CreatePost from "./pages/CreatePost";
-import PostRequest from "./pages/PostRequest";
 
 
 function App() {
@@ -56,10 +56,9 @@ function App() {
 //       </Routes>
 //     </Router>
 //   );
-// return(<Home/>) 
-return(<CreatePost/>) 
+//return(<Navbar/>) 
 
-// return(<PostRequest/>)
+rerturn(<CreatePost/>)
 }
 
 export default App;
