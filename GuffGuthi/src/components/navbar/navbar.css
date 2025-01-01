@@ -27,7 +27,7 @@ body {
   position: fixed;
   left: 0;
   top: 0;
-  border: 1px solid #333;
+  border-right: 1px solid #333;
 }
 
 .main-content {
@@ -359,6 +359,7 @@ body {
   margin-left: 100px;
   /* left: 256px; */
   background-color: white;
+  border-bottom: 1px solid #333;
   /* White background for the search bar container */
   display: flex;
   justify-content: center;

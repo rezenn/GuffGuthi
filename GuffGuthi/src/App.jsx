@@ -16,15 +16,19 @@ import CreatePost from "./pages/CreatePost";
 
 function App() {
   return (
+    // <Router>
+    //   <Routes>
+    //     <Route path="/" element={<Login />} />
+    //     <Route path="/login" element={<Login />} />
+    //     <Route path="/register" element={<Register />} />
+    //     <Route path="/forgotPassword" element={<ForgotPassword />} />
+    //   </Routes>
+    // </Router> 
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/forgotPassword" element={<ForgotPassword />} />
-        {/* <Route path="/" element={<ViewProfilePage />} /> 
+        <Route path="/" element={<ViewProfilePage />} /> 
         <Route path="/viewProfilePage" element={<ViewProfilePage />} /> 
-        <Route path="/editProfilePage" element={<EditProfilePage />} />  */}
+        <Route path="/editProfilePage" element={<EditProfilePage />} /> 
       </Routes>
     </Router> 
   );
