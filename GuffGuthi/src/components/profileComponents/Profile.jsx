@@ -1,8 +1,14 @@
 
 import styles from "./profile.module.css";
-import { Link } from "react-router-dom"; 
+import { useNavigate } from 'react-router-dom';
 
+    
 function Profile(){
+    const navigate = useNavigate();
+
+    const handleNavigate = () => {
+        navigate('/EditProfilePage'); 
+    };
     return(
         <>
             <section>
@@ -37,15 +43,13 @@ function Profile(){
                         <p className= {styles.likes}>Likes</p>
                     </div>
                 </div>
-                <button className={styles.editProfile}>
-  <Link to="/EditProfile" className={styles.link}>
+                <button onClick={handleNavigate} className={styles.editProfile}>
     Edit Profile
-  </Link>
 </button>
 
             </section>
         
         </>
-    )
+    );
 }
 export default Profile;

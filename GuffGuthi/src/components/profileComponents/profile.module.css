@@ -110,12 +110,9 @@ section {
     height: 40px;
     border-radius: 20px;
     margin: 40px;
-
-}
-
-.link {
     color: #fff;
     font-family: "Inter", serif;
     font-size: 15px;
     text-decoration: none;
+
 }

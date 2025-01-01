@@ -1,5 +1,5 @@
 import React from "react";
-import './login.css'
+import style from "./Login.module.css";
 import { Link } from "react-router-dom";
 
 function Register(){
@@ -10,33 +10,31 @@ function Register(){
 
     return(
         <>
-            <div id="regLog">
-                <div>
-                <img className="backgroundImg" src="./src/assets/background.png" alt="background" />
-                    
-                </div> 
+            <body id={style.body}>
+            <div id={style.regLog}>
+                
 
-                <div id="login">
-                    <img className="logo" 
+                <div id={style.login}>
+                    <img className={style.logo} 
                         src="./src/assets/logo.png"
                         alt="Logo" 
                     />
            
                     <h2>Create your free Account</h2>
                     <form onSubmit={handleSubmit}>
-                        <label>Username</label>
+                        <label className={style.label}>Username</label>
                         <br />
-                        <input type="text" placeholder="Username" required />
+                        <input className={style.input} type="text" placeholder="Username" required />
                         <br />
-                        <label>Email</label>
+                        <label className={style.label}>Email</label>
                         <br />
-                        <input type="email" placeholder="Email Address" required />
+                        <input className={style.input} type="email" placeholder="Email Address" required />
                         <br />
-                        <label>Password</label>
+                        <label className={style.label}>Password</label>
                         <br />
-                        <input type="password" placeholder="Password" required />
+                        <input className={style.input} type="password" placeholder="Password" required />
                         <br />
-                        <button className="createAccount" 
+                        <button className={style.createAccount} 
                                 type="submit">Create Account
                         </button>
                     </form>
@@ -46,6 +44,7 @@ function Register(){
                     </p>
                 </div>               
             </div>
+            </body>
         </>
     );
 }

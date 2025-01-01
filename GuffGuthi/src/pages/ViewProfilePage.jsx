@@ -2,10 +2,12 @@ import Profile from "../components/profileComponents/Profile";
 import ViewPost from "../components/profileComponents/ViewPost";
 import CoverImage from "../components/profileComponents/CoverImage";
 import styles from "./viewProfile.module.css"
+import Navbar from "../components/navbar/Navbar";
 
 function ViewProfilePage(){
     return(
         <>
+            <Navbar/>
             <div className= {styles.container} >
                 <div className={styles.coverImg}>
                     <CoverImage/>
@@ -19,7 +21,7 @@ function ViewProfilePage(){
                     </div>
                 </div>
             </div>
-            
+          
         </>
     )
 }
