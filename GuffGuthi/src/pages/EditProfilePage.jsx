@@ -5,7 +5,7 @@ function EditProfilePage(){
     return(
         <>
         <Navbar/>
-        <EditProfile/>
+        <EditProfile />
         </>
     )
 }
