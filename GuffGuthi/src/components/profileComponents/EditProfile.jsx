@@ -92,6 +92,7 @@ function EditProfile() {
                         <br />
                         <button className= {styles.updateProfile} >Update profile</button>
                     </form>
+                    {/* button */}
                 </div>
             </section>
         </>
