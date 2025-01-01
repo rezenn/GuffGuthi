@@ -1,0 +1,85 @@
+.CreatePost-Container {
+    background: white;
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center;
+    width: 10in; 
+    height: 6in; 
+    position: absolute; 
+    top: 1.2in; 
+    left: 55%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to align the center of the container */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+    padding: 1rem; /* Add padding inside the container */
+    box-sizing: border-box; 
+    display: flex;
+    /* justify-content: end; */
+    align-items: end;
+}
+
+
+.CreatePost-Container h1 {
+    font-size: 1.5rem; 
+    font-weight: bold;
+    margin-bottom: 1rem; 
+    color: black; 
+    text-align: left; 
+    width: 100%; 
+}
+
+
+.CreatePost-Container .title{
+    width: 870px; 
+    height: 60px;
+    margin-bottom: 1rem; 
+    padding: 0.5rem; 
+    font-size: 1rem; 
+    margin-right: 50px;
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    box-sizing: border-box; }
+
+.CreatePost-Container .BodyText {
+    max-width: 870px; 
+    max-height: 350px;
+    min-width: 870px; 
+    min-height: 350px;
+    margin-bottom: 1rem; 
+    margin-right: 50px;
+    padding: 0.5rem; 
+    font-size: 1rem; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    
+}
+
+/* Styles for the button */
+.CreatePost-Container .Post-Button {
+    width: 69px; 
+    height: 48px;
+    padding: 0.5rem; 
+    background-color: orangered; /* Blue background */
+    color: white; 
+    border-radius: 8px; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    
+}
+
+.ButtonPosition  {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+
+.CreatePost-Container .Post-Button:hover {
+    background-color: #b30000; 
+}
+
+
+

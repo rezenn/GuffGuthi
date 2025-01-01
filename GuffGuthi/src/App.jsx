@@ -11,6 +11,7 @@ import home from "./pages/home";
 import ViewPost from "./components/profileComponents/ViewPost";
 import CoverImage from "./components/profileComponents/CoverImage";
 import EditProfilePage from "./pages/EditProfilePage";
+import CreatePost from "./pages/CreatePost";
 
 
 function App() {
