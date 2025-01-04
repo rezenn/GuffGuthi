@@ -13,6 +13,7 @@ import CoverImage from "./components/profileComponents/CoverImage";
 import EditProfilePage from "./pages/EditProfilePage";
 import CreatePost from "./pages/CreatePost";
 
+//
 
 function App() {
   return (
@@ -56,6 +57,8 @@ function App() {
 // {/* <ViewProfilePage/> */}
 // </>  
 // ) 
+
+return(<Navbar/>)
 }
 
-export default App;
+export default Navbar;

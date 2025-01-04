@@ -13,6 +13,21 @@ body {
   padding: 0;
 }
 
+
+
+.main-content {
+  margin-left: 200px;
+  /* This ensures the main content takes up the remaining space */
+  padding: 20px;
+  background-color: grey;
+  /* Set the main content area background to grey */
+  min-height: 100vh;
+  color: white;
+  /* Optional: to make text color contrast with grey background */
+}
+
+
+/*nav bar*/
 .navbar {
   width: 256px;
   /* Fixed width for the navbar */
@@ -28,34 +43,6 @@ body {
   left: 0;
   top: 0;
   border-right: 1px solid #333;
-}
-
-.main-content {
-  margin-left: 200px;
-  /* This ensures the main content takes up the remaining space */
-  padding: 20px;
-  background-color: grey;
-  /* Set the main content area background to grey */
-  min-height: 100vh;
-  color: white;
-  /* Optional: to make text color contrast with grey background */
-}
-
-
-.navbar {
-  width: 250px;
-  height: 100vh;
-  background-color: white;
-  /* Changed background to white */
-  color: black;
-  /* Changed default text color to black */
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-
-  position: fixed;
-  left: 0;
-  top: 0;
 }
 
 .navbar button {
@@ -115,6 +102,7 @@ body {
 }
 
 
+/* home button */
 #homeButton {
   font-family: 'Roboto';
   position: relative;
@@ -139,7 +127,7 @@ body {
 }
 
 
-
+/* popular button */
 #popularButton {
   /* background-color: lightgreen; /* Customize Popular button */
   font-family: 'Roboto';
@@ -164,6 +152,9 @@ body {
   Left: 16px;
 }
 
+
+
+/* myPost button */
 #myPostsButton {
   /*background-color: lightcoral; /* Customize My Posts button */
   font-family: 'Roboto';
@@ -186,6 +177,8 @@ body {
   Left: 15px;
 }
 
+
+/* request button */
 #requestsButton {
   /*background-color: lightgoldenrodyellow; /* Customize Requests button */
   font-family: 'Roboto';
@@ -209,6 +202,7 @@ body {
 }
 
 
+/* chat button */
 #chatButton {
   /*background-color: lightpink; /* Customize Chat button */
   font-family: 'Roboto';
@@ -231,6 +225,8 @@ body {
   Left: 15px;
 }
 
+
+/* create group button */
 #createGroupButton {
   /*background-color: lightpink; /* Customize Chat button */
   font-family: 'Roboto';
@@ -256,6 +252,7 @@ body {
 }
 
 
+/* settings button */
 #settingsButton {
   font-family: 'Roboto';
   position: relative;
@@ -286,6 +283,8 @@ body {
   margin-top: 0px;
 }
 
+
+/* help button */
 #helpButton {
   font-family: 'Roboto';
   position: relative;
@@ -309,6 +308,8 @@ body {
   Left: 16px;
 }
 
+
+/* about button */
 #aboutButton {
   font-family: 'Roboto';
   position: relative;
@@ -350,11 +351,12 @@ body {
 
 
 
-/* White Box with Search Bar */
+/* Search Bar */
 
 
 .search-container {
-  width: 1419px;
+  /* width: 1419px; */
+  width: 1435px;
   height: 82px;
   margin-left: 100px;
   /* left: 256px; */
@@ -368,12 +370,11 @@ body {
 }
 
 .search-bar {
+  border-radius: 45px;
   display: flex;
   left: 350;
-  /* align-items: center; */
-  width: 652px;
+  width: 900px;
   /* Adjust this to make the search bar smaller */
-  /* max-width: 400px; Max width for larger screens8 */
   background-color: #f6f6f6;
   border-radius: 20px;
   padding: 5px 12px;
@@ -384,9 +385,9 @@ body {
   /* Subtle shadow */
   border: 0px;
   /* Move the search bar left or right */
-  margin-left: 265px;
+  margin-left: 200px;
   /* Adjust this value to move to the right */
-  margin-right: 550px;
+  margin-right: 360px;
   /* Adjust this value to move to the left */
 }
 
@@ -406,7 +407,7 @@ body {
   outline: none;
   font-size: 14px;
   /* Adjust font size to be smaller */
-  border-radius: 20px;
+  border-radius: 45px;
   height: 30px;
   /* Set a specific height for the input field */
 }
@@ -438,6 +439,67 @@ body {
   color: #005fa3;
 }
 
+
+
+/* notification button */
+
+.notification-button {
+  font-family: 'Roboto';
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  /* gap: 35px; */
+  position: absolute;
+  right: 115px; /* Adjust to position relative to the white box */
+  top: 375px; /* Center vertically */
+  transform: translateY(-350px);
+  background: none;
+  border: none;
+  color: black;
+  font-size: 16px;
+  /* cursor: pointer; */
+}
+
+.notification-button:hover {
+  color: orange;
+}
+.notification_icon {
+  align-items: center;
+  Width: 29px;
+  Height: 19px;
+  Top: 12px;
+  Left: 16px;
+}
+
+/* post button */
+
+.post-button {
+  font-family: 'Roboto';
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  /* gap: 35px; */
+  position: absolute;
+  right: 250px; /* Adjust to position relative to the white box */
+  top: 375px; /* Center vertically */
+  transform: translateY(-350px);
+  background: none;
+  border: none;
+  color: black;
+  font-size: 16px;
+  /* cursor: pointer; */
+}
+
+.post-button:hover {
+  color: orange;
+}
+.Post_icon {
+  align-items: center;
+  Width: 29px;
+  Height: 19px;
+  Top: 12px;
+  Left: 16px;
+}
 
 
 
@@ -505,4 +567,3 @@ body {
 }
 
 
-/* Post Container Styling */

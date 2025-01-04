@@ -16,6 +16,18 @@ const Navbar = ({ activePage, setActivePage }) => {
             <img src="./src/assets/search.svg" alt="search Icon" className="search_icon"/>
          </button>
          <input type="text" className="search-input" placeholder="Search..." />
+       
+         <button className="notification-button">
+           <img src="./src/assets/notification.svg" alt="notification Icon" className="notification_icon"/>
+           Notification
+         </button>
+
+
+         <button className="post-button">
+           <img src="./src/assets/s_post.svg" alt="post Icon" className="Post_icon"/>
+           Post
+         </button>
+
        </div>
 
       </div>
