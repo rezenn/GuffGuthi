@@ -7,24 +7,27 @@ import Profile from "./components/profileComponents/Profile";
 import EditProfile from "./components/profileComponents/EditProfile";
 import Navbar from "./components/navbar/Navbar";
 import ViewProfilePage from "./pages/ViewProfilePage";
-import home from "./pages/home";
 import ViewPost from "./components/profileComponents/ViewPost";
 import CoverImage from "./components/profileComponents/CoverImage";
 import EditProfilePage from "./pages/EditProfilePage";
 import CreatePost from "./pages/CreatePost";
+// import post from "./components/postINhome/Post";
+import Home from "./components/home";
+import Post from "./components/postINhome/Post";
+import Chat from "./components/chatINhome/Chat";
 
 //
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/forgotPassword" element={<ForgotPassword />} />
-      </Routes>
-    </Router> 
+  // return (
+  //   <Router>
+  //     <Routes>
+  //       <Route path="/" element={<Login />} />
+  //       <Route path="/login" element={<Login />} />
+  //       <Route path="/register" element={<Register />} />
+  //       <Route path="/forgotPassword" element={<ForgotPassword />} />
+  //     </Routes>
+  //   </Router> 
     // <Router>
     //   <Routes>
     //     <Route path="/" element={<ViewProfilePage />} /> 
@@ -32,7 +35,7 @@ function App() {
     //     <Route path="/editProfilePage" element={<EditProfilePage />} /> 
     //   </Routes>
     // </Router> 
-  );
+  // );
   const [activePage, setActivePage] = useState("Navbar");
 
   // const renderContent = () => {
@@ -58,7 +61,7 @@ function App() {
 // </>  
 // ) 
 
-return(<Navbar/>)
+return(<Home/>)
 }
 
-export default Navbar;
+export default App;

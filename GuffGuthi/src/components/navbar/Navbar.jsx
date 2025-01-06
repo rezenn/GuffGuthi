@@ -83,7 +83,7 @@ const Navbar = ({ activePage, setActivePage }) => {
           onClick={() => setActivePage("requests")}
         >
           <img src="./src/assets/request.svg" alt="request Icon" className="request_icon"/>
-          Requests
+          Community Service
         </button>
 
 

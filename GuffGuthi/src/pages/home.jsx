@@ -1,5 +1,5 @@
 import Navbar from "../components/navbar/Navbar";
-import post from "../components/post";
+import post from "../components/postINhome/Post";
 
 function home(){
     return(

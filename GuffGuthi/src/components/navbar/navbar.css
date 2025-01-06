@@ -125,6 +125,9 @@ body {
   Top: 12px;
   Left: 16px;
 }
+.homeButton:hover {
+  color: #FF4500;
+}
 
 
 /* popular button */
@@ -461,7 +464,7 @@ body {
 }
 
 .notification-button:hover {
-  color: orange;
+  color: #FF4500;
 }
 .notification_icon {
   align-items: center;
@@ -491,7 +494,7 @@ body {
 }
 
 .post-button:hover {
-  color: orange;
+  color: #FF4500;
 }
 .Post_icon {
   align-items: center;
