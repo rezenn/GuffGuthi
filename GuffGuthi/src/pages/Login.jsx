@@ -1,5 +1,5 @@
 import React from "react";
-import './login.css'
+import style from "./Login.module.css";
 import { Link } from "react-router-dom";
 
 function Login(){
@@ -10,30 +10,28 @@ function Login(){
 
     return(
         <>
-            <div id="regLog">
-                <div>
-                <img className="backgroundImg" src="./src/assets/background.png" alt="background" />
-                    
-                </div> 
+            <body id={style.body}>
+            <div id={style.regLog}>
+                
 
-                <div id="login">
-                    <img className="logo" 
+                <div id={style.login}>
+                    <img className={style.logo} 
                         src="./src/assets/logo.png"
                         alt="Logo" 
                     />
            
                     <h2>Login to your Account</h2>
                     <form onSubmit={handleSubmit}>
-                        <label>Email</label>
+                        <label className={style.label}>Email</label>
                         <br />
-                        <input type="email" placeholder="Your Email Address" required />
+                        <input className={style.input} type="email" placeholder="Your Email Address" required />
                         <br />
-                        <label>Password</label>
+                        <label className={style.label}s>Password</label>
                         <br />
-                        <input type="password" placeholder="Password" required />
+                        <input className={style.input} type="password" placeholder="Password" required />
                         <br />
-                        <Link className="forgotPassword" to="/ForgotPassword">Forgot password </Link>
-                        <button className="createAccount" 
+                        <Link className={style.forgotPassword} to="/ForgotPassword">Forgot password </Link>
+                        <button className={style.createAccount} 
                                 type="submit">Login
                         </button>
                     </form>
@@ -43,6 +41,7 @@ function Login(){
                     </p>
                 </div>               
             </div>
+            </body>
         </>
     );
 }

@@ -7,7 +7,7 @@
 }
 
 .ViewPost {
-    margin: 20px;
+    margin: 10px;
     padding: 20px;
 }
 
@@ -26,11 +26,12 @@ hr {
 }
 
 .card {
-    width: 589px;
+    width: 590px;
     height: 340px;
     border: 1px solid #333;
     border-radius: 20px;
-    box-shadow: 2px 4px grey;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 8px 5px grey;
 }
 
 .card h3 {

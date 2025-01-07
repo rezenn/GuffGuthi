@@ -14,7 +14,6 @@ const Navbar = ({ activePage, setActivePage }) => {
            onClick={() => setActivePage("my-posts")}
          >
             <img src="./src/assets/search.svg" alt="search Icon" className="search_icon"/>
-          
          </button>
          <input type="text" className="search-input" placeholder="Search..." />
        </div>

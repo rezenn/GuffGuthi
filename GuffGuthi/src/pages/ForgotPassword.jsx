@@ -1,6 +1,5 @@
 import React from "react";
-import './login.css'
-// import './index.css'; 
+import style from "./Login.module.css";
 
 import { Link } from "react-router-dom";
 
@@ -12,33 +11,29 @@ function ForgotPassword(){
 
     return(
         <>
-            <div id="regLog">
-                <div>
-                <img className="backgroundImg" src="./src/assets/background.png" alt="background" />
-                    
-                </div> 
-
-                <div id="login">
-                    <img className="logo" 
+            <body id={style.body}>
+            <div id={style.regLog}>
+                <div id={style.login}>
+                    <img className={style.logo} 
                         src="./src/assets/logo.png"
                         alt="Logo" 
                     />
            
                     <h2>Reset your account password</h2>
                     <form onSubmit={handleSubmit}>
-                        <label>Email</label>
+                        <label className={style.label}>Email</label>
                         <br />
-                        <input type="email" placeholder="Your Email Address" required />
+                        <input className={style.input} type="email" placeholder="Your Email Address" required />
                         <br />
-                        <label>Password</label>
+                        <label className={style.label}>Password</label>
                         <br />
-                        <input type="password" placeholder="Password" required />
+                        <input className={style.input} type="password" placeholder="Password" required />
                         <br />
-                        <label>Confirm Password</label>
+                        <label className={style.label}>Confirm Password</label>
                         <br />
-                        <input type="password" placeholder="Confirm Password" required />
+                        <input className={style.input} type="password" placeholder="Confirm Password" required />
                         <br />
-                        <button className="createAccount" 
+                        <button className={style.createAccount} 
                                 type="submit">Change Password
                         </button>
                     </form>
@@ -48,6 +43,7 @@ function ForgotPassword(){
                     </p>
                 </div>               
             </div>
+            </body>
         </>
     );
 }

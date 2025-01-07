@@ -1,12 +1,12 @@
-import "./ViewPost.css"
+import styles from "./ViewPost.module.css"
 
 function ViewPost(){
     return(
         <>
-            <div className="ViewPost">
+            <div className= {styles.ViewPost}>
                 <h2>Posts</h2>
                 <hr />
-                <div className="card">
+                <div className= {styles.card}>
                     <h3>Prince Harry's lawsuit against Murdoch's UK group moves towards trial as others settle</h3>
                     <p>Prince Harry is continuing his lawsuit against Rupert Murdoch's News Group Newspapers (NGN) over alleged unlawful activities by journalists and private investigators despite dozens of others settling their cases, his lawyer said on Friday.
                     
