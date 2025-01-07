@@ -1,23 +1,51 @@
 import React from "react";
 import "./navbar.css";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ activePage, setActivePage }) => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (page) => {
+    setActivePage(page); // Update active page state
+    navigate(`/${page}`); // Navigate to the route
+  };
+
   return (
     <>
       <div className="search-container">
-
-       <div className="search-bar">
-          
+        <div className="search-bar">
           <button 
-           id="searchButton"
-           className={activePage === "search" ? "active" : ""}
-           onClick={() => setActivePage("my-posts")}
-         >
+            id="searchButton"
+            className={activePage === "search" ? "active" : ""}
+            onClick={() => handleNavigation("search")}
+          >
             <img src="./src/assets/search.svg" alt="search Icon" className="search_icon"/>
-         </button>
-         <input type="text" className="search-input" placeholder="Search..." />
-       </div>
+          </button>
 
+          <input type="text" className="search-input" placeholder="Search..." />
+          
+          <button className="notification-button">
+            <img src="./src/assets/notification.svg" alt="notification Icon" className="notification_icon"/>
+            Notification
+          </button>
+
+          <button 
+            id="post-button"
+            className={activePage === "createPost" ? "active" : ""}
+            onClick={() => handleNavigation("createPost")}
+          >
+            <img src="./src/assets/s_post.svg" alt="post Icon" className="Post_icon" />
+            Post
+          </button>
+
+          <button 
+            id="profile"
+            className={activePage === "viewProfilePage" ? "active" : ""}
+            onClick={() => handleNavigation("viewProfilePage")}
+          >
+            <img src="./src/assets/profile.jpg" alt="profile" className="profile" />
+          </button>
+        </div>
       </div>
 
       <div className="navbar">
@@ -26,117 +54,94 @@ const Navbar = ({ activePage, setActivePage }) => {
         </div>
 
         <div className="navbar-Line">
-        <hr></hr>
-      </div>
-
+          <hr></hr>
+        </div>
 
         <button
           id="homeButton"
           className={activePage === "home" ? "active" : ""}
-          onClick={() => setActivePage("home")}
+          onClick={() => handleNavigation("home")}
         >
           <img src="./src/assets/homebutton1.svg" alt="Home Icon" className="icon" />
           Home
         </button>
 
-
-
         <button
           id="popularButton"
-          className={activePage === "popular" ? "active" : ""}
-          onClick={() => setActivePage("popular")}
+          className={activePage === "group" ? "active" : ""}
+          onClick={() => handleNavigation("group")}
         >
-          <img src="./src/assets/popularbutton.svg" alt="Popular Icon" className="Popular_icon"/>
-          Popular
+          <img src="./src/assets/popularbutton.svg" alt="Group Icon" className="Popular_icon" />
+          Group
         </button>
-
-
-
 
         <button
           id="myPostsButton"
           className={activePage === "my-posts" ? "active" : ""}
-          onClick={() => setActivePage("my-posts")}
+          onClick={() => handleNavigation("my-posts")}
         >
-           <img src="./src/assets/myPost.svg" alt="my post Icon" className="MyPost_icon"/>
+          <img src="./src/assets/myPost.svg" alt="my post Icon" className="MyPost_icon" />
           My Posts
         </button>
 
-
-
-
         <button
           id="requestsButton"
-          className={activePage === "requests" ? "active" : ""}
-          onClick={() => setActivePage("requests")}
+          className={activePage === "communityServices" ? "active" : ""}
+          onClick={() => handleNavigation("communityServices")}
         >
-          <img src="./src/assets/request.svg" alt="request Icon" className="request_icon"/>
-          Requests
+          <img src="./src/assets/request.svg" alt="request Icon" className="request_icon" />
+          Community Services
         </button>
-
-
-
 
         <button
           id="chatButton"
           className={activePage === "chat" ? "active" : ""}
-          onClick={() => setActivePage("chat")}
+          onClick={() => handleNavigation("chat")}
         >
-           <img src="./src/assets/chats.svg" alt="chats Icon" className="chat_icon"/>
-
+          <img src="./src/assets/chats.svg" alt="chats Icon" className="chat_icon" />
           Chat
         </button>
-
-
-
 
         <button
           id="createGroupButton"
           className={activePage === "createGroup" ? "active" : ""}
+          onClick={() => handleNavigation("createGroup")}
+
         >
           <img src="./src/assets/group.svg" alt="group Icon" className="group_icon" />
           Create Group
         </button>
 
-
-
-
         <button
           id="settingsButton"
           className={activePage === "settings" ? "active" : ""}
-          onClick={() => setActivePage("settings")}
+          onClick={() => handleNavigation("settings")}
         >
-           <img src="./src/assets/settings.svg" alt="setting Icon" className="settings_icon" />
+          <img src="./src/assets/settings.svg" alt="setting Icon" className="settings_icon" />
           Settings
         </button>
 
         <div className="settingANDhelp-Line">
-        <hr></hr>
-      </div>
-
+          <hr></hr>
+        </div>
 
         <button
           id="helpButton"
           className={activePage === "help" ? "active" : ""}
-          onClick={() => setActivePage("help")}
+          onClick={() => handleNavigation("help")}
         >
           <img src="./src/assets/help.svg" alt="help Icon" className="help_icon" />
           Help
         </button>
 
-
-
-
         <button
           id="aboutButton"
           className={activePage === "about" ? "active" : ""}
-          onClick={() => setActivePage("about")}
+          onClick={() => handleNavigation("about")}
         >
           <img src="./src/assets/about.svg" alt="about Icon" className="about_icon" />
           About
         </button>
-
-
       </div>
     </>
   );

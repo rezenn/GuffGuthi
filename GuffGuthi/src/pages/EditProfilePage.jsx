@@ -4,7 +4,6 @@ import Navbar from "../components/navbar/Navbar";
 function EditProfilePage(){
     return(
         <>
-        <Navbar/>
         <EditProfile />
         </>
     )

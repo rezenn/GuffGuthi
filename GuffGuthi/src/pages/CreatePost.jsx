@@ -7,7 +7,7 @@ const CreatePost = () => {
     return (
 
         <>
-        <Navbar/>
+        {/* <Navbar/> */}
         <div className='CreatePost-Container'>
 
             <h1>Create Post</h1>
@@ -20,7 +20,9 @@ const CreatePost = () => {
             <textarea type="text"
             className='BodyText' 
             />
-<div className='ButtonPosition'><button className='Post-Button'>Post</button></div>
+            <div className='ButtonPosition'>
+            <button className='Post-Button'>
+                Post</button></div>
             
             
         </div>

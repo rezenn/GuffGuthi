@@ -1,16 +1,13 @@
 import Navbar from "../components/navbar/Navbar";
-import post from "../components/post";
-import { Link } from "react-router-dom";
 
+import Post from "../components/postINhome/Post";
 
-function home(){
+function Home(){
     return(
         <>
-        
-        <Navbar />
-        <post/>
+            <Post/>
         </>
     )
 }
 
-export default home;
+export default Home;

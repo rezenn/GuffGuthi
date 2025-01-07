@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { useState } from "react";
 import Navbar from "../components/navbar/Navbar";
 import './PostRequest.css'
 
@@ -7,7 +8,6 @@ const PostRequest = () => {
 
     return (
         <>
-        <Navbar/>
 
         <main>
 
