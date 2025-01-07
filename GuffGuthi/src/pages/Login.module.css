@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Anta&family=Basic&family=Baumans&family=Doto:wght@100..900&family=Faculty+Glyphic&family=Marmelad&family=Merienda:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#body {
+    background-image: url("./src/assets/background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+#regLog {
+    display: grid;
+    height: 100%;
+    min-height: 100%;
+    grid-template-columns: auto auto;
+    margin: 0 600px;
+}
+
+/* Mobile and Tablet responsiveness */
+@media (max-width: 768px) {
+    #regLog {
+        margin: 0 20px;
+        grid-template-columns: 1fr;
+    }
+
+    #login {
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+    #login h2 {
+        font-size: 1.2rem;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    #login .logo {
+        width: 150px;
+        height: 70px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    form {
+        margin-top: 20px;
+        font-size: 1.3rem;
+    }
+
+    .input {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .createAccount {
+        width: 100%;
+        max-width: 340px;
+        margin: 20px auto;
+    }
+
+    #login p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    #login a {
+        font-size: 1rem;
+    }
+
+    #login .forgotPassword {
+        margin: 0;
+        padding-left: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #login .logo {
+        width: 120px;
+        height: 60px;
+    }
+
+    #login h2 {
+        font-size: 1.1rem;
+    }
+
+    .input {
+        width: 90%;
+    }
+
+    .createAccount {
+        width: 90%;
+    }
+
+    #login p {
+        font-size: 0.9rem;
+    }
+
+    #login a {
+        font-size: 0.9rem;
+    }
+
+    #login .forgotPassword {
+        font-size: 1rem;
+        padding-left: 0;
+    }
+}
+
+#login .logo {
+    align-items: start;
+    width: 175px;
+    height: 81px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#login {
+    background-color: #fff;
+    border-radius: 20px;
+    padding-bottom: 51px;
+    padding-right: 55px;
+    z-index: 1000;
+}
+
+#login h2 {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 1.5rem;
+    width: 485px;
+    padding-left: 95px;
+    padding-top: 20px;
+}
+
+form {
+    margin-top: 40px;
+    font-family: Poppins;
+    color: #7C838A;
+    font-size: 1.5rem;
+    padding: 0;
+}
+
+.label {
+    margin-top: 70px;
+}
+
+.input {
+    width: 500px;
+    height: 65px;
+    border-radius: 20px;
+    background-color: rgba(176, 186, 195, 0.414);
+    border: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.createAccount {
+    font-family: Poppins;
+    font-size: 2rem;
+    width: 340px;
+    height: 60px;
+    background-color: #FF4500;
+    border-radius: 20px;
+    color: #fff;
+    border: none;
+    margin-top: 15px;
+    margin-left: 83px;
+    margin-bottom: 20px;
+}
+
+.createAccount:hover {
+    background-color: hsla(16, 100%, 50%, 0.71);
+}
+
+#login p {
+    font-family: Poppins;
+    font-size: 1.1rem;
+    color: #7C838A;
+    padding-left: 35px;
+}
+
+#login a {
+    color: #FF4500;
+    text-decoration: none;
+    font-family: Poppins;
+    font-size: 1.1rem;
+}
+
+#login .forgotPassword {
+    color: #FF4500;
+    text-decoration: none;
+    font-family: Poppins;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 10px;
+    padding-left: 340px;
+}
+
+#login a:hover,
+#login .forgotPassword:hover {
+    color: hsla(16, 100%, 50%, 0.71);
+}
+

@@ -1,0 +1,18 @@
+.post-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 100px; /* Adjust this to move it up or down */
+    /* border: 1px solid black; */
+  }
+  
+  .post {
+    width: 60%; /* Adjust the width of the post box */
+    max-width: 800px; /* Maximum width for larger screens */
+    background-color: white; /* White background for the post box */
+    color: black; /* Text color inside the post box */
+    padding: 20px; /* Space inside the box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 1px solid rgb(178, 176, 176);
+  }
