@@ -1,10 +1,14 @@
 import React from "react";
 import style from "./Login.module.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate  } from "react-router-dom";
 
 function Login(){
+    const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent form from refreshing the page
+        navigate("/Home"); // Navigate to the Home page after form submission
+
      
     };
 

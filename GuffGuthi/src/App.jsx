@@ -7,7 +7,7 @@ import Profile from "./components/profileComponents/Profile";
 import EditProfile from "./components/profileComponents/EditProfile";
 import Navbar from "./components/navbar/Navbar";
 import ViewProfilePage from "./pages/ViewProfilePage";
-import home from "./pages/home";
+import Home from "./pages/Home";
 import ViewPost from "./components/profileComponents/ViewPost";
 import CoverImage from "./components/profileComponents/CoverImage";
 import EditProfilePage from "./pages/EditProfilePage";
@@ -22,6 +22,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </Router> 
     //
