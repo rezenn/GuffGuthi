@@ -3,21 +3,19 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
-import ForgotPassword from "./pages/ForgotPassword"
 import Profile from "./components/profileComponents/Profile";
 import EditProfile from "./components/profileComponents/EditProfile";
 import Navbar from "./components/navbar/Navbar";
 import ViewProfilePage from "./pages/ViewProfilePage";
-import home from "./pages/home";
+import Home from "./pages/Home";
 import ViewPost from "./components/profileComponents/ViewPost";
 import CoverImage from "./components/profileComponents/CoverImage";
 import EditProfilePage from "./pages/EditProfilePage";
 import CreatePost from "./pages/CreatePost";
 import Post from "./components/postINhome/Post";
 import Chat from "./components/chatINhome/Chat";
-import HtmlEditor from "./components/TextEditor/HtmlEditor";
 import PostRequest from "./pages/PostRequest";
-
+import HtmlEditor from "./components/TextEditor/HtmlEditor";
 
 function App() {
   const [activePage, setActivePage] = useState("home");
@@ -40,38 +38,9 @@ function App() {
         <Route path="/editProfilePage" element={<EditProfilePage />} />
       </Routes>
     </Router>
+
+
   );
-//   return (
-//     <Router>
-//       <Routes>
-//         {/* Authentication Routes */}
-//         <Route path="/" element={<Login />} />
-//         <Route path="/login" element={<Login />} />
-//         <Route path="/register" element={<Register />} />
-//         <Route path="/forgotPassword" element={<ForgotPassword />} />
-
-//         {/* Protected Routes */}
-//         <Route
-//           path="/*"
-//           element={
-//             <div style={{ display: "flex" }}>
-//               {/* Vertical Navbar */}
-//               <Home activePage={activePage} setActivePage={setActivePage} />
-
-//               {/* Main Content Area */}
-//               <div style={{ marginLeft: "200px", padding: "20px", flexGrow: 1 }}>
-//                 {renderContent()}
-//               </div>
-//             </div>
-//           }
-//         />
-//       </Routes>
-//     </Router>
-//   );
-// return(<CreatePost/>) 
-
-return(<CreatePost/>) 
-// return(<HtmlEditor/>)
 }
 
 export default App;

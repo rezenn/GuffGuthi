@@ -4,9 +4,10 @@
     flex-direction: column; 
     justify-content: flex-start; 
     align-items: center;
-    width: 10in; 
-    height: 6in; 
+    width: 1024px; 
+    height: 590px; 
     position: absolute; 
+    margin-left: 50px;
     top: 1.2in; 
     left: 55%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust to align the center of the container */
@@ -23,48 +24,41 @@
 .CreatePost-Container h1 {
     font-size: 1.5rem; 
     font-weight: bold;
-    margin-bottom: 1rem; 
-    padding-left: 30px;
+    /* margin-bottom: 1rem;  */
+    padding-left: 20px;
+    padding-bottom: 5px;
     color: black; 
     text-align: left; 
     width: 100%; 
 }
 
 
+
+
+
 .CreatePost-Container .title{
-    width: 870px; 
-    height: 60px;
+    max-width: 930px;
+    min-width: 930px;
+    height: 70px;
     margin-bottom: 1rem; 
-    padding: 0.5rem; 
+     
     font-size: 1rem; 
-    margin-right: 50px;
+    margin-bottom:5px;
+    margin-right:35px;
+    margin-left: 10px;
     border: 1px solid #ddd; 
-    border-radius: 4px; 
+    border-radius: 15px; 
     box-sizing: border-box; }
 
-/* .CreatePost-Container .BodyText {
-    max-width: 870px; 
-    max-height: 350px;
-    min-width: 870px; 
-    min-height: 350px;
-    margin-bottom: 1rem; 
-    margin-right: 50px;
-    padding: 0.5rem; 
-    font-size: 1rem; 
-    border: 1px solid #ddd; 
-    border-radius: 4px; 
-    box-sizing: border-box; 
-    
-} */
 
-/* Styles for the button */
 .CreatePost-Container .Post-Button {
     width: 69px; 
     height: 48px;
     padding: 0.5rem; 
+    margin-right: 50px;
     background-color: orangered; /* Blue background */
     color: white; 
-    border-radius: 8px; 
+    border-radius: 15px; 
     font-size: 1rem; 
     cursor: pointer; 
     transition: background-color 0.3s ease; 
@@ -84,15 +78,15 @@
 
 .Editor {
     max-width: 870px; 
-    max-height: 800px;
+    max-height: 350px;
     min-width: 870px; 
     min-height: 350px;
+    padding-top: 5rem;
     margin-bottom: 1rem; 
-    margin-right: 50px;
+    margin-right: 100px;
     padding: 0.5rem; 
     font-size: 1rem; 
-    border: 1px solid #ddd; 
-    border-radius: 4px; 
+    border-radius: 15px; 
     box-sizing: border-box; 
     
 }

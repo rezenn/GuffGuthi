@@ -1,5 +1,6 @@
+
 import React from 'react';
-import Navbar from '../components/navbar/Navbar';
+
 import './CreatePost.css';
 import HtmlEditor from '../components/TextEditor/HtmlEditor';
 
@@ -8,8 +9,7 @@ const CreatePost = () => {
 
   return (
     <>
-      <Navbar />
-      <HtmlEditor className="Editor"/>
+      
      
       <div className='CreatePost-Container'>
         <h1>Create Post</h1>
@@ -20,7 +20,7 @@ const CreatePost = () => {
           placeholder='Title'
         />
 
-
+<HtmlEditor className="Editor"/>
             
           {/* <textarea type="text"
             className='BodyText' 
