@@ -92,6 +92,7 @@ input {
     font-family: "Afacad", serif;
     font-size: 18px;
     margin: 3px;
+    border-radius: 20px;
 }
 
 form button {

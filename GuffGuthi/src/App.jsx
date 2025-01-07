@@ -12,18 +12,18 @@ import ViewPost from "./components/profileComponents/ViewPost";
 import CoverImage from "./components/profileComponents/CoverImage";
 import EditProfilePage from "./pages/EditProfilePage";
 import CreatePost from "./pages/CreatePost";
-import Post from "./components/postINhome/Post";
+import Post from "./components/postInHome/Post";
 import Chat from "./components/chatINhome/Chat";
 
 function App() {
-  const [activePage, setActivePage] = useState("home");
+  // const [activePage, setActivePage] = useState("home");
 
   return (
     <Router>
       {/* Render Navbar conditionally */}
-      {window.location.pathname !== "/login" && window.location.pathname !== "/register" && (
-        <Navbar activePage={activePage} setActivePage={setActivePage} />
-      )}
+      {/* {window.location.pathname !== "/login" && window.location.pathname !== "/register" && (
+        // <Navbar activePage={activePage} setActivePage={setActivePage} />
+      )} */}
 
       <Routes>
         <Route path="/" element={<Login />} />

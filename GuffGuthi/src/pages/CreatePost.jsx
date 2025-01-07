@@ -7,8 +7,8 @@ const CreatePost = () => {
     return (
 
         <>
-        {/* <Navbar/> */}
-        <div className='CreatePost-Container'>
+      <Navbar activePage="createPost" setActivePage={() => {}} />
+      <div className='CreatePost-Container'>
 
             <h1>Create Post</h1>
             <input type="text" 

@@ -38,13 +38,13 @@ const Navbar = ({ activePage, setActivePage }) => {
             Post
           </button>
 
-          <button 
-            id="profile"
-            className={activePage === "viewProfilePage" ? "active" : ""}
-            onClick={() => handleNavigation("viewProfilePage")}
-          >
-            <img src="./src/assets/profile.jpg" alt="profile" className="profile" />
-          </button>
+          <button
+        id="profile"
+        className={activePage === "viewProfilePage" ? "active" : ""}
+        onClick={() => handleNavigation("viewProfilePage")}
+      >
+        <img src="./src/assets/profile.jpg" alt="profile" className="profile" />
+      </button>
         </div>
       </div>
 
