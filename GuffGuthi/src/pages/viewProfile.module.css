@@ -8,9 +8,7 @@ body {}
 }
 
 .coverImg {
-    margin: 10px 0 0 260px;
-
-
+    margin: 83px 0 0 256px;
     grid-row: 1;
     z-index: 1;
     top: 0;
@@ -26,7 +24,7 @@ body {}
     grid-row: 2;
     gap: 20px;
     position: relative;
-    top: 180px;
+    top: 250px;
     left: 20px;
 }
 

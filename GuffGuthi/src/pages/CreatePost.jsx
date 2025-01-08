@@ -1,36 +1,46 @@
+
 import React from 'react';
+
+import './CreatePost.css';
 import Navbar from '../components/navbar/Navbar';
-import './CreatePost.css'
+import HtmlEditor from '../components/TextEditor/HtmlEditor';
+import { useNavigate } from 'react-router-dom';
 
 
-const CreatePost = () => {
-    return (
+function CreatePost(){
+  const navigate = useNavigate();
 
-        <>
-      <Navbar activePage="createPost" setActivePage={() => {}} />
-      <div className='CreatePost-Container'>
+    const handleNavigate = () => {
+        navigate('/PostRequest'); 
+    };
 
-            <h1>Create Post</h1>
-            <input type="text" 
+  return (
+    <>
+        <Navbar activePage="createPost" setActivePage={() => {}} />
+        <div className='CreatePost-Container'>
+        <h1>Create Post</h1>
+
+        <input
+          type='text'
+          className='title'
+          placeholder='Title'
+        />
+
+<HtmlEditor className="Editor"/>
             
-            className="title"
-            placeholder="Title"/>
-
-
-            <textarea type="text"
+          {/* <textarea type="text"
             className='BodyText' 
-            />
-            <div className='ButtonPosition'>
-            <button className='Post-Button'>
-                Post</button></div>
-            
-            
+            /> */}
+
+        <div className='ButtonPosition'>
+          <button onClick={handleNavigate} className='Post-Button'>Post</button>
         </div>
-
-
-
-        </>
-    );
+      </div>
+    </>
+  );
 };
 
 export default CreatePost;
+
+
+          

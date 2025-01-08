@@ -6,7 +6,7 @@ import "./homePage.css";
 function Home(){
     return(
         <>
-      <Navbar activePage="home" setActivePage={() => {}} />
+      <Navbar className="Navbar" activePage="home" setActivePage={() => {}} />
         <h1 className="title">Find something interesting to discuss</h1>
       <Post/>
       <Post/>

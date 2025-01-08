@@ -14,6 +14,8 @@ import EditProfilePage from "./pages/EditProfilePage";
 import CreatePost from "./pages/CreatePost";
 import Post from "./components/postInHome/Post";
 import Chat from "./components/chatINhome/Chat";
+import PostRequest from "./pages/PostRequest/PostRequest";
+import HtmlEditor from "./components/TextEditor/HtmlEditor";
 
 function App() {
   // const [activePage, setActivePage] = useState("home");
@@ -34,8 +36,11 @@ function App() {
         <Route path="/createPost" element={<CreatePost />} />
         <Route path="/viewProfilePage" element={<ViewProfilePage />} />
         <Route path="/editProfilePage" element={<EditProfilePage />} />
+        <Route path="/postRequest" element={<PostRequest />} />
       </Routes>
     </Router>
+
+
   );
 }
 
