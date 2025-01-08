@@ -9,7 +9,7 @@ function HtmlEditor(){
 
     return(
         <div className="Editor">
-            <div  style={{ width: 930, height: 300 }}>
+            <div  style={{ width: 930, height: 300}}>
       <div ref={quillRef} />
     </div>
 
