@@ -7,7 +7,7 @@ function PostRequest(){
 
     return (
         <>
-      <Navbar activePage="postrequest" setActivePage={() => {}} />
+      <Navbar activePage="communityServices" setActivePage={() => {}} />
       <main>
                 <div className="PostReq-Container">
                     <h1 className="Heading">Post for Community Service</h1>

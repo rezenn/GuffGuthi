@@ -8,11 +8,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 function CreatePost(){
-  const navigate = useNavigate();
-
-    const handleNavigate = () => {
-        navigate('/PostRequest'); 
-    };
 
   return (
     <>
@@ -33,7 +28,7 @@ function CreatePost(){
             /> */}
 
         <div className='ButtonPosition'>
-          <button onClick={handleNavigate} className='Post-Button'>Post</button>
+          <button className='Post-Button'>Post</button>
         </div>
       </div>
     </>
