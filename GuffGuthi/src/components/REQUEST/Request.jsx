@@ -1,15 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
 import "./request.css";
-import Navbar from "../navbar/Navbar";
+// import Navbar from "../navbar/Navbar";
 
-function CommunityServices() {
-  const navigate = useNavigate();
-
-    const handleNavigate = () => {
-        navigate('/PostRequest'); 
-    };
-
+function Request() {
   const [selectedPost, setSelectedPost] = useState(null);
 
   const posts = [
@@ -33,7 +26,7 @@ function CommunityServices() {
     },
     // Add more posts as needed
   ];
-
+ 
   const handlePostClick = (post) => {
     setSelectedPost(post);
   };
@@ -44,13 +37,13 @@ function CommunityServices() {
 
   return (
     <>
-      <Navbar className="Navbar" activePage="communityServices" setActivePage={() => {}} />
+      {/* <Navbar /> */}
       <div className="dashboard">
         <div className="dashboard-header">
           {!selectedPost ? (
             <>
               <div className="dashboard-title">Requests</div>
-              <button onClick={handleNavigate} className="create-button">Create Request</button>
+              <button className="create-button">Create Request</button>
             </>
           ) : (
             <button className="back-button" onClick={handleBackClick}>
@@ -84,4 +77,4 @@ function CommunityServices() {
   );
 }
 
-export default CommunityServices;
+export default Request;
