@@ -2,16 +2,17 @@
 import React from 'react';
 
 import './CreatePost.css';
+import Navbar from '../components/navbar/Navbar';
 import HtmlEditor from '../components/TextEditor/HtmlEditor';
+import { useNavigate } from 'react-router-dom';
 
-const CreatePost = () => {
 
+function CreatePost(){
 
   return (
     <>
-      
-     
-      <div className='CreatePost-Container'>
+        <Navbar activePage="createPost" setActivePage={() => {}} />
+        <div className='CreatePost-Container'>
         <h1>Create Post</h1>
 
         <input

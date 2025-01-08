@@ -1,0 +1,98 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Reem+Kufi:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Dashboard Container */
+.dashboard {
+    position: absolute;
+    top: 96px;
+    left: 307px;
+    width: 928px;
+    height: 690px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.dashboard-title {
+    font-family: 'Afacad', sans-serif;
+    font-size: 32px;
+    color: black;
+    width: 223.55px;
+}
+
+/* Buttons */
+.create-button,
+.back-button {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 15px;
+    width: 164px;
+    height: 48px;
+    padding: 8px 16px;
+    background-color: #FF4500;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.create-button:hover,
+.back-button:hover {
+    background-color: #FF6500;
+}
+
+/* Dashboard Content Area */
+.dashboard-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Post List */
+.post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.post-preview {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.post-preview:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.01);
+}
+
+/* Post Details */
+.post-details h2 {
+    margin-top: 0;
+    font-family: 'Afacad', sans-serif;
+    font-size: 24px;
+    color: #333;
+}
+
+.post-details p {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: #555;
+    line-height: 1.6;
+}

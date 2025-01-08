@@ -12,20 +12,20 @@ import ViewPost from "./components/profileComponents/ViewPost";
 import CoverImage from "./components/profileComponents/CoverImage";
 import EditProfilePage from "./pages/EditProfilePage";
 import CreatePost from "./pages/CreatePost";
-import Post from "./components/postINhome/Post";
+import Post from "./components/postInHome/Post";
 import Chat from "./components/chatINhome/Chat";
-import PostRequest from "./pages/PostRequest";
+import PostRequest from "./pages/PostRequest/PostRequest";
 import HtmlEditor from "./components/TextEditor/HtmlEditor";
-
+import CommunityServices from "./components/REQUEST/Request";
 function App() {
-  const [activePage, setActivePage] = useState("home");
+  // const [activePage, setActivePage] = useState("home");
 
   return (
     <Router>
       {/* Render Navbar conditionally */}
-      {window.location.pathname !== "/login" && window.location.pathname !== "/register" && (
-        <Navbar activePage={activePage} setActivePage={setActivePage} />
-      )}
+      {/* {window.location.pathname !== "/login" && window.location.pathname !== "/register" && (
+        // <Navbar activePage={activePage} setActivePage={setActivePage} />
+      )} */}
 
       <Routes>
         <Route path="/" element={<Login />} />
@@ -36,6 +36,8 @@ function App() {
         <Route path="/createPost" element={<CreatePost />} />
         <Route path="/viewProfilePage" element={<ViewProfilePage />} />
         <Route path="/editProfilePage" element={<EditProfilePage />} />
+        <Route path="/communityServices" element={<CommunityServices />} />
+        <Route path="/postRequest" element={<PostRequest />} />
       </Routes>
     </Router>
 
