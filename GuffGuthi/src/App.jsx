@@ -14,28 +14,31 @@ import EditProfilePage from "./pages/EditProfilePage";
 import CreatePost from "./pages/CreatePost";
 import Post from "./components/postINhome/Post";
 import Chat from "./components/chatINhome/Chat";
-
+import Request from "./components/REQUEST/Request";
 function App() {
-  const [activePage, setActivePage] = useState("home");
+  // const [activePage, setActivePage] = useState("home");
 
   return (
-    <Router>
-      {/* Render Navbar conditionally */}
-      {window.location.pathname !== "/login" && window.location.pathname !== "/register" && (
-        <Navbar activePage={activePage} setActivePage={setActivePage} />
-      )}
-
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/forgotPassword" element={<ForgotPassword />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/createPost" element={<CreatePost />} />
-        <Route path="/viewProfilePage" element={<ViewProfilePage />} />
-        <Route path="/editProfilePage" element={<EditProfilePage />} />
-      </Routes>
-    </Router>
+//     // <Router>
+//       {/* Render Navbar conditionally */}
+//       {/* {window.location.pathname !== "/login" && window.location.pathname !== "/register" && (
+//         <Navbar activePage={activePage} setActivePage={setActivePage} />
+//       )} */}
+// {/* 
+//       <Routes>
+//         <Route path="/" element={<Login />} />
+//         <Route path="/login" element={<Login />} />
+//         <Route path="/register" element={<Register />} />
+//         <Route path="/forgotPassword" element={<ForgotPassword />} />
+//         <Route path="/home" element={<Home />} />
+//         <Route path="/createPost" element={<CreatePost />} />
+//         <Route path="/viewProfilePage" element={<ViewProfilePage />} />
+//         <Route path="/editProfilePage" element={<EditProfilePage />} />
+//         <Route path="/Request" element={<Request />} />
+//       </Routes>
+//     </Router> */}
+   
+<Request/>
   );
 }
 
