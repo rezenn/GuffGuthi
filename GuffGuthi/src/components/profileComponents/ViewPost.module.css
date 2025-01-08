@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Alexandria:wght@100..900&family=Anta&family=Basic&family=Baumans&family=Doto:wght@100..900&family=Faculty+Glyphic&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Marmelad&family=Merienda:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.ViewPost {
+    margin: 10px;
+    padding: 20px;
+}
+
+.ViewPost h2 {
+    color: #242760;
+    font-family: "Inter", serif;
+    font-size: 24px;
+    font-size: 300;
+    margin-left: 28px
+}
+
+hr {
+    width: 123px;
+    margin: 10px 6px;
+    border: 1px solid #000;
+}
+
+.card {
+    width: 590px;
+    height: 340px;
+    border: 1px solid #333;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 8px 5px grey;
+}
+
+.card h3 {
+    margin: 15px 15px;
+    font-family: "Afacad", serif;
+    font-size: 18px;
+}
+
+.card p {
+    margin: 5px 15px;
+    font-family: "Afacad", serif;
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 10.3rewm;
+
+}
