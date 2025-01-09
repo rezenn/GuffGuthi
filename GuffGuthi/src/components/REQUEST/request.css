@@ -1,6 +1,8 @@
 /* Import Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Reem+Kufi:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;1,400&family=Roboto:wght@100;300;400;500;700;900&family=Reem+Kufi:wght@400;700&display=swap');
 
 /* Dashboard Container */
 .dashboard {
@@ -26,11 +28,12 @@
     border-bottom: 1px solid #ccc;
 }
 
+/* Dashboard Title */
 .dashboard-title {
     font-family: 'Afacad', sans-serif;
     font-size: 32px;
     color: black;
-    width: 223.55px;
+    width: auto;
 }
 
 /* Buttons */
@@ -68,6 +71,7 @@
     gap: 10px;
 }
 
+/* Post Preview */
 .post-preview {
     padding: 10px;
     border: 1px solid #ccc;
@@ -90,10 +94,48 @@
     color: #333;
 }
 
-.post-details p {
-    font-size: 16px;
+.post-details div {
     font-family: 'Roboto', sans-serif;
-    color: #555;
-    line-height: 1.6;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6; /* Improves readability */
+    white-space: pre-wrap; /* Ensures text wraps and respects line breaks */
 }
-    
+
+/* Additional Styles (Optional) */
+
+/* Navbar Styling (If Navbar is Implemented) */
+/*
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #ffffff;
+    border-right: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.navbar a {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    color: #333;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    transition: color 0.2s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #FF4500;
+}
+*/
