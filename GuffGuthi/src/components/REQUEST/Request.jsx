@@ -44,7 +44,6 @@ function CommunityServices() {
 
   return (
     <>
-      <Navbar className="Navbar" activePage="communityServices" setActivePage={() => {}} />
       <div className="dashboard">
         <div className="dashboard-header">
           {!selectedPost ? (
