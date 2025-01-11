@@ -7,7 +7,7 @@ function Profile(){
     const navigate = useNavigate();
 
     const handleNavigate = () => {
-        navigate('/EditProfilePage'); 
+        navigate('/EditProfile'); 
     };
     return(
         <>

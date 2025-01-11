@@ -92,6 +92,19 @@ body {
   left: 16px;
 }
 
+.username {
+  font-family: 'Baumans', serif;
+  color: #555;
+  margin-left: 5px;
+  padding: 0 px;
+  font-size: 16px;
+  position: relative;
+
+
+
+
+}
+
 .navbar-Line hr {
   border: 1px solid hwb(0 20% 80% / 0.293);
   width: 235px;
@@ -312,8 +325,8 @@ body {
 }
 
 
-/* help button */
-#helpButton {
+/* about button */
+#aboutButton {
   font-family: 'Roboto';
   position: relative;
   display: flex;
@@ -328,11 +341,11 @@ body {
 
 }
 
-#helpButton:hover {
+#aboutButton:hover {
   color: #FF4500;
 }
 
-.help_icon {
+.about_icon {
   align-items: center;
   Width: 24px;
   Height: 17px;
@@ -341,8 +354,8 @@ body {
 }
 
 
-/* about button */
-#aboutButton {
+/* logout button */
+#logoutButton {
   font-family: 'Roboto';
   position: relative;
   display: flex;
@@ -356,11 +369,11 @@ body {
   margin-top: -10px;
 }
 
-#aboutButton:hover {
+#logoutButton:hover {
   color: #FF4500;
 }
 
-.about_icon {
+.logout_icon {
   align-items: center;
   Width: 24px;
   Height: 17px;

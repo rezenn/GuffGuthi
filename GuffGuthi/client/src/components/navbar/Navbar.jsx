@@ -1,15 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
  
-const Navbar = ({ activePage, setActivePage }) => {
+const Navbar = ({ activePage, setActivePage, setAuth }) => {
   const navigate = useNavigate();
- 
+  
   const handleNavigation = (page) => {
     setActivePage(page); // Update active page state
     navigate(`/${page}`); // Navigate to the route
   };
  
+    const [name, setName] = useState("");
+  
+    async function getName(){
+      try {
+  
+        const response = await fetch(
+          "http://localhost:8000/home/",
+          {
+            method: "GET",
+            headers: {token: localStorage.token},
+          }
+        );
+        const parseRes = await response.json();
+  
+  
+  setName(parseRes.user_name);    
+      } catch (err) {
+        console.error(err.message);
+        
+      }
+    }
+    useEffect(() => {
+      getName();
+    }, []);
+
+
+    
   return (
     <>
    
@@ -41,8 +68,8 @@ const Navbar = ({ activePage, setActivePage }) => {
 
           <button
         id="profile"
-        className={activePage === "viewProfilePage" ? "active" : ""}
-        onClick={() => handleNavigation("viewProfilePage")}
+        className={activePage === "viewProfile" ? "active" : ""}
+        onClick={() => handleNavigation("viewProfile")}
       >
         <img src="./src/assets/profile.jpg" alt="profile" className="profile" />
       </button>
@@ -53,6 +80,7 @@ const Navbar = ({ activePage, setActivePage }) => {
         <div className="navbar-logo">
           <img src="./src/assets/logo.png" alt="Logo" />
         </div>
+        <span className="username"> Hello, {name}</span>
  
         <div className="navbar-Line">
           <hr></hr>
@@ -127,15 +155,6 @@ const Navbar = ({ activePage, setActivePage }) => {
         </div>
  
         <button
-          id="helpButton"
-          className={activePage === "help" ? "active" : ""}
-          onClick={() => handleNavigation("help")}
-        >
-          <img src="./src/assets/help.svg" alt="help Icon" className="help_icon" />
-          Help
-        </button>
- 
-        <button
           id="aboutButton"
           className={activePage === "about" ? "active" : ""}
           onClick={() => handleNavigation("about")}
@@ -143,6 +162,8 @@ const Navbar = ({ activePage, setActivePage }) => {
           <img src="./src/assets/about.svg" alt="about Icon" className="about_icon" />
           About
         </button>
+ 
+        
       </div>
     </>
   );

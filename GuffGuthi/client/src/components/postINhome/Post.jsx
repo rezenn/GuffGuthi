@@ -1,7 +1,10 @@
 import React from 'react';
 import "./post.css"
-import Navbar from '../navbar/Navbar';
+import axios from "axios"
 
+const api = axios.create({
+  baseURL: "http://localhost:3000/post/"
+})
 function post(){
     return(
         <div className="card">
