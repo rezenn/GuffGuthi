@@ -12,14 +12,14 @@ app.use(cors({
 
 const { PORT } = require("./constants")
 
-//AuthRoutes
-app.use("/auth", require("./routes/auth"))
+// Middleware
+app.use(express.json());
+app.use(cors());
 
-
-//homeRoutes
-app.use("/home", require("./routes/home"));
-
+// Routes
+app.use("/auth", require("./routes/authRoutes"));
+app.use("/home", require("./routes/homeRoutes"));
 
 app.listen(PORT, () => {
     console.log(`The app is running at port: ${PORT}`);
-})
+});

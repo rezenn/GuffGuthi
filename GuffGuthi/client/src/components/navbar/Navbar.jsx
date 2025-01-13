@@ -12,25 +12,29 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
  
     const [name, setName] = useState("");
   
-    async function getName(){
+    async function getName() {
       try {
-  
-        const response = await fetch(
-          "http://localhost:8000/home/",
-          {
-            method: "GET",
-            headers: {token: localStorage.token},
-          }
-        );
+        const token = localStorage.getItem("token"); // Ensure token exists
+        if (!token) {
+          throw new Error("No token found");
+        }
+    
+        const response = await fetch("http://localhost:8000/home/", {
+          method: "GET",
+          headers: { token },
+        });
+    
+        if (!response.ok) {
+          throw new Error("Failed to fetch user name");
+        }
+    
         const parseRes = await response.json();
-  
-  
-  setName(parseRes.user_name);    
+        setName(parseRes.user_name); // Expecting { user_name: 'Name' }
       } catch (err) {
         console.error(err.message);
-        
       }
     }
+    
     useEffect(() => {
       getName();
     }, []);

@@ -34,16 +34,16 @@ function Login({setAuth}){
         
                 // Ensure token is saved in localStorage
                 if (parseRes.jwtToken) {
-        localStorage.setItem("token", parseRes.jwtToken);
-        setAuth(true);
-        console.log("Success Toast Triggered");
+                    localStorage.setItem("token", parseRes.jwtToken);
+                    setAuth(true);
+                    console.log("Success Toast Triggered");
 
-        toast.success("Logged in Successfully");
-      } else {
-        setAuth(false);
-        toast.error(parseRes);
+                    toast.success("Logged in Successfully");
+                } else {
+                    setAuth(false);
+                    toast.error(parseRes);
 
-      }
+                }
                 
         
             } catch (err) {

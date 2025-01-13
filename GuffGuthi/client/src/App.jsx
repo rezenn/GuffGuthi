@@ -31,20 +31,26 @@ function App() {
 
       const parseRes = await response.json()
 
-      parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
-
+      if (parseRes === true) {
+        setIsAuthenticated(true);
+      } else {
+        setIsAuthenticated(false);
+        localStorage.removeItem("token");  // Remove invalid token
+      }
     }catch(err){
       console.error(err.message);
+      setIsAuthenticated(false);
+
     }
     
   }
   useEffect(() => {
     isAuth()
-  })
+  },[])
 
   return (
     <Router>
-            {/* <Navbar activePage={activePage} setActivePage={setActivePage} setAuth={setAuth} /> */}
+      {/* {isAuthenticated && <Navbar activePage={activePage} setActivePage={setActivePage} setAuth={setAuth} />} */}
 
 
       <Routes>

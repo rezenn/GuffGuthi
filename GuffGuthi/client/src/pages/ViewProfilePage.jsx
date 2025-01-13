@@ -8,8 +8,8 @@ import styles from "./viewProfile.module.css";
 function ViewProfilePage() {
     return (
         <>
-            <Navbar activePage="viewProfilePage" setActivePage={() => {}} />
-            <div className={styles.container}>
+      <Navbar className="Navbar" activePage="home" setActivePage={() => {}} /> 
+      <div className={styles.container}>
                 <div className={styles.coverImg}>
                     <CoverImage />
                 </div>

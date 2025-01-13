@@ -353,45 +353,12 @@ body {
   Left: 16px;
 }
 
-
-/* logout button */
-#logoutButton {
-  font-family: 'Roboto';
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 35px;
-  padding-top: 15px;
-  font-size: 14px;
-  border: none;
-  font-weight: bold;
-  height: 48px;
-  margin-top: -10px;
-}
-
-#logoutButton:hover {
-  color: #FF4500;
-}
-
-.logout_icon {
-  align-items: center;
-  Width: 24px;
-  Height: 17px;
-  Top: 12px;
-  Left: 16px;
-}
-
-/* Dashboard styling (main content area) */
-
 .main-content {
   margin-left: 250px;
-  /* This ensures the main content takes up the remaining space */
   padding: 20px;
   background-color: rgb(236, 236, 236);
-  /* Set the main content area background to grey */
   min-height: 100vh;
   color: white;
-  /* Optional: to make text color contrast with grey background */
 }
 
 
@@ -425,7 +392,7 @@ body {
   left: 350;
   width: 900px;
   /* Adjust this to make the search bar smaller */
-  background-color: #f6f6f6;
+  background-color: #e2ddddad;
   border-radius: 20px;
   padding: 5px 12px;
   /* Adjust padding to change height */

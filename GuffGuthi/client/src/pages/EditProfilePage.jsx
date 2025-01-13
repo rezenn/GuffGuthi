@@ -1,4 +1,4 @@
-import EditProfile from "../components/profileComponents/EditProfile";
+  import EditProfile from "../components/profileComponents/EditProfile";
 import Navbar from "../components/navbar/Navbar";
 
 function EditProfilePage(){
