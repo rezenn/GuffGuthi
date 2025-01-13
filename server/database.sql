@@ -8,7 +8,3 @@ create table users(
     user_password varchar(255)  not null,
     created_at date default current_date
 );
-
---fake user for test
-
-insert into users(user_name,user_email,user_password) values('Jun', 'jun@mail.com', 'hello');

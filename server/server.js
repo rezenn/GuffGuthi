@@ -4,17 +4,10 @@ const cors = require("cors")
 
 //middleware
 app.use(express.json())
-app.use(cors({
-    // origin: 'http://localhost:5175', 
-    // credentials: true, 
-}));
-
-
-const { PORT } = require("./constants")
-
-// Middleware
-app.use(express.json());
 app.use(cors());
+
+
+const PORT = process.env.PORT || 5000;
 
 // Routes
 app.use("/auth", require("./routes/authRoutes"));
