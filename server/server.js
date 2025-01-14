@@ -7,8 +7,8 @@ app.use(express.json())
 app.use(cors());
 
 
-const PORT = process.env.PORT || 5000;
-
+const { PORT } = require("./constants") || 5000;
+//
 // Routes
 app.use("/auth", require("./routes/authRoutes"));
 app.use("/home", require("./routes/homeRoutes"));

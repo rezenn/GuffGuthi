@@ -11,7 +11,10 @@ import CreatePost from "./pages/CreatePost";
 import PostRequest from "./pages/PostRequest/PostRequest";
 import CommunityServices from "./pages/CommunityServicesPage";
 import Settings from "./pages/Settings";
+// import Group from "./pages/Group";
+import GroupFeedPage from "./pages/GroupFeedPage";
 import Navbar from "./components/navbar/Navbar";
+
 function App() {
   const [activePage, setActivePage] = useState("home");
 
@@ -78,6 +81,13 @@ function App() {
         <Route path="/home" element={
           isAuthenticated ? (
           <Home setAuth = {setAuth}/>
+          ) : (
+          <Navigate to = "/login"/>
+          ) } />
+
+        <Route path="/groupFeed" element={
+          isAuthenticated ? (
+          <GroupFeedPage setAuth = {setAuth}/>
           ) : (
           <Navigate to = "/login"/>
           ) } />
