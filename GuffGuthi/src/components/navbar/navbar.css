@@ -568,114 +568,74 @@ body {
 
 }
 
-/* General Reset for Better Responsiveness */
-* {
-  box-sizing: border-box;
+/* Sidebar */
+.navbar {
+  width: 256px;
+  height: 100vh;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: -256px; /* Start hidden */
+  top: 0;
+  transition: left 0.3s ease-in-out;
+  border-right: 1px solid hsla(0, 0%, 20%, 0.29);
 }
 
-/* Adjustments for Mobile Screens */
+.navbar.open {
+  left: 0;
+}
+
+.navbar.closed {
+  left: -256px;
+}
+
+/* Top Section */
+.navbar-top {
+  flex: 1; /* Take available space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.navbar-logo img {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+/* Bottom Section */
+.navbar-bottom {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-top: 1px solid hsla(0, 0%, 20%, 0.29);
+}
+
+.navbar-bottom button {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.navbar-bottom img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
-  /* Sidebar adjustments */
-  .navbar {
-    width: 100%;
-    height: auto;
-    position: static;
-    border-right: none;
-    border-bottom: 1px solid hsla(0, 0%, 20%, 0.29);
-    flex-direction: row;
-    justify-content: space-around;
-    overflow-x: auto;
-    padding: 10px 0;
-  }
-
-  .navbar button {
-    font-size: 12px;
-    padding: 5px;
-    margin: 0 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar-logo img {
-    width: 50px;
-    height: auto;
-    margin: 0 auto;
-  }
-
-  .navbar-Line,
-  .settingANDhelp-Line {
-    display: none;
-  }
-
-  /* Search bar adjustments */
   .search-container {
-    flex-wrap: wrap;
-    height: auto;
     margin-left: 0;
-    margin-top: 0;
-    padding: 10px;
-    box-shadow: none;
-  }
-
-  .search-bar {
     width: 100%;
-    margin: 0 auto 10px;
-    padding: 5px 10px;
   }
-
-  .search-input {
-    font-size: 12px;
-    height: 30px;
-    padding: 5px;
-  }
-
-  .search_icon {
-    width: 20px;
-    height: auto;
-  }
-
-  #searchButton {
-    font-size: 14px;
-  }
-
-  .notification-button,
-  #post-button,
-  #profile {
-    position: static;
-    margin: 5px 0;
-    transform: none;
-  }
-
-  .notification_icon,
-  .Post_icon,
-  .profile {
-    width: 25px;
-    height: 25px;
-  }
-
-  /* Main content adjustments */
-  .main-content {
-    margin-left: 0;
-    padding: 10px;
-    font-size: 14px;
-  }
-}
-
-/* For very small devices (phones) */
-@media (max-width: 480px) {
-  .navbar button {
-    font-size: 10px;
-    gap: 5px;
-  }
-
   .search-bar {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .search-input {
-    font-size: 10px;
-    height: 25px;
+    width: 80%;
   }
 }
