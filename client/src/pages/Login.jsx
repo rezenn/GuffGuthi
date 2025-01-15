@@ -36,7 +36,6 @@ function Login({setAuth}){
                 if (parseRes.jwtToken) {
                     localStorage.setItem("token", parseRes.jwtToken);
                     setAuth(true);
-                    console.log("Success Toast Triggered");
 
                     toast.success("Logged in Successfully");
                 } else {

@@ -11,7 +11,6 @@ import CreatePost from "./pages/CreatePost";
 import PostRequest from "./pages/PostRequest/PostRequest";
 import CommunityServices from "./pages/CommunityServicesPage";
 import Settings from "./pages/Settings";
-// import Group from "./pages/Group";
 import GroupFeedPage from "./pages/GroupFeedPage";
 import Navbar from "./components/navbar/Navbar";
 
