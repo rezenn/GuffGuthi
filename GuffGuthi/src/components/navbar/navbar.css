@@ -567,3 +567,163 @@ body {
 
 
 }
+/* Add media queries for mobile responsiveness */
+@media (max-width: 768px) {
+  .search-container {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .right-icons {
+    display: flex;
+    gap: 10px;
+  }
+
+  .notification-button,
+  #post-button,
+  #profile {
+    display: none;
+  }
+
+  .search-bar .right-icons {
+    display: flex;
+    align-items: center;
+  }
+
+  .search-bar .right-icons button {
+    display: block;
+  }
+
+  .sidebar-toggle {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 101;
+  }
+
+  .navbar {
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    left: -200px;
+    top: 0;
+    transition: left 0.3s ease;
+    z-index: 100;
+  }
+
+  .navbar.open {
+    left: 0;
+  }
+}
+
+/* Existing styles */
+.home-container {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: #e0dfdf;
+  margin: 0;
+  padding: 0;
+}
+
+.main-content {
+  margin-left: 200px;
+  margin-right: 0;
+  padding: 20px;
+  background-color: grey;
+  min-height: 100vh;
+  color: white;
+}
+
+.navbar {
+  width: 256px;
+  height: 100vh;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-right: 1px solid hsla(0, 0%, 20%, 0.29);
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  text-align: left;
+  color: black;
+  padding: 10px;
+  margin: 11px 0;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.navbar button:hover {
+  background-color: hsla(0, 0%, 5%, 0.04);
+}
+
+.navbar button.active {
+  background-color: hsla(0, 0%, 5%, 0.04);
+  color: #ff4500;
+}
+
+.navbar-logo img {
+  width: 120px;
+  height: 55.28px;
+  background-image: url('../src/assets/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  top: 12px;
+  left: 16px;
+}
+
+.navbar-Line hr {
+  border: 1px solid hwb(0 20% 80% / 0.293);
+  width: 235px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  margin-top: 23px;
+}
+
+#homeButton,
+#popularButton,
+#myPostsButton,
+#requestsButton,
+#chatButton,
+#createGroupButton,
+#settingsButton,
+#helpButton,
+#aboutButton {
+  font-family: 'Roboto';
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  padding-top: 15px;
+  font-size: 14px;
+  border: none
+}
