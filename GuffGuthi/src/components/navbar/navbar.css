@@ -567,3 +567,53 @@ body {
 
 
 }
+/* General styles for mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-container {
+    width: 100%;
+    position: relative;
+    margin-left: 0;
+  }
+
+  .search-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .search-actions {
+    display: flex;
+    align-items: center;
+  }
+
+  .toggle-button {
+    display: block;
+    margin: 10px;
+    background-color: #0079d3;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .sidebar {
+    display: none; /* Hide sidebar by default */
+  }
+
+  .sidebar.visible {
+    display: block; /* Show sidebar when visible */
+  }
+
+  .sidebar.hidden {
+    display: none; /* Hide sidebar when hidden */
+  }
+}
