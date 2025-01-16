@@ -1,7 +1,6 @@
-const jwtGenerator = require("../utils/jwtGenerator");
-const { getUserById } = require("../model/home");
+import { getUserById } from "../model/home.js";
 
-const getUserInfo = async (req, res) => {
+export const getUserInfo = async (req, res) => {
     try {
         const user = await getUserById(req.user);
 
@@ -15,5 +14,3 @@ const getUserInfo = async (req, res) => {
         res.status(500).json("Server error");
     }
 };
-
-module.exports = { getUserInfo };

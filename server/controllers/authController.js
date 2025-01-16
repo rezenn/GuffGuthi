@@ -1,8 +1,8 @@
-const bcrypt = require("bcrypt");
-const jwtGenerator = require("../utils/jwtGenerator");
-const User = require("../model/User");
+import bcrypt from "bcrypt";
+import jwtGenerator from "../utils/jwtGenerator.js";
+import User from "../model/User.js";
 
-exports.registerUser = async (req, res) => {
+export const registerUser = async (req, res) => {
     const { name, email, password } = req.body;
 
     try {
@@ -12,6 +12,7 @@ exports.registerUser = async (req, res) => {
             return res.status(401).send("User already exists.");
         }
 
+        // Encryption
         const salt = await bcrypt.genSalt(10);
         const bcryptPassword = await bcrypt.hash(password, salt);
 
@@ -25,7 +26,7 @@ exports.registerUser = async (req, res) => {
     }
 };
 
-exports.loginUser = async (req, res) => {
+export const loginUser = async (req, res) => {
     const { email, password } = req.body;
 
     try {
@@ -49,7 +50,7 @@ exports.loginUser = async (req, res) => {
     }
 };
 
-exports.verifyUser = async (req, res) => {
+export const verifyUser = async (req, res) => {
     try {
         res.json(true);
     } catch (err) {

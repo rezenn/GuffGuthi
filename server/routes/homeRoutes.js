@@ -1,9 +1,10 @@
-const express = require("express");
+import express from "express";
+import { getUserInfo } from "../controllers/homeController.js";
+import authorize from "../middleware/auth_middleware.js";
+
 const router = express.Router();
-const { getUserInfo } = require("../controllers/homeController");
-const authorize = require("../middleware/auth_middleware");
 
 // Route to get user information
 router.get("/", authorize, getUserInfo);
 
-module.exports = router;
+export default router;

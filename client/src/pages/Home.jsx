@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
+import { useQuery } from 'react-query'
+
 
 import Navbar from "../components/navbar/Navbar";
 import Chat from "../components/chatINhome/Chat";
@@ -32,6 +34,12 @@ const [name, setName] = useState("");
       getName();
     }, []);
 
+
+    const { isLoading, error, data } = useQuery('repoData', () =>
+      fetch('https://api.github.com/repos/tannerlinsley/react-query').then(res =>
+        res.json()
+      )
+    )
 // const logout = async e => {
 //     e.preventDefault();
 //     try {
