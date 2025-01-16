@@ -1,12 +1,15 @@
-const jwt = require("jsonwebtoken");
-require('dotenv').config();
+// jwtGenerator.js
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 function jwtGenerator(user_id) {
     const payLoad = {
-        user: user_id
-    }
+        user: user_id,
+    };
 
-    return jwt.sign(payLoad, process.env.SECRET, { expiresIn: "1hr" })
+    return jwt.sign(payLoad, process.env.SECRET, { expiresIn: "1hr" });
 }
 
-module.exports = jwtGenerator;
+export default jwtGenerator;
