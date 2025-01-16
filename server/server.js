@@ -15,7 +15,7 @@ const app = express();
 app.use(express.json());
 
 const corsOptions = {
-    origin: 'http://localhost:5173', // Allow this origin
+    // origin: 'http://localhost:5173', // Allow this origin
     credentials: true // Allow sending credentials with requests
 };
 
