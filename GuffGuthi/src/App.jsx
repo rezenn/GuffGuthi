@@ -17,6 +17,7 @@ import Chat from "./components/chatINhome/Chat";
 import PostRequest from "./pages/PostRequest/PostRequest";
 import HtmlEditor from "./components/TextEditor/HtmlEditor";
 import CommunityServicesPage from "./pages/CommunityServicesPage";
+import Group from "./components/group/Group";
 function App() {
   // const [activePage, setActivePage] = useState("home");
 
@@ -38,6 +39,9 @@ function App() {
         <Route path="/editProfilePage" element={<EditProfilePage />} />
         <Route path="/communityServices" element={<CommunityServicesPage />} />
         <Route path="/postRequest" element={<PostRequest />} />
+        <Route path="/Group" element={<Group />} />
+
+
       </Routes>
     </Router>
 
