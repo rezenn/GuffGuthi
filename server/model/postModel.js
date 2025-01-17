@@ -2,22 +2,34 @@ import pool from "../database/databaseConnect.js";
 import moment from "moment";
 
 // Fetch posts
-export const fetchPosts = (userId, currentUserId, callback) => {
-    const query =
-        userId !== "undefined"
-            ? `SELECT p.*, u.id AS userId, name, profilePic FROM posts AS p 
-         JOIN users AS u ON (u.id = p.userId) 
-         WHERE p.userId = ? ORDER BY p.createdAt DESC`
-            : `SELECT p.*, u.id AS userId, name, profilePic FROM posts AS p 
-         JOIN users AS u ON (u.id = p.userId)
-         LEFT JOIN relationships AS r ON (p.userId = r.followedUserId) 
-         WHERE r.followerUserId= ? OR p.userId =? 
-         ORDER BY p.createdAt DESC`;
+export const fetchPosts = (userId, currentUserId) => {
+    const query = userId && userId !== "undefined"
+        ? `SELECT p.*, u.user_id AS userId, u.user_name AS name, u.profilePic 
+           FROM posts AS p 
+           JOIN test AS u ON u.user_id = p.user_id 
+           WHERE p.user_id = ? 
+           ORDER BY p.created_at DESC`
+        : `SELECT p.*, u.user_id AS userId, u.user_name AS name, u.profilePic 
+           FROM posts AS p 
+           JOIN test AS u ON u.user_id = p.user_id 
+           LEFT JOIN follow AS f ON p.user_id = f.followedUser_id 
+           WHERE f.followerUser_id = ? OR p.user_id = ? 
+           ORDER BY p.created_at DESC`;
 
-    const values = userId !== "undefined" ? [userId] : [currentUserId, currentUserId];
+    const values = userId && userId !== "undefined"
+        ? [userId]
+        : [currentUserId, currentUserId]; // We use currentUserId here
 
-    pool.query(query, values, callback);
+    return new Promise((resolve, reject) => {
+        pool.query(query, values, (err, results) => {
+            if (err) {
+                return reject(err);
+            }
+            resolve(results);
+        });
+    });
 };
+
 
 // Add a post
 export const createPost = (postDetails, callback) => {

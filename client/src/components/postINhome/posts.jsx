@@ -1,4 +1,5 @@
-import Post from "./Post.jsx";
+import post from "./Post";
+import { useQuery } from 'react-query'
 import { makeRequest } from "../../axios";
 
 const Posts = ({userId}) => {
