@@ -25,24 +25,19 @@ function App() {
 
   async function isAuth() {
     try {
-      const response = await fetch("http://localhost:8000/auth/verifyed", {
-        method: "GET",
-        headers: { token: localStorage.token }
-      });
-
-      const parseRes = await response.json();
-
-      if (parseRes === true) {
+      const response = await api.get("/auth/verifyed");
+      if (response.data === true) {
         setIsAuthenticated(true);
       } else {
         setIsAuthenticated(false);
-        localStorage.removeItem("token");  // Remove invalid token
+        localStorage.removeItem("token");
       }
     } catch (err) {
       console.error(err.message);
       setIsAuthenticated(false);
     }
   }
+  
 
   useEffect(() => {
     isAuth();

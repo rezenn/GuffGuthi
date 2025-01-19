@@ -1,17 +1,13 @@
 // postController.js
 import { fetchPosts, createPost, removePost } from "../model/postModel.js";
 
-
 export const getPosts = async (req, res) => {
     try {
-        console.log("User Info from Token:", req.userInfo); // Debugging the user info attached by the middleware
 
-        const currentUserId = req.userInfo.id; // Extract current user's ID from the token
-        console.log("User ID:", currentUserId); // Debugging
+        const currentUserId = req.userInfo; // Extract current user's ID from the token
 
         // Fetch posts using the model function
         const posts = await fetchPosts(null, currentUserId); // Only pass currentUserId
-        console.log("Fetched Posts:", posts);
 
         return res.status(200).json(posts);
     } catch (err) {
@@ -19,11 +15,12 @@ export const getPosts = async (req, res) => {
         return res.status(500).json("Failed to fetch posts.");
     }
 };
+
 export const addPost = (req, res) => {
     const postDetails = {
         desc: req.body.desc,
         img: req.body.img,
-        userId: req.userInfo.id,
+        userId: req.userInfo, // Use the correct field to access the user ID
     };
 
     createPost(postDetails, (err, data) => {
@@ -35,7 +32,7 @@ export const addPost = (req, res) => {
 export const deletePost = (req, res) => {
     const postId = req.params.id;
 
-    removePost(postId, req.userInfo.id, (err, data) => {
+    removePost(postId, req.userInfo, (err, data) => { // Use the correct field to access the user ID
         if (err) return res.status(500).json(err);
         if (data.affectedRows > 0) {
             return res.status(200).json("Post has been deleted.");

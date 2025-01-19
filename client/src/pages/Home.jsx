@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
+
 import { toast, ToastContainer } from "react-toastify";
 import { useQuery } from 'react-query'
 
 
 import Navbar from "../components/navbar/Navbar";
 import Chat from "../components/chatINhome/Chat";
-import Posts from "../components/postINhome/posts";
-import post from "../components/postINhome/Post";
+import Post from "../components/postINhome/Post";
 import "./homePage.css";
 
 function Home({setAuth}){
@@ -46,7 +47,7 @@ const [name, setName] = useState("");
     <>
       <Navbar className="Navbar" activePage="home" setActivePage={() => {}} /> 
       <h1 className="title">Find something interesting to discuss  </h1>
-  <Posts/>
+  <Post/>
   
   {/* <Chat/> */}
   

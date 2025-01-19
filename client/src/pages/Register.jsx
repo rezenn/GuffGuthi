@@ -21,7 +21,7 @@ function Register({setAuth}){
         e.preventDefault();
 
         try {
-            
+            // 
             const body = {name, email, password}
             
             const response = await fetch

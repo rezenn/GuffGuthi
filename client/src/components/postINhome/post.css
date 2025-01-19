@@ -6,8 +6,7 @@
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 16px;
-  margin-left: 340px;
-  margin-top: 30px;
+  margin: 10px 0px 30px 340px;
 }
 
 .card-header {
@@ -32,10 +31,21 @@
 
 .card-title {
   font-family: "Roboto", serif;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 25px;
-  color: #222;
+  color: #050505;
+}
+
+.card-img {
+  border-radius: 10px;
+
+}
+
+.postImg {
+  width: 750px;
+  padding: 0px 10px 15px 0px;
+  border-radius: 25px;
 }
 
 .card-content {
@@ -43,6 +53,7 @@
   font-size: 0.95em;
   color: #555;
   line-height: 1.6;
+  margin-bottom: 25px;
 }
 
 .card-footer {
@@ -51,26 +62,30 @@
   align-items: center;
   margin-top: 16px;
   color: #888;
+  font-family: "Roboto", serif;
   font-size: 0.9em;
 }
 
 .card-footer .actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .card-footer .actions span {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   cursor: pointer;
+  font-family: "Roboto", serif;
+
+  margin-bottom: 10px;
 }
 
 .card-footer .actions span .icon {
-  width: 16px;
-  height: 16px;
-  fill: #888;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
 }
 
 .card-footer .actions span:hover {
