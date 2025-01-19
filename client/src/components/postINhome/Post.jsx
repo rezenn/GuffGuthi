@@ -5,7 +5,13 @@ import axios from "axios"
 const api = axios.create({
   baseURL: "http://localhost:3000/post/"
 })
-function post(){
+function post({post}){
+  
+  const { isLoading, error, data } = useQuery(["likes", post.id], () =>
+    makeRequest.get("/likes?postId=" + post.id).then((res) => {
+      return res.data;
+    })
+  );
     return(
         <div className="card">
             <div className="card-header">
@@ -14,7 +20,7 @@ function post(){
                 alt="User Avatar"
                 className="avatar"
             />
-          <div className="author">Melissa Peters</div>
+          <div className="author">{post.name}</div>
         </div>
         <div className="card-title">
           Prince Harry's lawsuit against Murdoch's UK group moves towards trial as others settle

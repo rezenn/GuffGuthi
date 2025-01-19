@@ -1,0 +1,68 @@
+/* Container */
+.groups-container {
+  font-family: Arial, sans-serif;
+  text-align: left;
+  margin: 20px;
+}
+
+/* Box for buttons */
+.groups-grid-container {
+  background-color: #F7F7F7;
+  width: 780px;
+  border-radius: 20px;
+  box-shadow: 0;
+  padding: 40px;
+  margin-left: 380px;
+  margin-top: 50px;
+}
+
+
+
+/* Title in top-left */
+.groups-title {
+  position: fixed;
+  top: 150px;
+  left: 450px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Grid Layout */
+.groups-grid {
+  display: grid;
+  position: fixed;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+/* Button Styles */
+.group-button {
+  background-color: rgb(154, 152, 152);
+  display: flex;
+  width: 250px;
+  height: 61px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1px;
+  border: none;
+  border-radius: 20px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effect */
+.group-button:hover {
+  background-color: rgb(199, 196, 196);
+  transform: translateY(-6px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.linkText {
+  text-decoration: none;
+  color: #fff;
+}

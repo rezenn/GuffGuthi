@@ -1,15 +1,24 @@
 // postController.js
 import { fetchPosts, createPost, removePost } from "../model/postModel.js";
 
-export const getPosts = (req, res) => {
-    const userId = req.query.userId;
 
-    fetchPosts(userId, req.userInfo.id, (err, data) => {
-        if (err) return res.status(500).json(err);
-        return res.status(200).json(data);
-    });
+export const getPosts = async (req, res) => {
+    try {
+        console.log("User Info from Token:", req.userInfo); // Debugging the user info attached by the middleware
+
+        const currentUserId = req.userInfo.id; // Extract current user's ID from the token
+        console.log("User ID:", currentUserId); // Debugging
+
+        // Fetch posts using the model function
+        const posts = await fetchPosts(null, currentUserId); // Only pass currentUserId
+        console.log("Fetched Posts:", posts);
+
+        return res.status(200).json(posts);
+    } catch (err) {
+        console.error("Error fetching posts:", err.message);
+        return res.status(500).json("Failed to fetch posts.");
+    }
 };
-
 export const addPost = (req, res) => {
     const postDetails = {
         desc: req.body.desc,

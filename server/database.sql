@@ -9,8 +9,8 @@ create table users(
     created_at date default current_date
 );
 
--- test test test
-create table test(
+-- users test test
+create table users(
     user_id uuid primary key default
     uuid_generate_v4(),
     user_name varchar(255) not null,
@@ -21,14 +21,14 @@ create table test(
     bio varchar(255),
     location varchar(255),
 
-    created_at date default current_date
+    created_at timestamp default current_timestamp
 );
 
 create table posts(
     post_id serial primary key not null,
     post_title varchar(255) not null,
     post_desc text not null,
-    user_id uuid references test(user_id) on delete cascade,
+    user_id uuid references users(user_id) on delete cascade,
     img varchar(255),
     created_at timestamp default current_timestamp
 );
@@ -36,14 +36,14 @@ create table posts(
 create table comments(
     comments_id serial primary key not null,
     comments_desc text not null,
-    user_id uuid references test(user_id) on delete cascade,
+    user_id uuid references users(user_id) on delete cascade,
     post_id int references posts(post_id) on delete cascade,
     created_at timestamp default current_timestamp
 );
 
 create table likes(
     likes_id serial primary key not null,
-    user_id uuid references test(user_id) on delete cascade,
+    user_id uuid references users(user_id) on delete cascade,
     post_id int references posts(post_id) on delete cascade,
     created_at timestamp default current_timestamp
 );
@@ -54,8 +54,8 @@ create table follow(
     followerUser_id uuid not null,
     followedUser_id uuid not null,
     created_at timestamp default current_timestamp,
-    foreign key (followerUser_id) references test(user_id) on delete cascade,
-    foreign key (followedUser_id) references test(user_id) on delete cascade,
+    foreign key (followerUser_id) references users(user_id) on delete cascade,
+    foreign key (followedUser_id) references users(user_id) on delete cascade,
     check (followerUser_id <> followedUser_id),
     unique (followerUser_id, followedUser_id)
 );
