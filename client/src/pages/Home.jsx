@@ -5,7 +5,7 @@ import { useQuery } from 'react-query'
 
 import Navbar from "../components/navbar/Navbar";
 import Chat from "../components/chatINhome/Chat";
-import Post from "../components/postInHome/Post";
+import Post from "../components/postINhome/Post";
 import "./homePage.css";
 
 function Home({setAuth}){
@@ -59,10 +59,12 @@ const [name, setName] = useState("");
   <Post/>
   <Post/>
   <Post/>
+  <Post/>
+  <Post/>
+  <Post/>
+  <Post/>
   <Chat/>
-  <button onClick={e => logout(e)}>
-  Logout
-  </button>
+  
     </>
 )
 }
