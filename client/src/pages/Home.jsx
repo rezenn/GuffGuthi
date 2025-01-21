@@ -5,7 +5,12 @@ import { useQuery } from 'react-query'
 
 import Navbar from "../components/navbar/Navbar";
 import Chat from "../components/chatINhome/Chat";
+<<<<<<< HEAD
 import Post from "../components/postINhome/Post";
+=======
+import Posts from "../components/postINhome/posts";
+import post from "../components/postINhome/Post";
+>>>>>>> 12a5369bf50b0c5dfdf8b249ae26712685b90ba6
 import "./homePage.css";
 
 function Home({setAuth}){
@@ -40,22 +45,12 @@ const [name, setName] = useState("");
         res.json()
       )
     )
-// const logout = async e => {
-//     e.preventDefault();
-//     try {
-//       localStorage.removeItem("token");
-//       setAuth(false);
-//       toast.success("Logout successfully");
-//     } catch (err) {
-//       console.error(err.message);
-//     }
-//   };
-
 
   return(
     <>
       <Navbar className="Navbar" activePage="home" setActivePage={() => {}} /> 
       <h1 className="title">Find something interesting to discuss  </h1>
+<<<<<<< HEAD
   <Post/>
   <Post/>
   <Post/>
@@ -64,6 +59,11 @@ const [name, setName] = useState("");
   <Post/>
   <Post/>
   <Chat/>
+=======
+  <Posts/>
+  
+  {/* <Chat/> */}
+>>>>>>> 12a5369bf50b0c5dfdf8b249ae26712685b90ba6
   
     </>
 )

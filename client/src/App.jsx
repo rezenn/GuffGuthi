@@ -11,8 +11,8 @@ import CreatePost from "./pages/CreatePost";
 import PostRequest from "./pages/PostRequest/PostRequest";
 import CommunityServices from "./pages/CommunityServicesPage";
 import Settings from "./pages/Settings";
+import Group from "./components/Group";
 import GroupFeedPage from "./pages/GroupFeedPage";
-import Navbar from "./components/navbar/Navbar";
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 function App() {
@@ -82,6 +82,12 @@ function App() {
               <Navigate to="/login" />
             )} />
 
+          <Route path="/group" element={
+            isAuthenticated ? (
+              <Group setAuth={setAuth} />
+            ) : (
+              <Navigate to="/login" />
+            )} />
           <Route path="/groupFeed" element={
             isAuthenticated ? (
               <GroupFeedPage setAuth={setAuth} />
