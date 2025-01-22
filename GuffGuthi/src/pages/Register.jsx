@@ -24,6 +24,7 @@ function Register(){
                     <form onSubmit={handleSubmit}>
                         <label className={style.label}>Username</label>
                         <br />
+                        
                         <input className={style.input} type="text" placeholder="Username" required />
                         <br />
                         <label className={style.label}>Email</label>
