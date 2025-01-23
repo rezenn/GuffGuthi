@@ -1,5 +1,17 @@
 // postController.js
 import { fetchPosts, createPost, removePost } from "../model/postModel.js";
+import multer from "multer";
+
+// Configure multer for file uploads
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, "uploads/"); // Save files in the 'uploads' directory
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + "_" + file.originalname); // Unique file name
+    },
+});
+const upload = multer({ storage });
 
 export const getPosts = async (req, res) => {
     try {
@@ -17,15 +29,27 @@ export const getPosts = async (req, res) => {
 };
 
 export const addPost = (req, res) => {
-    const postDetails = {
-        desc: req.body.desc,
-        img: req.body.img,
-        userId: req.userInfo, // Use the correct field to access the user ID
-    };
+    upload.single("image")(req, res, async (err) => {
+        if (err) return res.status(500).json({ message: "File upload failed." });
 
-    createPost(postDetails, (err, data) => {
-        if (err) return res.status(500).json(err);
-        return res.status(200).json("Post has been created.");
+        const { title, body } = req.body;
+        if (!title || !body) {
+            return res.status(400).json({ message: "Title and body are required." });
+        }
+
+        const postDetails = {
+            title,
+            desc: body,
+            img: req.file ? `/uploads/${req.file.filename}` : null,
+            userId: req.userInfo,
+        };
+
+        try {
+            const data = await createPost(postDetails);
+            res.status(200).json(data);
+        } catch (error) {
+            res.status(500).json({ message: "Failed to create post." });
+        }
     });
 };
 

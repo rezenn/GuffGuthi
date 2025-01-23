@@ -5,7 +5,6 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { toast } from "react-toastify";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -21,30 +20,45 @@ import GroupFeedPage from "./pages/GroupFeedPage";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 function App() {
-  const [activePage, setActivePage] = useState("home");
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    return !!localStorage.getItem("token"); // Check if token exists on initialization
+  });
 
   const setAuth = (boolean) => {
     setIsAuthenticated(boolean);
+    if (!boolean) localStorage.removeItem("token"); // Clear token on logout
   };
 
-  async function isAuth() {
+  const isAuth = async () => {
     try {
-      const response = await api.get("/auth/verifyed");
-      if (response.data === true) {
+      const response = await fetch("http://localhost:8000/auth/verifyed", {
+        method: "GET",
+        headers: { token: localStorage.token },
+      });
+
+      if (!response.ok) {
+        throw new Error("Token validation failed");
+      }
+
+      const parseRes = await response.json();
+
+      if (parseRes === true) {
         setIsAuthenticated(true);
       } else {
         setIsAuthenticated(false);
         localStorage.removeItem("token");
       }
-    } catch (err) {
-      console.error(err.message);
+    } catch (error) {
+      console.error("Authentication Error: ", error.message);
       setIsAuthenticated(false);
+      localStorage.removeItem("token");
     }
-  }
+  };
 
   useEffect(() => {
-    isAuth();
+    if (localStorage.getItem("token")) {
+      isAuth();
+    }
   }, []);
 
   const queryClient = new QueryClient();
@@ -52,11 +66,8 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
-        {/* You can uncomment this line for the Navbar if needed */}
-        {/* {isAuthenticated && <Navbar activePage={activePage} setActivePage={setActivePage} setAuth={setAuth} />} */}
-
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Login setAuth={setAuth} />} />
 
           <Route
             path="/login"
@@ -112,6 +123,7 @@ function App() {
               )
             }
           />
+
           <Route
             path="/groupFeed"
             element={
