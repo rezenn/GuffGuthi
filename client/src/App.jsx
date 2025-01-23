@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { toast } from "react-toastify";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -13,7 +18,7 @@ import CommunityServices from "./pages/CommunityServicesPage";
 import Settings from "./pages/Settings";
 import Group from "./components/Group";
 import GroupFeedPage from "./pages/GroupFeedPage";
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from "react-query";
 
 function App() {
   const [activePage, setActivePage] = useState("home");
@@ -37,7 +42,6 @@ function App() {
       setIsAuthenticated(false);
     }
   }
-  
 
   useEffect(() => {
     isAuth();
@@ -54,83 +58,136 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
 
-          <Route path="/login" element={ 
-            !isAuthenticated ? (
-              <Login setAuth={setAuth} />
-            ) : (
-              <Navigate to="/home" />
-            )} />
+          <Route
+            path="/login"
+            element={
+              !isAuthenticated ? (
+                <Login setAuth={setAuth} />
+              ) : (
+                <Navigate to="/home" />
+              )
+            }
+          />
 
-          <Route path="/register" element={
-            !isAuthenticated ? (
-              <Register setAuth={setAuth} />
-            ) : (
-              <Navigate to="/home" />
-            )} />
+          <Route
+            path="/register"
+            element={
+              !isAuthenticated ? (
+                <Register setAuth={setAuth} />
+              ) : (
+                <Navigate to="/home" />
+              )
+            }
+          />
 
-          <Route path="/forgotPassword" element={<ForgotPassword />} />
+          <Route
+            path="/forgotPassword"
+            element={
+              !isAuthenticated ? (
+                <ForgotPassword setAuth={setAuth} />
+              ) : (
+                <Navigate to="/home" />
+              )
+            }
+          />
 
-          <Route path="/home" element={
-            isAuthenticated ? (
-              <Home setAuth={setAuth} />
-            ) : (
-              <Navigate to="/login" />
-            )} />
+          <Route
+            path="/home"
+            element={
+              isAuthenticated ? (
+                <Home setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
 
-          <Route path="/group" element={
-            isAuthenticated ? (
-              <Group setAuth={setAuth} />
-            ) : (
-              <Navigate to="/login" />
-            )} />
-          <Route path="/groupFeed" element={
-            isAuthenticated ? (
-              <GroupFeedPage setAuth={setAuth} />
-            ) : (
-              <Navigate to="/login" />
-            )} />
+          <Route
+            path="/group"
+            element={
+              isAuthenticated ? (
+                <Group setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/groupFeed"
+            element={
+              isAuthenticated ? (
+                <GroupFeedPage setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
 
-          <Route path="/createPost" element={
-            isAuthenticated ? (
-              <CreatePost setAuth={setAuth} />
-            ) : (
-              <Navigate to="/login" />
-            )} />
+          <Route
+            path="/createPost"
+            element={
+              isAuthenticated ? (
+                <CreatePost setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
 
-          <Route path="/viewProfile" element={
-            isAuthenticated ? (
-              <ViewProfile setAuth={setAuth} />
-            ) : (
-              <Navigate to="/login" />
-            )} />
+          <Route
+            path="/viewProfile"
+            element={
+              isAuthenticated ? (
+                <ViewProfile setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
 
-          <Route path="/editProfile" element={
-            isAuthenticated ? (
-              <EditProfile setAuth={setAuth} />
-            ) : (
-              <Navigate to="/login" />
-            )} />
+          <Route
+            path="/editProfile"
+            element={
+              isAuthenticated ? (
+                <EditProfile setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
 
-          <Route path="/communityServices" element={
-            isAuthenticated ? (
-              <CommunityServices setAuth={setAuth} />
-            ) : (
-              <Navigate to="/login" />
-            )} />
+          <Route
+            path="/communityServices"
+            element={
+              isAuthenticated ? (
+                <CommunityServices setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
 
-          <Route path="/postRequest" element={
-            isAuthenticated ? (
-              <PostRequest setAuth={setAuth} />
-            ) : (
-              <Navigate to="/login" />
-            )} />
+          <Route
+            path="/postRequest"
+            element={
+              isAuthenticated ? (
+                <PostRequest setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
 
-          <Route path="/settings" element={
-            isAuthenticated ? (
-              <Settings setAuth={setAuth} />
-            ) : (
-              <Navigate to="/login" />
-            )} />
+          <Route
+            path="/settings"
+            element={
+              isAuthenticated ? (
+                <Settings setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
         </Routes>
       </Router>
     </QueryClientProvider>
