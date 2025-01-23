@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./CreatePost.css";
 import Navbar from "../components/navbar/Navbar";
-import HtmlEditor from "../components/TextEditor/HtmlEditor"; // Assuming this is a rich-text editor
+import HtmlEditor from "../components/TextEditor/HtmlEditor"; // Rich Text Editor
 import { useNavigate } from "react-router-dom";
 
 function CreatePost() {
@@ -11,8 +11,17 @@ function CreatePost() {
   const navigate = useNavigate();
 
   const handlePost = async () => {
-    if (!title.trim() || !body.trim()) {
-      alert("Title and body are required.");
+    console.log("Sending Title:", title);
+    console.log("Sending Body:", body);
+    console.log("Sending Image:", image);
+
+    if (!title.trim()) {
+      alert("Title is required.");
+      return;
+    }
+
+    if (!body.trim() || body === "<p><br></p>") {
+      alert("Body is required.");
       return;
     }
 
@@ -27,10 +36,12 @@ function CreatePost() {
       const response = await fetch("http://localhost:8000/post", {
         method: "POST",
         headers: {
-          token: localStorage.token,
+          token: localStorage.token, // Assuming the token is stored in localStorage
         },
         body: formData,
       });
+      const token = localStorage.getItem("token");
+      console.log("Token:", token); // Debugging to verify if the token exists
 
       if (response.ok) {
         alert("Post created successfully!");
@@ -64,8 +75,10 @@ function CreatePost() {
           onChange={(e) => setImage(e.target.files[0])}
         />
         <HtmlEditor
-          className="Editor"
-          onChange={(content) => setBody(content)}
+          value={body}
+          onChange={(content) => {
+            setBody(content);
+          }}
         />
 
         <div className="ButtonPosition">
