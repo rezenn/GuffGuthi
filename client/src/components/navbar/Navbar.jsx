@@ -1,3 +1,4 @@
+<<<<<<< HEAD:client/src/components/navbar/Navbar.jsx
 import React, { useState, useEffect } from "react";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
@@ -5,10 +6,21 @@ import { useNavigate } from "react-router-dom";
 const Navbar = ({ activePage, setActivePage, setAuth }) => {
   const navigate = useNavigate();
   
+=======
+import React, { useState } from "react";
+import "./navbar.css";
+import { useNavigate } from "react-router-dom";
+
+const Navbar = ({ activePage, setActivePage }) => {
+  const [sidebarOpen, setSidebarOpen] = useState(false); // Sidebar toggle state
+  const navigate = useNavigate();
+
+>>>>>>> 25d9e5da4b72872b180a85d27f779deca376068a:GuffGuthi/src/components/navbar/Navbar.jsx
   const handleNavigation = (page) => {
-    setActivePage(page); // Update active page state
-    navigate(`/${page}`); // Navigate to the route
+    setActivePage(page);
+    navigate(`/${page}`);
   };
+<<<<<<< HEAD:client/src/components/navbar/Navbar.jsx
  
     const [name, setName] = useState("");
   
@@ -41,9 +53,25 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
 
 
     
+=======
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
+>>>>>>> 25d9e5da4b72872b180a85d27f779deca376068a:GuffGuthi/src/components/navbar/Navbar.jsx
   return (
     <>
-   
+      {/* Sidebar Toggle Button */}
+      <button
+        className="sidebar-toggle"
+        onClick={toggleSidebar}
+        aria-label="Toggle Sidebar"
+      >
+        ☰
+      </button>
+
+      {/* Search Bar */}
       <div className="search-container">
         <div className="search-bar">
           <button
@@ -51,45 +79,70 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
             className={activePage === "search" ? "active" : ""}
             onClick={() => handleNavigation("search")}
           >
-            <img src="./src/assets/search.svg" alt="search Icon" className="search_icon"/>
+            <img
+              src="./src/assets/search.svg"
+              alt="search Icon"
+              className="search_icon"
+            />
           </button>
- 
           <input type="text" className="search-input" placeholder="Search..." />
-         
           <button className="notification-button">
-            <img src="./src/assets/notification.svg" alt="notification Icon" className="notification_icon"/>
+            <img
+              src="./src/assets/notification.svg"
+              alt="notification Icon"
+              className="notification_icon"
+            />
             Notification
           </button>
- 
           <button
             id="post-button"
             className={activePage === "createPost" ? "active" : ""}
             onClick={() => handleNavigation("createPost")}
           >
-            <img src="./src/assets/s_post.svg" alt="post Icon" className="Post_icon" />
+            <img
+              src="./src/assets/s_post.svg"
+              alt="post Icon"
+              className="Post_icon"
+            />
             Post
           </button>
-
           <button
+<<<<<<< HEAD:client/src/components/navbar/Navbar.jsx
         id="profile"
         className={activePage === "viewProfile" ? "active" : ""}
         onClick={() => handleNavigation("viewProfile")}
       >
         <img src="./src/assets/profile.jpg" alt="profile" className="profile" />
       </button>
+=======
+            id="profile"
+            className={activePage === "viewProfilePage" ? "active" : ""}
+            onClick={() => handleNavigation("viewProfilePage")}
+          >
+            <img
+              src="./src/assets/profile.jpg"
+              alt="profile"
+              className="profile"
+            />
+          </button>
+>>>>>>> 25d9e5da4b72872b180a85d27f779deca376068a:GuffGuthi/src/components/navbar/Navbar.jsx
         </div>
       </div>
- 
-      <div className="navbar">
+
+      {/* Sidebar */}
+      <div className={`navbar ${sidebarOpen ? "open" : ""}`}>
         <div className="navbar-logo">
           <img src="./src/assets/logo.png" alt="Logo" />
         </div>
+<<<<<<< HEAD:client/src/components/navbar/Navbar.jsx
         <span className="username"> Hello, {name}</span>
  
+=======
+>>>>>>> 25d9e5da4b72872b180a85d27f779deca376068a:GuffGuthi/src/components/navbar/Navbar.jsx
         <div className="navbar-Line">
-          <hr></hr>
+          <hr />
         </div>
- 
+        {/* Sidebar buttons */}
         <button
           id="homeButton"
           className={activePage === "home" ? "active" : ""}
