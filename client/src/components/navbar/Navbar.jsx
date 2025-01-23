@@ -1,77 +1,46 @@
-<<<<<<< HEAD:client/src/components/navbar/Navbar.jsx
 import React, { useState, useEffect } from "react";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
- 
+
 const Navbar = ({ activePage, setActivePage, setAuth }) => {
   const navigate = useNavigate();
-  
-=======
-import React, { useState } from "react";
-import "./navbar.css";
-import { useNavigate } from "react-router-dom";
 
-const Navbar = ({ activePage, setActivePage }) => {
-  const [sidebarOpen, setSidebarOpen] = useState(false); // Sidebar toggle state
-  const navigate = useNavigate();
-
->>>>>>> 25d9e5da4b72872b180a85d27f779deca376068a:GuffGuthi/src/components/navbar/Navbar.jsx
   const handleNavigation = (page) => {
-    setActivePage(page);
-    navigate(`/${page}`);
+    setActivePage(page); // Update active page state
+    navigate(`/${page}`); // Navigate to the route
   };
-<<<<<<< HEAD:client/src/components/navbar/Navbar.jsx
- 
-    const [name, setName] = useState("");
-  
-    async function getName() {
-      try {
-        const token = localStorage.getItem("token"); // Ensure token exists
-        if (!token) {
-          throw new Error("No token found");
-        }
-    
-        const response = await fetch("http://localhost:8000/home/", {
-          method: "GET",
-          headers: { token },
-        });
-    
-        if (!response.ok) {
-          throw new Error("Failed to fetch user name");
-        }
-    
-        const parseRes = await response.json();
-        setName(parseRes.user_name); // Expecting { user_name: 'Name' }
-      } catch (err) {
-        console.error(err.message);
+
+  const [name, setName] = useState("");
+
+  async function getName() {
+    try {
+      const token = localStorage.getItem("token"); // Ensure token exists
+      if (!token) {
+        throw new Error("No token found");
       }
+
+      const response = await fetch("http://localhost:8000/home/", {
+        method: "GET",
+        headers: { token },
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch user name");
+      }
+
+      const parseRes = await response.json();
+      setName(parseRes.user_name); // Expecting { user_name: 'Name' }
+    } catch (err) {
+      console.error(err.message);
     }
-    
-    useEffect(() => {
-      getName();
-    }, []);
+  }
 
+  useEffect(() => {
+    getName();
+  }, []);
 
-    
-=======
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
-
->>>>>>> 25d9e5da4b72872b180a85d27f779deca376068a:GuffGuthi/src/components/navbar/Navbar.jsx
   return (
     <>
-      {/* Sidebar Toggle Button */}
-      <button
-        className="sidebar-toggle"
-        onClick={toggleSidebar}
-        aria-label="Toggle Sidebar"
-      >
-        ☰
-      </button>
-
-      {/* Search Bar */}
       <div className="search-container">
         <div className="search-bar">
           <button
@@ -85,7 +54,9 @@ const Navbar = ({ activePage, setActivePage }) => {
               className="search_icon"
             />
           </button>
+
           <input type="text" className="search-input" placeholder="Search..." />
+
           <button className="notification-button">
             <img
               src="./src/assets/notification.svg"
@@ -94,6 +65,7 @@ const Navbar = ({ activePage, setActivePage }) => {
             />
             Notification
           </button>
+
           <button
             id="post-button"
             className={activePage === "createPost" ? "active" : ""}
@@ -106,18 +78,11 @@ const Navbar = ({ activePage, setActivePage }) => {
             />
             Post
           </button>
+
           <button
-<<<<<<< HEAD:client/src/components/navbar/Navbar.jsx
-        id="profile"
-        className={activePage === "viewProfile" ? "active" : ""}
-        onClick={() => handleNavigation("viewProfile")}
-      >
-        <img src="./src/assets/profile.jpg" alt="profile" className="profile" />
-      </button>
-=======
             id="profile"
-            className={activePage === "viewProfilePage" ? "active" : ""}
-            onClick={() => handleNavigation("viewProfilePage")}
+            className={activePage === "viewProfile" ? "active" : ""}
+            onClick={() => handleNavigation("viewProfile")}
           >
             <img
               src="./src/assets/profile.jpg"
@@ -125,105 +90,129 @@ const Navbar = ({ activePage, setActivePage }) => {
               className="profile"
             />
           </button>
->>>>>>> 25d9e5da4b72872b180a85d27f779deca376068a:GuffGuthi/src/components/navbar/Navbar.jsx
         </div>
       </div>
 
-      {/* Sidebar */}
-      <div className={`navbar ${sidebarOpen ? "open" : ""}`}>
+      <div className="navbar">
         <div className="navbar-logo">
           <img src="./src/assets/logo.png" alt="Logo" />
         </div>
-<<<<<<< HEAD:client/src/components/navbar/Navbar.jsx
         <span className="username"> Hello, {name}</span>
- 
-=======
->>>>>>> 25d9e5da4b72872b180a85d27f779deca376068a:GuffGuthi/src/components/navbar/Navbar.jsx
+
         <div className="navbar-Line">
-          <hr />
+          <hr></hr>
         </div>
-        {/* Sidebar buttons */}
+
         <button
           id="homeButton"
           className={activePage === "home" ? "active" : ""}
           onClick={() => handleNavigation("home")}
         >
-          <img src="./src/assets/homebutton1.svg" alt="Home Icon" className="icon" />
+          <img
+            src="./src/assets/homebutton1.svg"
+            alt="Home Icon"
+            className="icon"
+          />
           Home
         </button>
- 
+
         <button
           id="popularButton"
           className={activePage === "group" ? "active" : ""}
           onClick={() => handleNavigation("group")}
         >
-          <img src="./src/assets/popularbutton.svg" alt="Group Icon" className="Popular_icon" />
+          <img
+            src="./src/assets/popularbutton.svg"
+            alt="Group Icon"
+            className="Popular_icon"
+          />
           Group
         </button>
- 
+
         <button
           id="myPostsButton"
           className={activePage === "my-posts" ? "active" : ""}
           onClick={() => handleNavigation("my-posts")}
         >
-          <img src="./src/assets/myPost.svg" alt="my post Icon" className="MyPost_icon" />
+          <img
+            src="./src/assets/myPost.svg"
+            alt="my post Icon"
+            className="MyPost_icon"
+          />
           My Posts
         </button>
- 
+
         <button
           id="requestsButton"
           className={activePage === "communityServices" ? "active" : ""}
           onClick={() => handleNavigation("communityServices")}
         >
-          <img src="./src/assets/request.svg" alt="request Icon" className="request_icon" />
+          <img
+            src="./src/assets/request.svg"
+            alt="request Icon"
+            className="request_icon"
+          />
           Community Services
         </button>
- 
+
         <button
           id="chatButton"
           className={activePage === "chat" ? "active" : ""}
           onClick={() => handleNavigation("chat")}
         >
-          <img src="./src/assets/chats.svg" alt="chats Icon" className="chat_icon" />
+          <img
+            src="./src/assets/chats.svg"
+            alt="chats Icon"
+            className="chat_icon"
+          />
           Chat
         </button>
- 
+
         <button
           id="createGroupButton"
           className={activePage === "createGroup" ? "active" : ""}
           onClick={() => handleNavigation("createGroup")}
- 
         >
-          <img src="./src/assets/group.svg" alt="group Icon" className="group_icon" />
+          <img
+            src="./src/assets/group.svg"
+            alt="group Icon"
+            className="group_icon"
+          />
           Create Group
         </button>
- 
+
         <button
           id="settingsButton"
           className={activePage === "settings" ? "active" : ""}
           onClick={() => handleNavigation("settings")}
         >
-          <img src="./src/assets/settings.svg" alt="setting Icon" className="settings_icon" />
+          <img
+            src="./src/assets/settings.svg"
+            alt="setting Icon"
+            className="settings_icon"
+          />
           Settings
         </button>
- 
+
         <div className="settingANDhelp-Line">
           <hr></hr>
         </div>
- 
+
         <button
           id="aboutButton"
           className={activePage === "about" ? "active" : ""}
           onClick={() => handleNavigation("about")}
         >
-          <img src="./src/assets/about.svg" alt="about Icon" className="about_icon" />
+          <img
+            src="./src/assets/about.svg"
+            alt="about Icon"
+            className="about_icon"
+          />
           About
         </button>
- 
-        
       </div>
     </>
   );
 };
- 
+
 export default Navbar;
