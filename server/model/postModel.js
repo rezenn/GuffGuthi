@@ -33,8 +33,9 @@ export const fetchPosts = (userId, currentUserId) => {
 // Add a post
 export const createPost = (postDetails, callback) => {
     const query =
-        "INSERT INTO posts (post_desc, img, created_at, user_id) VALUES ($1, $2, $3, $4) RETURNING *";
+        "INSERT INTO posts (post_title, post_desc, img, created_at, user_id) VALUES ($1, $2, $3, $4, $5) RETURNING *";
     const values = [
+        postDetails.title, // Include the title field
         postDetails.desc,
         postDetails.img,
         moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),

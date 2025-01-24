@@ -1,0 +1,28 @@
+.Editor {
+    width: 100%;
+    /* Adjust as needed */
+    max-width: 800px;
+    /* Optional: Set a max width */
+    margin: 0 auto;
+    /* Center the editor */
+}
+
+
+
+/* Ensure images in the post content fit within the container */
+.post-content img {
+    max-width: 100%;
+    /* Make images responsive */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    /* Remove extra space below images */
+    margin: 0 auto;
+    /* Center images horizontally */
+}
+
+/* Optionally, set a max height for images */
+.post-content img {
+    max-height: 400px;
+    /* Adjust as needed */
+}

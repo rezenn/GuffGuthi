@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import api from "../../api";
+import PostContent from "./PostContent"; // Import the PostContent component
 import "./post.css";
 
 function Post() {
@@ -8,7 +9,7 @@ function Post() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await api.get("/post"); // Use the correct API endpoint
+        const response = await api.get("/post");
         setPosts(response.data || []); // Ensure it defaults to an empty array
       } catch (err) {
         console.error("Error fetching posts:", err.message);
@@ -35,7 +36,10 @@ function Post() {
             <img className="postImg" src={post.img} alt="Post visual content" />
           )}
           <div className="card-content">
-            {post.post_desc || "No description provided."}
+            {/* Use PostContent to render the post description */}
+            <PostContent
+              htmlContent={post.post_desc || "No description provided."}
+            />
           </div>
           <div className="card-footer">
             <div className="actions">

@@ -19,7 +19,7 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
         throw new Error("No token found");
       }
 
-      const response = await fetch("http://localhost:8000/home/", {
+      const response = await fetch("http://localhost:8000/home", {
         method: "GET",
         headers: { token },
       });
