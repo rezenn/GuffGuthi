@@ -18,6 +18,7 @@ import Settings from "./pages/Settings";
 import Group from "./components/Group";
 import GroupFeedPage from "./pages/GroupFeedPage";
 import { QueryClient, QueryClientProvider } from "react-query";
+import Chat from "./pages/Chat";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
@@ -184,6 +185,16 @@ function App() {
             element={
               isAuthenticated ? (
                 <PostRequest setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/chat"
+            element={
+              isAuthenticated ? (
+                <Chat setAuth={setAuth} />
               ) : (
                 <Navigate to="/login" />
               )
