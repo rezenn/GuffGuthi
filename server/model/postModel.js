@@ -1,7 +1,6 @@
 import pool from "../database/databaseConnect.js";
 import moment from "moment";
 
-// Fetch posts
 export const fetchPosts = (userId, currentUserId) => {
     const query = userId && userId !== "undefined"
         ? `SELECT p.*, u.user_id AS userId, u.user_name AS name, u.profilePic 
@@ -30,22 +29,26 @@ export const fetchPosts = (userId, currentUserId) => {
     });
 };
 
-// Add a post
-export const createPost = (postDetails, callback) => {
+export const createPost = async (postDetails) => {
     const query =
         "INSERT INTO posts (post_title, post_desc, img, created_at, user_id) VALUES ($1, $2, $3, $4, $5) RETURNING *";
     const values = [
-        postDetails.title, // Include the title field
+        postDetails.title,
         postDetails.desc,
         postDetails.img,
         moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
         postDetails.userId,
     ];
 
-    pool.query(query, values, callback);
+    try {
+        const result = await pool.query(query, values);
+        return result.rows[0];
+    } catch (err) {
+        console.error("Error creating post:", err.message);
+        throw err;
+    }
 };
 
-// Delete a post
 export const removePost = (postId, userId, callback) => {
     const query = "DELETE FROM posts WHERE post_id = $1 AND user_id = $2";
     pool.query(query, [postId, userId], callback);

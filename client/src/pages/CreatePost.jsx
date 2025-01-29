@@ -39,17 +39,18 @@ function CreatePost() {
       const response = await fetch("http://localhost:8000/post", {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${localStorage.token}`,
+          Authorization: `Bearer ${localStorage.token}`, // If authentication is required
         },
         body: formData,
       });
+
+      const data = await response.json();
 
       if (response.ok) {
         alert("Post created successfully!");
         navigate("/home");
       } else {
-        const errorData = await response.json();
-        alert(`Error creating post: ${errorData.message}`);
+        alert(`Error creating post: ${data.message}`);
       }
     } catch (error) {
       console.error("Error creating post:", error.message);

@@ -15,6 +15,7 @@
     "body-parser": "^1.20.3",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
+    "dompurify": "^3.2.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-validator": "^7.2.1",
@@ -24,6 +25,9 @@
     "nodemon": "^3.1.9",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
-    "pg": "^8.13.1"
+    "pg": "^8.13.1",
+    "quill": "^2.0.3",
+    "react-quilljs": "^2.0.5",
+    "server": "^1.0.41"
   }
 }

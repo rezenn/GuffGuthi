@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import api from "../../api";
-import PostContent from "./PostContent"; // Import the PostContent component
+import api from "../../api"; // This should be the API instance for making requests
+import PostContent from "./PostContent"; // Import PostContent to display HTML content
 import "./post.css";
 
 function Post() {
@@ -9,8 +9,8 @@ function Post() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await api.get("/post");
-        setPosts(response.data || []); // Ensure it defaults to an empty array
+        const response = await api.get("/post"); // Assuming api instance is configured to communicate with the backend
+        setPosts(response.data || []); // Ensure it defaults to an empty array if no posts
       } catch (err) {
         console.error("Error fetching posts:", err.message);
       }
@@ -25,7 +25,7 @@ function Post() {
         <div className="card" key={post.id || index}>
           <div className="card-header">
             <img
-              src={post.profilePic || "/path/to/default/avatar.png"}
+              src={post.profilePic || "/path/to/default/avatar.png"} // Use a fallback avatar if the profilePic is missing
               alt="User Avatar"
               className="avatar"
             />
@@ -33,12 +33,15 @@ function Post() {
           </div>
           <div className="card-title">{post.post_title || "Untitled Post"}</div>
           {post.img && (
-            <img className="postImg" src={post.img} alt="Post visual content" />
+            <img
+              className="postImg"
+              src={`http://localhost:8000/uploads/${post.img}`}
+              alt="Post visual content"
+            />
           )}
           <div className="card-content">
-            {/* Use PostContent to render the post description */}
             <PostContent
-              htmlContent={post.post_desc || "No description provided."}
+              htmlContent={post.post_desc || "No description provided."} // Fallback description
             />
           </div>
           <div className="card-footer">
