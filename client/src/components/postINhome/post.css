@@ -6,7 +6,7 @@
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 16px;
-  margin: 10px 0px 30px 340px;
+  margin: 10px 0px 30px 350px;
   overflow: hidden;
 }
 
@@ -19,7 +19,7 @@
 .card-header .avatar {
   width: 40px;
   height: 40px;
-  border-: 50%;
+  border-radius: 50%;
   margin-right: 10px;
 }
 
@@ -40,14 +40,14 @@
 }
 
 .card-img {
-  border-: 25px;
+  border-radius: 25px;
 
 }
 
 .postImg {
   width: 750px;
   padding: 0px 10px 15px 0px;
-  border-: 25px;
+  border-radius: 25px;
 }
 
 .card-content {

@@ -11,3 +11,11 @@
     padding: 0;
 
 }
+
+.noPostDisplay {
+    margin: 150px 450px 0 350px;
+    font-family: "Red Hat Display", serif;
+    font-size: 3.2rem;
+    font-weight: 200;
+    text-align: center;
+}
