@@ -8,6 +8,7 @@ const cleanHtml = (html) => {
   const parser = new DOMParser();
   const doc = parser.parseFromString(html, "text/html");
 
+  // Remove unnecessary attributes or elements
   doc.querySelectorAll("[data-list]").forEach((el) => {
     el.removeAttribute("data-list");
   });
@@ -23,9 +24,23 @@ function CreatePost() {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState(null);
   const [body, setBody] = useState("");
+  const [preview, setPreview] = useState(null); // For image preview
   const navigate = useNavigate();
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImage(file);
+      setPreview(URL.createObjectURL(file)); // Create a preview URL
+    }
+  };
+
   const handlePost = async () => {
+    if (!title.trim() || !body.trim()) {
+      alert("Title and body are required.");
+      return;
+    }
+
     const cleanedBody = cleanHtml(body);
 
     const formData = new FormData();
@@ -54,6 +69,7 @@ function CreatePost() {
       }
     } catch (error) {
       console.error("Error creating post:", error.message);
+      alert("An error occurred while creating the post.");
     }
   };
 
@@ -63,6 +79,7 @@ function CreatePost() {
       <div className="CreatePost-Container">
         <h1>Create Post</h1>
 
+        {/* Title Input */}
         <input
           type="text"
           className="title"
@@ -70,12 +87,28 @@ function CreatePost() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <input
-          type="file"
-          accept="image/*"
-          className="image"
-          onChange={(e) => setImage(e.target.files[0])}
-        />
+
+        {/* File Input with Custom Styling */}
+        <div className="file-input-container">
+          {preview && (
+            <div className="image-preview">
+              <img src={preview} alt="Preview" className="preview-image" />
+            </div>
+          )}
+          <input
+            type="file"
+            accept="image/*"
+            className="image"
+            id="file-input"
+            onChange={handleImageChange}
+            style={{ display: "none" }}
+          />
+          <label htmlFor="file-input" className="custom-file-button">
+            Add an Image
+          </label>
+        </div>
+
+        {/* HTML Editor */}
         <HtmlEditor
           value={body}
           onChange={(content) => {
@@ -83,6 +116,7 @@ function CreatePost() {
           }}
         />
 
+        {/* Post Button */}
         <div className="ButtonPosition">
           <button className="Post-Button" onClick={handlePost}>
             Post

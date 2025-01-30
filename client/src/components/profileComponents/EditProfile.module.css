@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 .editProfile {
@@ -63,7 +64,7 @@ h1 {
 }
 
 .profile button:hover {
-    background-color: #ff4400af;
+    background-color: #ff3300b6;
 }
 
 .introContainer {
@@ -110,7 +111,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #ff4400af;
+    background-color: #ff3300b6;
 }
 
 .updateProfile {

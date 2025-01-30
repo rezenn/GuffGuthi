@@ -4,20 +4,59 @@ import "quill/dist/quill.snow.css";
 import "./HtmlEditor.css"; // Import your custom CSS
 
 function HtmlEditor({ value, onChange }) {
-  const { quill, quillRef } = useQuill();
-
-  // Set initial value when the Quill editor initializes
+  const { quill, quillRef } = useQuill({
+    modules: {
+      toolbar: [
+        ["bold", "italic", "underline", "strike"],
+        [{ list: "ordered" }, { list: "bullet" }],
+        [{ header: [1, 2, 3, false] }],
+        ["link"],
+        [{ color: [] }, { background: [] }],
+        ["clean"],
+      ],
+    },
+  });
   useEffect(() => {
-    if (quill && value) {
-      quill.clipboard.dangerouslyPasteHTML(value);
+    if (quill) {
+      const handlePaste = (event) => {
+        const clipboardData = event.clipboardData || window.clipboardData;
+        const items = clipboardData.items;
+
+        for (let i = 0; i < items.length; i++) {
+          if (
+            items[i].type.indexOf("image") !== -1 ||
+            items[i].type.indexOf("video") !== -1
+          ) {
+            event.preventDefault();
+            alert("Image and video pasting is not allowed.");
+            return;
+          }
+        }
+      };
+
+      quill.root.addEventListener("paste", handlePaste);
+
+      return () => {
+        quill.root.removeEventListener("paste", handlePaste);
+      };
+    }
+  }, [quill]);
+  useEffect(() => {
+    if (quill) {
+      quill.on("text-change", () => {
+        const links = quill.root.querySelectorAll("a");
+        links.forEach((link) => {
+          link.setAttribute("target", "_blank"); // Open links in a new tab
+          link.setAttribute("rel", "noopener noreferrer"); // Security best practice
+        });
+      });
     }
   }, [quill]);
 
-  // Handle content changes in the editor
   useEffect(() => {
     if (quill) {
       const handler = () => {
-        const html = quill.root.innerHTML; // Get the HTML content
+        const html = quill.root.innerHTML;
         if (onChange) {
           onChange(html);
         }
@@ -25,7 +64,6 @@ function HtmlEditor({ value, onChange }) {
 
       quill.on("text-change", handler);
 
-      // Cleanup the event listener when the component unmounts
       return () => {
         quill.off("text-change", handler);
       };

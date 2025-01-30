@@ -372,9 +372,9 @@ body {
 
 
 .search-container {
-  width: 1279px;
+  width: 1285px;
   height: 82px;
-  margin-left: 256px;
+  margin-left: 250px;
   margin-top: 0px;
   top: 0;
   position: fixed;
@@ -565,7 +565,7 @@ body {
   cursor: pointer;
 }
 
-/* Show sidebar-toggle on small screens */
+
 @media (max-width: 768px) {
   .sidebar-toggle {
     display: block;
@@ -583,11 +583,10 @@ body {
   }
 
   .main-content {
-    margin-left: 0; /* No sidebar space */
+    margin-left: 0;
   }
 }
 
-/* Sidebar adjustments */
 .navbar {
   width: 250px;
   height: 100%;
@@ -598,19 +597,17 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* Sidebar logo styling */
 .navbar-logo img {
   width: 150px;
   margin: 20px auto;
 }
 
-/* Adjust sidebar for smaller screens */
 @media (max-width: 768px) {
   .navbar {
     width: 200px;
   }
 }
-/* Adjust search container for smaller screens */
+
 @media (max-width: 768px) {
   .search-container {
     width: 100%;

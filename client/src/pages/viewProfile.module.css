@@ -2,9 +2,12 @@ body {}
 
 .container {
     display: grid;
+    height: fit-content;
     grid-template-rows: auto 1fr;
     grid-template-columns: 1fr;
     position: absolute;
+
+
 }
 
 .coverImg {

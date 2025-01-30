@@ -1,8 +1,4 @@
-/* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Reem+Kufi:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
-/* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;1,400&family=Roboto:wght@100;300;400;500;700;900&family=Reem+Kufi:wght@400;700&display=swap');
 
 /* Dashboard Container */
 .dashboard {
@@ -52,9 +48,13 @@
     transition: background-color 0.2s ease;
 }
 
+.back-button {
+    margin-left: 730px;
+}
+
 .create-button:hover,
 .back-button:hover {
-    background-color: #FF6500;
+    background-color: #ff3300b6;
 }
 
 /* Dashboard Content Area */
@@ -81,7 +81,7 @@
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.post-preview:hover {
+.post-preview {
     background-color: #e0e0e0;
     transform: scale(1.01);
 }
@@ -98,8 +98,10 @@
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     color: #333;
-    line-height: 1.6; /* Improves readability */
-    white-space: pre-wrap; /* Ensures text wraps and respects line breaks */
+    line-height: 1.6;
+    /* Improves readability */
+    white-space: pre-wrap;
+    /* Ensures text wraps and respects line breaks */
 }
 
 /* Additional Styles (Optional) */
@@ -134,7 +136,7 @@
     transition: color 0.2s ease;
 }
 
-.navbar a:hover,
+.navbar a:,
 .navbar a.active {
     color: #FF4500;
 }

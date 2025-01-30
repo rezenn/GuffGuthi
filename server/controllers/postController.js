@@ -44,8 +44,7 @@ const postController = {
           console.error("Error creating post:", error.message);
           res.status(500).json({ error: "Failed to create post." });
       }
-  }
-  ,
+  },
   
 
     // Delete a post

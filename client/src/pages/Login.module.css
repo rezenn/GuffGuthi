@@ -174,8 +174,8 @@ form {
     margin-bottom: 20px;
 }
 
-.createAccount:hover {
-    background-color: hsla(16, 100%, 50%, 0.71);
+.createAccount {
+    background-color: #ff3300b6;
 }
 
 #login p {
@@ -204,5 +204,5 @@ form {
 
 #login a:hover,
 #login .forgotPassword:hover {
-    color: hsla(16, 100%, 50%, 0.71);
+    color: #ff3300b6;
 }

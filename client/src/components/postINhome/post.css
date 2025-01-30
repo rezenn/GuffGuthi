@@ -7,6 +7,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 16px;
   margin: 10px 0px 30px 340px;
+  overflow: hidden;
 }
 
 .card-header {
@@ -18,7 +19,7 @@
 .card-header .avatar {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-: 50%;
   margin-right: 10px;
 }
 
@@ -33,26 +34,28 @@
   font-family: "Roboto", serif;
   font-size: 1.2rem;
   font-weight: 700;
+  margin-left: 10px;
   margin-bottom: 25px;
   color: #050505;
 }
 
 .card-img {
-  border-radius: 10px;
+  border-: 25px;
 
 }
 
 .postImg {
   width: 750px;
   padding: 0px 10px 15px 0px;
-  border-radius: 25px;
+  border-: 25px;
 }
 
 .card-content {
   font-family: "Afacad", serif;
-  font-size: 0.95em;
+  font-size: 1em;
   color: #555;
   line-height: 1.6;
+  margin-left: 10px;
   margin-bottom: 25px;
 }
 
@@ -90,4 +93,23 @@
 
 .card-footer .actions span:hover {
   color: #222;
+}
+
+.post-content {
+  line-height: 1.6;
+  color: #333;
+}
+
+.read-more-button {
+  background: none;
+  border: none;
+  color: #FF4500;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.read-more-button:hover {
+  text-decoration: underline;
 }
