@@ -21,7 +21,7 @@ const postController = {
     async addPost(req, res) {
       try {
           const { title, body } = req.body;
-          const img = req.file ? `/uploads/${req.file.filename}` : null;
+          const img = req.file ? `/uploads/posts/${req.file.filename}` : null;
   
           if (!title || !body) {
               return res.status(400).json({ message: "Title and body are required." });
