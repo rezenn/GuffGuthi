@@ -1,5 +1,8 @@
 
 -- users test test
+
+-- ALTER TABLE users ADD occupation varchar(255)
+
 create table users(
     user_id uuid primary key default
     uuid_generate_v4(),
@@ -9,8 +12,8 @@ create table users(
     coverPic varchar(255),
     profilePic varchar(255),
     bio varchar(255),
+    occupation varchar(255),
     location varchar(255),
-
     created_at timestamp default current_timestamp
 );
 

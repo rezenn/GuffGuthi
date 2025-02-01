@@ -8,9 +8,9 @@ function HtmlEditor({ value, onChange }) {
     modules: {
       toolbar: [
         ["bold", "italic", "underline", "strike"],
+        ["link"],
         [{ list: "ordered" }, { list: "bullet" }],
         [{ header: [1, 2, 3, false] }],
-        ["link"],
         [{ color: [] }, { background: [] }],
         ["clean"],
       ],

@@ -8,7 +8,9 @@
 }
 
 .editProfile {
-    border: 1px soild hsla(0, 0%, 85%, 0.523);
+    border: 1px soild #d9d9d9a7;
+    background-color: #fff;
+    border-radius: 20px;
     width: 900px;
     height: 1050px;
     padding: 30px;
@@ -45,9 +47,10 @@ h1 {
 .profileImg {
     width: 65px;
     height: 65px;
-    border: 1px solid #000;
+    border: 1px solid #82818168;
     border-radius: 50%;
     margin: 0;
+    padding: 2px;
 }
 
 .profile button {
@@ -59,7 +62,7 @@ h1 {
     width: 155px;
     padding: 0 5px;
     border: 0;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-left: 345px;
 }
 
@@ -71,11 +74,8 @@ h1 {
     background-color: #d9d9d985;
     border-radius: 20px;
     width: 754px;
-    height: 685px;
-}
-
-form {
-    padding: 15px;
+    padding: 20px;
+    height: fit-content;
 }
 
 label {
@@ -88,15 +88,16 @@ label {
 input {
     width: 610px;
     height: 40px;
-    border: 1px solid #333;
+    border: 1px solid #82818168;
     background-color: #00000008;
     font-family: "Afacad", serif;
     font-size: 18px;
     margin: 3px;
-    border-radius: 20px;
+    padding-left: 5px;
+    border-radius: 10px;
 }
 
-form button {
+.changeProfile {
     background-color: #FF4500;
     color: aliceblue;
     font-family: "Afacad", serif;
@@ -114,6 +115,20 @@ form button:hover {
     background-color: #ff3300b6;
 }
 
+.changeCover {
+    background-color: #FF4500;
+    color: aliceblue;
+    font-family: "Afacad", serif;
+    font-size: 20px;
+    height: 34px;
+    width: 155px;
+    padding: 0 5px;
+    border: 0;
+    border-radius: 10px;
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
 .updateProfile {
     height: 48px;
     width: 670px;
@@ -123,6 +138,7 @@ form button:hover {
     font-size: 32px;
     font-weight: 200;
     margin-bottom: 15px;
+    border-radius: 15px;
 }
 
 .updateProfile:hover {
@@ -132,8 +148,8 @@ form button:hover {
 .coverImg {
     width: 700px;
     height: 250px;
-    margin: 25px 15px 10px 12px;
+    margin: 5px 15px 5px 0px;
     padding: 3px;
     border-radius: 20px;
-    border: 1px solid hsl(0, 0%, 4%);
+    border: 1px solid #82818168;
 }

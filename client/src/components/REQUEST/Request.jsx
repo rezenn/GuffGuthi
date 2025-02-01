@@ -73,36 +73,6 @@ Welcome to the captivating realm of Maya Universe, an extraordinary volunteer de
 - Personal Growth: Develop valuable skills, embrace new challenges, and make a lasting impact on the community.
       `,
     },
-    {
-      id: 3,
-      title: "School Construction Associate",
-      content: `
-<b>About the Program</b>
-Welcome to the captivating realm of Maya Universe, an extraordinary volunteer destination that has enchanted countless individuals seeking purpose and adventure. For over a decade, our sanctuary of empowerment has welcomed volunteers from diverse backgrounds, offering an unparalleled experience.
-
-<b>Program Highlights</b>
-- Build Schools and Infrastructure: Participate in constructing and maintaining educational facilities that empower local communities.
-- Hands-On Construction Experience: Gain practical experience in various aspects of construction, from masonry to carpentry.
-- Sustainable Development: Contribute to projects that promote sustainable growth and educational access in rural areas.
-- Community Engagement: Work closely with local residents, fostering meaningful connections and cultural exchange.
-- Personal Growth: Develop valuable skills, embrace new challenges, and make a lasting impact on the community.
-      `,
-    },
-    {
-      id: 3,
-      title: "School Construction Associate",
-      content: `
-<b>About the Program</b>
-Welcome to the captivating realm of Maya Universe, an extraordinary volunteer destination that has enchanted countless individuals seeking purpose and adventure. For over a decade, our sanctuary of empowerment has welcomed volunteers from diverse backgrounds, offering an unparalleled experience.
-
-<b>Program Highlights</b>
-- Build Schools and Infrastructure: Participate in constructing and maintaining educational facilities that empower local communities.
-- Hands-On Construction Experience: Gain practical experience in various aspects of construction, from masonry to carpentry.
-- Sustainable Development: Contribute to projects that promote sustainable growth and educational access in rural areas.
-- Community Engagement: Work closely with local residents, fostering meaningful connections and cultural exchange.
-- Personal Growth: Develop valuable skills, embrace new challenges, and make a lasting impact on the community.
-      `,
-    },
   ];
 
   const handlePostClick = (post) => {

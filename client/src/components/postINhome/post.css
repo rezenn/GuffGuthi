@@ -16,11 +16,12 @@
   margin-bottom: 16px;
 }
 
-.card-header .avatar {
+.card-header .profile {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin-right: 10px;
+  border: 1px solid #82818168;
 }
 
 .card-header .author {

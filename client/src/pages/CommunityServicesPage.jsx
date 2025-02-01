@@ -5,7 +5,7 @@ function CommunityServicesPage(){
     return(
         <>
         <Navbar className="Navbar" activePage="communityServices" setActivePage={() => {}} />
-        <CommunityServices/>
+        <CommunityServices />
         </>
     )
 }

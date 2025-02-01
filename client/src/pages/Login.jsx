@@ -28,6 +28,7 @@ function Login({ setAuth }) {
 
       // Ensure token is saved in localStorage
       if (parseRes.jwtToken) {
+        localStorage.setItem("email", email);
         localStorage.setItem("token", parseRes.jwtToken);
         setAuth(true);
 

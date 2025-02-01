@@ -289,6 +289,35 @@ body {
   Left: 16px;
 }
 
+/* create group button */
+#GuthiyarButton {
+  /*background-color: lightpink; /* Customize Chat button */
+  font-family: 'Roboto';
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  padding-top: 15px;
+  font-size: 14px;
+  border: none;
+  font-weight: bold;
+  height: 48px;
+  margin-top: -10px;
+
+}
+
+#GuthiyarButton:hover {
+  color: #FF4500;
+}
+
+.guthiyar_icon {
+  align-items: center;
+  Width: 24px;
+  Height: 17px;
+  Top: 12px;
+  Left: 16px;
+}
+
 
 /* settings button */
 #settingsButton {
@@ -372,16 +401,16 @@ body {
 
 
 .search-container {
-  width: 1285px;
+  width: 1280px;
   height: 82px;
-  margin-left: 250px;
+  margin-left: 256px;
   margin-top: 0px;
   top: 0;
   position: fixed;
   z-index: 100;
   background-color: white;
   border-bottom: 1px solid hsla(0, 0%, 20%, 0.29);
-  box-shadow: 5px 5px 5px rgba(128, 128, 128, 12);
+  box-shadow: 5px 5px 5px #aaaaaa82;
   display: flex;
   justify-content: center;
   padding: 10px 0;
@@ -529,12 +558,11 @@ body {
   border: none;
   display: flex;
   align-items: center;
-  /* gap: 35px; */
   position: absolute;
   right: 50px;
-  /* Adjust to position relative to the white box */
   top: 370px;
-  /* Center vertically */
+  border: 1px solid #82818168;
+  padding: 2px;
   transform: translateY(-350px);
   border-radius: 50%;
 
@@ -565,6 +593,7 @@ body {
   cursor: pointer;
 }
 
+/* 
 
 @media (max-width: 768px) {
   .sidebar-toggle {
@@ -631,4 +660,4 @@ body {
   .search-input {
     font-size: 12px;
   }
-}
+} */
