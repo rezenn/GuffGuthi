@@ -48,56 +48,62 @@ function ForgotPassword({ setAuth }) {
 
   return (
     <>
-      <div id={style.regLog}>
-        <div id={style.login}>
-          <img className={style.logo} src="./src/assets/logo.png" alt="Logo" />
+      <div id={style.body}>
+        <div id={style.regLog}>
+          <div id={style.login}>
+            <img
+              className={style.logo}
+              src="./src/assets/logo.png"
+              alt="Logo"
+            />
 
-          <h2>Reset your account password</h2>
-          <form onSubmit={onSubmitForm}>
-            <label className={style.label}>Email</label>
-            <br />
-            <input
-              className={style.input}
-              type="email"
-              placeholder="Your Email Address"
-              name="email"
-              value={email}
-              onChange={onChange}
-              required
-            />
-            <br />
-            <label className={style.label}>Password</label>
-            <br />
-            <input
-              className={style.input}
-              type="password"
-              placeholder="Password"
-              name="password"
-              value={password}
-              onChange={onChange}
-              required
-            />
-            <br />
-            <label className={style.label}>Confirm Password</label>
-            <br />
-            <input
-              className={style.input}
-              type="password"
-              placeholder="Confirm Password"
-              name="confirmPassword"
-              value={confirmPassword}
-              onChange={onChange}
-              required
-            />
-            <br />
-            <button className={style.createAccount} type="submit">
-              Change Password
-            </button>
-          </form>
-          <p>
-            Password Changed?
-            <Link to="/Login"> Login now</Link>
-          </p>
+            <h2>Reset your account password</h2>
+            <form onSubmit={onSubmitForm}>
+              <label className={style.label}>Email</label>
+              <br />
+              <input
+                className={style.input}
+                type="email"
+                placeholder="Your Email Address"
+                name="email"
+                value={email}
+                onChange={onChange}
+                required
+              />
+              <br />
+              <label className={style.label}>Password</label>
+              <br />
+              <input
+                className={style.input}
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={password}
+                onChange={onChange}
+                required
+              />
+              <br />
+              <label className={style.label}>Confirm Password</label>
+              <br />
+              <input
+                className={style.input}
+                type="password"
+                placeholder="Confirm Password"
+                name="confirmPassword"
+                value={confirmPassword}
+                onChange={onChange}
+                required
+              />
+              <br />
+              <button className={style.createAccount} type="submit">
+                Change Password
+              </button>
+            </form>
+            <p>
+              Password Changed?
+              <Link to="/Login"> Login now</Link>
+            </p>
+          </div>
         </div>
       </div>
     </>

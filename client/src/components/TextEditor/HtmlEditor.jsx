@@ -16,6 +16,8 @@ function HtmlEditor({ value, onChange }) {
       ],
     },
   });
+
+  // Handle paste events to prevent image/video pasting
   useEffect(() => {
     if (quill) {
       const handlePaste = (event) => {
@@ -41,18 +43,27 @@ function HtmlEditor({ value, onChange }) {
       };
     }
   }, [quill]);
+
+  // Ensure links open in a new tab
   useEffect(() => {
     if (quill) {
-      quill.on("text-change", () => {
+      const handleTextChange = () => {
         const links = quill.root.querySelectorAll("a");
         links.forEach((link) => {
           link.setAttribute("target", "_blank"); // Open links in a new tab
           link.setAttribute("rel", "noopener noreferrer"); // Security best practice
         });
-      });
+      };
+
+      quill.on("text-change", handleTextChange);
+
+      return () => {
+        quill.off("text-change", handleTextChange);
+      };
     }
   }, [quill]);
 
+  // Handle changes in the editor content
   useEffect(() => {
     if (quill) {
       const handler = () => {

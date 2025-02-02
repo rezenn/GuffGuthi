@@ -96,9 +96,12 @@ Welcome to the captivating realm of Maya Universe, an extraordinary volunteer de
               <button className="create-button">Create Request</button>
             </>
           ) : (
-            <button className="back-button" onClick={handleBackClick}>
-              Back to Requests
-            </button>
+            <>
+              <h2>{selectedPost.title}</h2>
+              <button className="back-button" onClick={handleBackClick}>
+                Back to Requests
+              </button>
+            </>
           )}
         </div>
 
@@ -106,7 +109,6 @@ Welcome to the captivating realm of Maya Universe, an extraordinary volunteer de
         <div className="dashboard-content">
           {selectedPost ? (
             <div className="post-details">
-              <h2>{selectedPost.title}</h2>
               <div
                 dangerouslySetInnerHTML={{ __html: selectedPost.content }}
               ></div>
