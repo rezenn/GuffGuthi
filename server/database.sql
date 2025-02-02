@@ -53,4 +53,17 @@ create table follow(
     unique (followerUser_id, followedUser_id)
 );
 
+CREATE TABLE conversations (
+    id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
+    participant_ids uuid[] NOT NULL,
+    message_ids uuid[] DEFAULT ARRAY[]::uuid[],
+    created_at timestamp DEFAULT current_timestamp
+);
 
+CREATE TABLE messages (
+    message_id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
+    sender_id uuid NOT NULL REFERENCES users(user_id) ON DELETE CASCADE,
+    body text NOT NULL,
+    conversation_id uuid NOT NULL REFERENCES conversations(id) ON DELETE CASCADE,
+    created_at timestamp DEFAULT current_timestamp
+);

@@ -11,6 +11,8 @@ import postRoutes from "./routes/postRoutes.js";
 import likeRoutes from "./routes/likeRoutes.js";
 import commentRoutes from "./routes/commentRoutes.js";
 import searchRoute from "./routes/searchRoutes.js";
+import messageRoute from "./routes/messageRoutes.js"
+
 
 // Get the directory name from the current module's URL
 const __filename = fileURLToPath(import.meta.url);
@@ -39,6 +41,7 @@ app.use("/post", postRoutes);
 app.use("/like", likeRoutes);
 app.use("/comment", commentRoutes);
 app.use("/search", searchRoute);
+app.use("/message", messageRoute);
 
 // Centralized error handling
 app.use((err, req, res, next) => {

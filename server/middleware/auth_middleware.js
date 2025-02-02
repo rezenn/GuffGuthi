@@ -9,7 +9,7 @@ export default async (req, res, next) => {
 
         // Check if the token is provided
         if (!jwtToken) {
-            return res.status(403).json("Not Authorized.");
+            return res.status(403).json("Not Authorized1.");
         }
 
         // Verify the token using jwt.verify
@@ -22,7 +22,7 @@ export default async (req, res, next) => {
 
         // If an error occurs, ensure no response has been sent yet
         if (!res.headersSent) {
-            return res.status(403).json("Not Authorized.");
+            return res.status(403).json("Not Authorized2.");
         }
     }
 }
