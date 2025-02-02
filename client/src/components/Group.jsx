@@ -1,17 +1,21 @@
 import React from "react";
 import Navbar from "./navbar/Navbar";
 import "./groups.css";
-import { Link,useNavigate  } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Group = () => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-      navigate('/groupFeed'); 
+    navigate("/groupFeed");
   };
   return (
     <>
-      <Navbar activePage="group" setActivePage={() => {}} />
+      <Navbar
+        className="Navbar"
+        activePage="guthiyar"
+        setActivePage={() => {}}
+      />
       <div className="groups-container">
         <div className="groups-grid-container">
           <div className="groups-grid-container">
@@ -20,7 +24,7 @@ const Group = () => {
           <div className="groups-grid">
             <button className="group-button" onClick={handleNavigate}>
               Journalist
-            </button> 
+            </button>
           </div>
         </div>
       </div>

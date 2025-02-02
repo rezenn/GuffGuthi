@@ -29,3 +29,4 @@ export const updateConversation = async (conversationId, messageId) => {
     const { rows } = await pool.query(query, [messageId, conversationId]);
     return rows[0];
 };
+

@@ -12,7 +12,7 @@ import ViewProfile from "./pages/ViewProfilePage";
 import Home from "./pages/Home";
 import EditProfile from "./pages/EditProfilePage";
 import CreatePost from "./pages/CreatePost";
-import PostRequest from "./pages/PostRequest/PostRequest";
+import PostRequest from "./pages/PostRequest";
 import CommunityServices from "./pages/CommunityServicesPage";
 import Settings from "./pages/Settings";
 import Group from "./components/Group";

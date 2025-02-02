@@ -52,13 +52,14 @@
 .formTitle1 {
     font-weight: bold;
     margin-right: 10px;
+    margin-left: 5px;
     width: 100px;
 }
 
 .inputTitle1 {
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 10px;
     width: 100%;
     max-width: 750px;
 }

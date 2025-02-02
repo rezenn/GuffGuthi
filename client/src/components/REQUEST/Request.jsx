@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./request.css";
-// Uncomment the next line once Navbar is correctly implemented
-// import Navbar from "../navbar/Navbar";
 
 function Request() {
+  const navigate = useNavigate();
   const [selectedPost, setSelectedPost] = useState(null);
 
   // Function to truncate HTML content and extract plain text
@@ -78,6 +79,9 @@ Welcome to the captivating realm of Maya Universe, an extraordinary volunteer de
   const handlePostClick = (post) => {
     setSelectedPost(post);
   };
+  const handleCreateClick = () => {
+    navigate("/postRequest");
+  };
 
   const handleBackClick = () => {
     setSelectedPost(null);
@@ -93,7 +97,9 @@ Welcome to the captivating realm of Maya Universe, an extraordinary volunteer de
           {!selectedPost ? (
             <>
               <div className="dashboard-title">Requests</div>
-              <button className="create-button">Create Request</button>
+              <button className="create-button" onClick={handleCreateClick}>
+                Create Request
+              </button>
             </>
           ) : (
             <>
