@@ -5,11 +5,11 @@ import ViewPost from "../components/profileComponents/ViewPost";
 import CoverImage from "../components/profileComponents/CoverImage";
 import styles from "./viewProfile.module.css";
 
-function ViewProfilePage() {
+function ViewProfile() {
     return (
         <>
-            <Navbar activePage="viewProfilePage" setActivePage={() => {}} />
-            <div className={styles.container}>
+      <Navbar className="Navbar" activePage="viewProfile" setActivePage={() => {}} /> 
+      <div className={styles.container}>
                 <div className={styles.coverImg}>
                     <CoverImage />
                 </div>
@@ -26,4 +26,4 @@ function ViewProfilePage() {
     );
 }
 
-export default ViewProfilePage;
+export default ViewProfile;

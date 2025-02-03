@@ -3,8 +3,9 @@ import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ activePage, setActivePage }) => {
-  const [sidebarOpen, setSidebarOpen] = useState(false); // Sidebar toggle state
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
+  const isMobile = window.innerWidth <= 768; // Check if the screen is mobile
 
   const handleNavigation = (page) => {
     setActivePage(page);
@@ -41,26 +42,30 @@ const Navbar = ({ activePage, setActivePage }) => {
             />
           </button>
           <input type="text" className="search-input" placeholder="Search..." />
-          <button className="notification-button">
-            <img
-              src="./src/assets/notification.svg"
-              alt="notification Icon"
-              className="notification_icon"
-            />
-            Notification
-          </button>
-          <button
-            id="post-button"
-            className={activePage === "createPost" ? "active" : ""}
-            onClick={() => handleNavigation("createPost")}
-          >
-            <img
-              src="./src/assets/s_post.svg"
-              alt="post Icon"
-              className="Post_icon"
-            />
-            Post
-          </button>
+          {!isMobile && ( // Conditionally render Notification button
+            <button className="notification-button">
+              <img
+                src="./src/assets/notification.svg"
+                alt="notification Icon"
+                className="notification_icon"
+              />
+              Notification
+            </button>
+          )}
+          {!isMobile && ( // Conditionally render Post button
+            <button
+              id="post-button"
+              className={activePage === "createPost" ? "active" : ""}
+              onClick={() => handleNavigation("createPost")}
+            >
+              <img
+                src="./src/assets/s_post.svg"
+                alt="post Icon"
+                className="Post_icon"
+              />
+              Post
+            </button>
+          )}
           <button
             id="profile"
             className={activePage === "viewProfilePage" ? "active" : ""}
