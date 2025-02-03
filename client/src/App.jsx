@@ -15,7 +15,6 @@ import CreatePost from "./pages/CreatePost";
 import PostRequest from "./pages/PostRequest";
 import CommunityServices from "./pages/CommunityServicesPage";
 import Settings from "./pages/Settings";
-import Group from "./components/Group";
 import GroupFeedPage from "./pages/GroupFeedPage";
 import { QueryClient, QueryClientProvider } from "react-query";
 import GuthiyarPage from "./pages/GuthiyarPage";
@@ -116,10 +115,10 @@ function App() {
           />
 
           <Route
-            path="/group"
+            path="/guthiyar"
             element={
               isAuthenticated ? (
-                <Group setAuth={setAuth} />
+                <GuthiyarPage setAuth={setAuth} />
               ) : (
                 <Navigate to="/login" />
               )
@@ -192,10 +191,10 @@ function App() {
             }
           />
           <Route
-            path="/guthiyar"
+            path="/chat"
             element={
               isAuthenticated ? (
-                <GuthiyarPage setAuth={setAuth} />
+                <Chat setAuth={setAuth} />
               ) : (
                 <Navigate to="/login" />
               )
