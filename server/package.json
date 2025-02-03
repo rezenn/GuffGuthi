@@ -26,10 +26,15 @@
     "nodemon": "^3.1.9",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
+<<<<<<< HEAD
     "pg": "^8.13.1",
     "quill": "^2.0.3",
     "react-quilljs": "^2.0.5",
     "server": "^1.0.41",
     "socket.io": "^4.8.1"
+=======
+    "password": "^0.1.1",
+    "pg": "^8.13.1"
+>>>>>>> d1ca0ac5b28a8a4f1d74be78a8392f5d1f979c69
   }
 }
