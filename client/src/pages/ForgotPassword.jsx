@@ -1,26 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 import style from "./Login.module.css";
-
 import { Link, useNavigate } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 
 function ForgotPassword({ setAuth }) {
   const navigate = useNavigate();
-
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
     confirmPassword: "",
   });
+  const [loading, setLoading] = useState(false); // Loading state
   const { email, password, confirmPassword } = inputs;
+
   const onChange = (e) =>
     setInputs({ ...inputs, [e.target.name]: e.target.value });
 
   const onSubmitForm = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      alert("Password does not match");
+      toast.error("Passwords do not match.");
       return;
     }
+
+    setLoading(true); // Start loading
+
     try {
       const body = { email, newPassword: password };
       const response = await fetch(
@@ -39,10 +44,13 @@ function ForgotPassword({ setAuth }) {
       }
 
       const parseRes = await response.json();
-      alert("Password reset successful!");
+      toast.success("Password reset successful!");
       navigate("/login");
     } catch (error) {
       console.error(error.message);
+      toast.error("An error occurred. Please try again.");
+    } finally {
+      setLoading(false); // Stop loading
     }
   };
 
@@ -71,7 +79,7 @@ function ForgotPassword({ setAuth }) {
                 required
               />
               <br />
-              <label className={style.label}>Password</label>
+              <label className={style.label}>New Password</label>
               <br />
               <input
                 className={style.input}
@@ -95,8 +103,12 @@ function ForgotPassword({ setAuth }) {
                 required
               />
               <br />
-              <button className={style.createAccount} type="submit">
-                Change Password
+              <button
+                className={style.createAccount}
+                type="submit"
+                disabled={loading}
+              >
+                {loading ? "Resetting..." : "Change Password"}
               </button>
             </form>
             <p>
@@ -106,7 +118,9 @@ function ForgotPassword({ setAuth }) {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 }
+
 export default ForgotPassword;

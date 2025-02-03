@@ -9,13 +9,18 @@ function Login({ setAuth }) {
     email: "",
     password: "",
   });
+  const [loading, setLoading] = useState(false); // Loading state
+  const [showPassword, setShowPassword] = useState(false); // Toggle password visibility
   const { email, password } = inputs;
+  const navigate = useNavigate();
 
   const onChange = (e) =>
     setInputs({ ...inputs, [e.target.name]: e.target.value });
 
   const onSubmitForm = async (e) => {
     e.preventDefault();
+    setLoading(true); // Start loading
+
     try {
       const body = { email, password };
       const response = await fetch("http://localhost:8000/auth/login", {
@@ -26,19 +31,21 @@ function Login({ setAuth }) {
 
       const parseRes = await response.json();
 
-      // Ensure token is saved in localStorage
       if (parseRes.jwtToken) {
         localStorage.setItem("email", email);
         localStorage.setItem("token", parseRes.jwtToken);
         setAuth(true);
-
         toast.success("Logged in Successfully");
+        navigate("/home"); // Redirect to home after login
       } else {
         setAuth(false);
-        toast.error(parseRes);
+        toast.error(parseRes.error || "Login failed. Please try again.");
       }
     } catch (err) {
       console.error(err.message);
+      toast.error("An error occurred. Please try again.");
+    } finally {
+      setLoading(false); // Stop loading
     }
   };
 
@@ -63,27 +70,40 @@ function Login({ setAuth }) {
                 placeholder="Your Email Address"
                 name="email"
                 value={email}
-                onChange={(e) => onChange(e)}
+                onChange={onChange}
                 required
               />
               <br />
               <label className={style.label}>Password</label>
               <br />
-              <input
-                className={style.input}
-                type="password"
-                placeholder="Password"
-                name="password"
-                value={password}
-                onChange={(e) => onChange(e)}
-                required
-              />
+              <div className={style.passwordContainer}>
+                <input
+                  className={style.input}
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  name="password"
+                  value={password}
+                  onChange={onChange}
+                  required
+                />
+                <button
+                  type="button"
+                  className={style.togglePassword}
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? "Hide" : "Show"}
+                </button>
+              </div>
               <br />
               <Link className={style.forgotPassword} to="/ForgotPassword">
-                Forgot password{" "}
+                Forgot password?
               </Link>
-              <button className={style.createAccount} type="submit">
-                Login
+              <button
+                className={style.createAccount}
+                type="submit"
+                disabled={loading}
+              >
+                {loading ? "Logging in..." : "Login"}
               </button>
             </form>
             <p>
@@ -93,7 +113,9 @@ function Login({ setAuth }) {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 }
+
 export default Login;

@@ -661,3 +661,19 @@ body {
     font-size: 12px;
   }
 } */
+
+/* Existing CSS code... */
+/* Hide Post and Notification buttons only on mobile screens */
+@media (max-width: 768px) {
+
+  #post-button,
+  .notification-button {
+    display: none;
+  }
+
+  /* Adjust the profile button position to fill the space */
+  #profile {
+    right: 20px;
+    /* Move profile button closer to the edge */
+  }
+}

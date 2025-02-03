@@ -171,8 +171,8 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
 
         <button
           id="popularButton"
-          className={activePage === "group" ? "active" : ""}
-          onClick={() => handleNavigation("group")}
+          className={activePage === "guthi" ? "active" : ""}
+          onClick={() => handleNavigation("guthi")}
         >
           <img
             src="./src/assets/popularbutton.svg"

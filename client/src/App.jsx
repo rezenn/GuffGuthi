@@ -12,6 +12,7 @@ import ViewProfile from "./pages/ViewProfilePage";
 import Home from "./pages/Home";
 import EditProfile from "./pages/EditProfilePage";
 import CreatePost from "./pages/CreatePost";
+import Creategroup from "./components/CreateGroup/Creategroup";
 import PostRequest from "./pages/PostRequest";
 import CommunityServices from "./pages/CommunityServicesPage";
 import Settings from "./pages/Settings";
@@ -88,7 +89,7 @@ function App() {
               !isAuthenticated ? (
                 <Register setAuth={setAuth} />
               ) : (
-                <Navigate to="/home" />
+                <Navigate to="/login" />
               )
             }
           />
@@ -99,7 +100,7 @@ function App() {
               !isAuthenticated ? (
                 <ForgotPassword setAuth={setAuth} />
               ) : (
-                <Navigate to="/home" />
+                <Navigate to="/login" />
               )
             }
           />
@@ -116,7 +117,7 @@ function App() {
           />
 
           <Route
-            path="/group"
+            path="/guthi"
             element={
               isAuthenticated ? (
                 <Group setAuth={setAuth} />
@@ -217,6 +218,16 @@ function App() {
             element={
               isAuthenticated ? (
                 <GuthiyarPage setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/createGroup"
+            element={
+              isAuthenticated ? (
+                <Creategroup setAuth={setAuth} />
               ) : (
                 <Navigate to="/login" />
               )

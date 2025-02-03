@@ -11,11 +11,7 @@ const Group = () => {
   };
   return (
     <>
-      <Navbar
-        className="Navbar"
-        activePage="guthiyar"
-        setActivePage={() => {}}
-      />
+      <Navbar className="Navbar" activePage="guthi" setActivePage={() => {}} />
       <div className="groups-container">
         <div className="groups-grid-container">
           <div className="groups-grid-container">
