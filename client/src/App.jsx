@@ -14,6 +14,7 @@ import Settings from "./pages/Settings";
 import Group from "./components/Group";
 import GroupFeedPage from "./pages/GroupFeedPage";
 import { QueryClient, QueryClientProvider } from 'react-query';
+import Creategroup from "./components/CreateGroup/Creategroup";
 
 function App() {
   const [activePage, setActivePage] = useState("home");
@@ -136,6 +137,15 @@ function App() {
             ) : (
               <Navigate to="/login" />
             )} />
+
+
+          <Route path="/createGroup" element={
+            isAuthenticated ? (
+              <Creategroup setAuth={setAuth} />
+            ) : (
+              <Navigate to="/login" />
+            )} />
+            
         </Routes>
       </Router>
     </QueryClientProvider>
