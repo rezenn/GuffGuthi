@@ -1,0 +1,9 @@
+.container {
+    height: 550px;
+    display: grid;
+    grid-template-columns: 360px auto;
+}
+
+/* .messageContainer {
+    width: 500px;
+} */

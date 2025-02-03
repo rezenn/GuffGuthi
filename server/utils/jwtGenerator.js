@@ -10,7 +10,7 @@ function jwtGenerator(user_id) {
 
     };
 
-    return jwt.sign(payLoad, process.env.SECRET, { expiresIn: "1hr" });
+    return jwt.sign(payLoad, process.env.SECRET, { expiresIn: "24hr" });
 }
 
 export default jwtGenerator;
