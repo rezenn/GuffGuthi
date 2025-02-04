@@ -12,6 +12,7 @@ function Chat() {
       <div className={styles.container}>
         <Sidebar className={styles.sidebar} />
         <MessageContainer className={styles.messageContainer} />
+        <div></div>
       </div>
     </>
   );
