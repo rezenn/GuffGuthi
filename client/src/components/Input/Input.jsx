@@ -17,7 +17,11 @@ function Input({ message, setMessage, sendMessage }) {
           }
         />
         <button className="sendButton" onClick={(e) => sendMessage(e)}>
-          Send
+          <img
+            className="sendIcon"
+            src="./src/assets/paper-plane.png"
+            alt="send"
+          />
         </button>
       </form>
     </>

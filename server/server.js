@@ -40,13 +40,13 @@ io.on("connection", (socket) => {
         socket.join(user.room);
       
         socket.emit("message", {
-          user: "admin",
+          user: " ",
           text: `${user.name}, welcome to the room ${room}.`,
         });
       
         socket.broadcast
           .to(user.room)
-          .emit("message", { user: "admin", text: `${user.name} has joined the room.` });
+          .emit("message", { user: " ", text: `${user.name} has joined the room.` });
       
         io.to(user.room).emit("roomData", {
           room: user.room,
@@ -72,7 +72,7 @@ io.on("connection", (socket) => {
 
         if (user) {
             io.to(user.room).emit("message", {
-                user: "admin",
+                user: " ",
                 text: `${user.name} has left the room.`,
             });
 

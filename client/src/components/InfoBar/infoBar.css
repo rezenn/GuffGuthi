@@ -2,9 +2,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #2979FF;
-    border-radius: 4px 4px 0 0;
-    height: 60px;
+    background: #FF4500;
+    border-radius: 20px 20px 0 0;
+    min-height: 50px;
+    max-height: 50px;
     width: 100%;
 }
 
@@ -31,5 +32,5 @@
 
 .img {
     width: 10px;
-    height: 2px;
+    height: 10px;
 }

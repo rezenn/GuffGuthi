@@ -1,8 +1,8 @@
 .messages {
-    padding: 5% 0;
-    width: 600px;
-    max-height: 600px;
-    /* Ensures the container doesn't stretch beyond 600px */
-    overflow-y: auto;
-    /* Scrolls only if content exceeds max-height */
+    padding: 0;
+    width: 845px;
+    min-height: 550px;
+    max-height: 550px;
+    background-color: #fff;
+    border: 1px solid #ccc;
 }

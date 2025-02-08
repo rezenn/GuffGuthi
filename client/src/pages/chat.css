@@ -2,17 +2,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 450px);
 }
 
 .container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: #FFFFFF;
     border-radius: 8px;
     height: 60%;
-    width: 35%;
+    width: 55%;
+}
+
+.Users {
+    min-width: 250px;
+    max-width: 250px;
+    border-radius: 0 20px 20px 0;
+}
+
+.userTitle {
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+.userList {
+    margin-top: 5px;
+    margin-left: 20px;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {

@@ -7,15 +7,15 @@ function Join() {
   const [room, setRoom] = useState("");
   return (
     <>
-      <Navbar activePage="chat" setActivePage={() => {}} />
+      <Navbar activePage="join" setActivePage={() => {}} />
 
       <div className="joinOuterContainer">
         <div className="joinInnerContainer">
-          <h1 className="heading">Join</h1>
+          <h1 className="heading">Join a Room</h1>
           <div>
             <input
               type="text"
-              placeholder="Username"
+              placeholder="Enter a username"
               className="joinInput"
               onChange={(event) => setName(event.target.value)}
             />
@@ -23,7 +23,7 @@ function Join() {
           <div>
             <input
               type="text"
-              placeholder="Room"
+              placeholder="Enter a room name"
               className="joinInput mt-20"
               onChange={(event) => setRoom(event.target.value)}
             />
@@ -37,7 +37,7 @@ function Join() {
             )}&room=${encodeURIComponent(room)}`}
           >
             <button className="button mt-20" type="submit">
-              Sign In
+              Enter the room
             </button>
           </Link>
         </div>

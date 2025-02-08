@@ -66,7 +66,7 @@ function Chat() {
   }, []);
   return (
     <>
-      <Navbar activePage="chat" setActivePage={() => {}} />
+      <Navbar activePage="join" setActivePage={() => {}} />
 
       <div className="outerContainer">
         <div className="container">
@@ -80,11 +80,21 @@ function Chat() {
         </div>
 
         {/* Users list */}
-        <div>
-          <h3>Users in Room:</h3>
-          {users.map((user) => (
-            <p key={user.id}>{user.name}</p>
-          ))}
+        <div className="Users">
+          <h3 className="userTitle">Users in Room</h3>
+          <div className="userList">
+            {users.map((user) => (
+              <>
+                <img
+                  className="onlineIcon"
+                  src="./src/assets/onlineIcon.png"
+                  alt="online icon"
+                />
+                <span key={user.id}>{user.name}</span>
+                <br />
+              </>
+            ))}
+          </div>
         </div>
       </div>
     </>

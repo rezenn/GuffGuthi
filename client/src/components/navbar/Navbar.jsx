@@ -235,7 +235,7 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
             alt="chats Icon"
             className="chat_icon"
           />
-          Chat
+          Chat Room
         </button>
 
         <button
