@@ -9,6 +9,11 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
   const [name, setName] = useState(""); // User name state
   const navigate = useNavigate();
 
+  function getYear() {
+    const today = new Date();
+    const year = today.getFullYear();
+    return year;
+  }
   // Fetch user data (profile image)
   useEffect(() => {
     const loggedInEmail = localStorage.getItem("email");
@@ -222,8 +227,8 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
 
         <button
           id="chatButton"
-          className={activePage === "chat" ? "active" : ""}
-          onClick={() => handleNavigation("chat")}
+          className={activePage === "join" ? "active" : ""}
+          onClick={() => handleNavigation("join")}
         >
           <img
             src="./src/assets/chats.svg"
@@ -275,6 +280,9 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
           />
           About
         </button>
+        <span className="copyRight">
+          GuffGuthi© {new Date().getFullYear()}, All rights reserved
+        </span>
       </div>
     </>
   );

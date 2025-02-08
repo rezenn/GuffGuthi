@@ -1,8 +1,8 @@
-import express from "express";
-import { /* functions from commentController */ } from "../controllers/commentController.js";
+// import express from "express";
+// import { /* functions from commentController */ } from "../controllers/commentController.js";
 
-const router = express.Router();
+// const router = express.Router();
 
-router.get("",);
+// router.get("",);
 
-export default router;
+// export default router;

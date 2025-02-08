@@ -22,6 +22,130 @@
     margin: 0 600px;
 }
 
+
+#login .logo {
+    align-items: start;
+    width: 175px;
+    height: 81px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#login {
+    background-color: #fff;
+    border-radius: 20px;
+    padding-bottom: 51px;
+    padding-right: 55px;
+    z-index: 1000;
+}
+
+#login h2 {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 1.5rem;
+    width: 485px;
+    padding-left: 95px;
+    padding-top: 20px;
+}
+
+form {
+    margin-top: 40px;
+    font-family: Poppins;
+    color: #7C838A;
+    font-size: 1.5rem;
+    padding: 0;
+}
+
+.label {
+    margin-top: 70px;
+}
+
+.passwordContainer {
+    position: relative;
+    margin: 0;
+}
+
+.input {
+    width: 500px;
+    height: 65px;
+    border-radius: 20px;
+    background-color: rgba(176, 186, 195, 0.414);
+    border: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    padding-right: 40px;
+    margin-bottom: 10px;
+}
+
+.togglePassword {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+.togglePassword:hover {
+    background-color: transparent;
+}
+
+.eyeIcon {
+    width: 24px;
+    height: auto;
+}
+
+.createAccount {
+    font-family: Poppins;
+    font-size: 2rem;
+    width: 340px;
+    height: 60px;
+    background-color: #FF4500;
+    border-radius: 20px;
+    color: #fff;
+    border: none;
+    margin-top: 15px;
+    margin-left: 83px;
+    margin-bottom: 20px;
+}
+
+.createAccount {
+    background-color: #ff3300b6;
+}
+
+#login p {
+    font-family: Poppins;
+    font-size: 1.1rem;
+    color: #7C838A;
+    padding-left: 35px;
+}
+
+#login a {
+    color: #FF4500;
+    text-decoration: none;
+    font-family: Poppins;
+    font-size: 1.1rem;
+}
+
+#login .forgotPassword {
+    color: #FF4500;
+    text-decoration: none;
+    font-family: Poppins;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 0px;
+    padding-left: 320px;
+    display: block;
+}
+
+#login a:hover,
+#login .forgotPassword:hover {
+    color: #ff3300b6;
+}
+
+
+
 /* Mobile and Tablet responsiveness */
 @media (max-width: 768px) {
     #regLog {
@@ -110,99 +234,4 @@
         font-size: 1rem;
         padding-left: 0;
     }
-}
-
-#login .logo {
-    align-items: start;
-    width: 175px;
-    height: 81px;
-    margin-top: 20px;
-    border-radius: 10px;
-}
-
-#login {
-    background-color: #fff;
-    border-radius: 20px;
-    padding-bottom: 51px;
-    padding-right: 55px;
-    z-index: 1000;
-}
-
-#login h2 {
-    font-family: Poppins;
-    font-weight: 500;
-    font-size: 1.5rem;
-    width: 485px;
-    padding-left: 95px;
-    padding-top: 20px;
-}
-
-form {
-    margin-top: 40px;
-    font-family: Poppins;
-    color: #7C838A;
-    font-size: 1.5rem;
-    padding: 0;
-}
-
-.label {
-    margin-top: 70px;
-}
-
-.input {
-    width: 500px;
-    height: 65px;
-    border-radius: 20px;
-    background-color: rgba(176, 186, 195, 0.414);
-    border: none;
-    font-size: 1.2rem;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-.createAccount {
-    font-family: Poppins;
-    font-size: 2rem;
-    width: 340px;
-    height: 60px;
-    background-color: #FF4500;
-    border-radius: 20px;
-    color: #fff;
-    border: none;
-    margin-top: 15px;
-    margin-left: 83px;
-    margin-bottom: 20px;
-}
-
-.createAccount {
-    background-color: #ff3300b6;
-}
-
-#login p {
-    font-family: Poppins;
-    font-size: 1.1rem;
-    color: #7C838A;
-    padding-left: 35px;
-}
-
-#login a {
-    color: #FF4500;
-    text-decoration: none;
-    font-family: Poppins;
-    font-size: 1.1rem;
-}
-
-#login .forgotPassword {
-    color: #FF4500;
-    text-decoration: none;
-    font-family: Poppins;
-    font-size: 1.1rem;
-    cursor: pointer;
-    margin: 10px;
-    padding-left: 330px;
-}
-
-#login a:hover,
-#login .forgotPassword:hover {
-    color: #ff3300b6;
 }
