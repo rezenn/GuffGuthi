@@ -11,7 +11,7 @@ import homeRoutes from "./routes/homeRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import postRoutes from "./routes/postRoutes.js";
 // import likeRoutes from "./routes/likeRoutes.js";
-// import commentRoutes from "./routes/commentRoutes.js";
+import commentRoutes from "./routes/commentRoutes.js";
 import searchRoute from "./routes/searchRoutes.js";
 
 import { addUser, getUser, removeUser, getUsersInRoom } from "./User.js";
@@ -104,7 +104,7 @@ app.use("/home", homeRoutes);
 app.use("/user", userRoutes);
 app.use("/post", postRoutes);
 // app.use("/like", likeRoutes);
-// app.use("/comment", commentRoutes);
+app.use("/comment", commentRoutes);
 app.use("/search", searchRoute);
 
 // Centralized error handling
