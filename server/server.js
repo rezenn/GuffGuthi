@@ -13,6 +13,7 @@ import postRoutes from "./routes/postRoutes.js";
 // import likeRoutes from "./routes/likeRoutes.js";
 import commentRoutes from "./routes/commentRoutes.js";
 import searchRoute from "./routes/searchRoutes.js";
+import groupRoute from "./routes/groupRoutes.js";
 
 import { addUser, getUser, removeUser, getUsersInRoom } from "./User.js";
 
@@ -106,6 +107,7 @@ app.use("/post", postRoutes);
 // app.use("/like", likeRoutes);
 app.use("/comment", commentRoutes);
 app.use("/search", searchRoute);
+app.use("/group", groupRoute);
 
 // Centralized error handling
 app.use((err, req, res, next) => {

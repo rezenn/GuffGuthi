@@ -1,7 +1,6 @@
 import User from "../model/User.js";
 
 const userController = {
-    // Get user profile (without password)
     async getProfile(req, res) {
         try {
             const { email } = req.params;
@@ -19,13 +18,11 @@ const userController = {
     },
 
 
-    // Update user profile (all fields in a single request)
     async updateProfile(req, res) {
         try {
             const { email } = req.params;
             const { user_name, bio, occupation, location } = req.body;
     
-            // Check if new files are provided, otherwise set to null
             const profilePic = req.files?.profilePic ? `/uploads/profiles/${req.files.profilePic[0].filename}` : null;
             const coverPhoto = req.files?.coverPhoto ? `/uploads/profiles/${req.files.coverPhoto[0].filename}` : null;
     

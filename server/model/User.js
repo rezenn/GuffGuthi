@@ -31,7 +31,6 @@ class User {
     }
 
     static async updateProfile({ user_name, bio, occupation, location, profilePic, coverPic, email }) {
-        // Fetch the current user data to get the existing image URLs
         const currentUser = await pool.query(
             "SELECT profilePic, coverPic FROM users WHERE user_email = $1",
             [email]

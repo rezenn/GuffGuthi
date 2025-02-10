@@ -156,7 +156,7 @@ function EditProfile() {
                   ? `http://localhost:8000${profileImage}`
                   : "./src/assets/profile.jpg"
               }
-              alt="Profile"
+              alt="User Profile"
             />
             <button
               type="button"
