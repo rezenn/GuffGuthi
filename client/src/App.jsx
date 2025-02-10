@@ -12,12 +12,15 @@ import ViewProfile from "./pages/ViewProfilePage";
 import Home from "./pages/Home";
 import EditProfile from "./pages/EditProfilePage";
 import CreatePost from "./pages/CreatePost";
-import PostRequest from "./pages/PostRequest/PostRequest";
+import Creategroup from "./components/CreateGroup/Creategroup";
+import PostRequest from "./pages/PostRequest";
 import CommunityServices from "./pages/CommunityServicesPage";
 import Settings from "./pages/Settings";
 import Group from "./components/Group";
 import GroupFeedPage from "./pages/GroupFeedPage";
 import { QueryClient, QueryClientProvider } from "react-query";
+import GuthiyarPage from "./pages/GuthiyarPage";
+import Chat from "./pages/Chat";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
@@ -86,7 +89,7 @@ function App() {
               !isAuthenticated ? (
                 <Register setAuth={setAuth} />
               ) : (
-                <Navigate to="/home" />
+                <Navigate to="/login" />
               )
             }
           />
@@ -97,7 +100,7 @@ function App() {
               !isAuthenticated ? (
                 <ForgotPassword setAuth={setAuth} />
               ) : (
-                <Navigate to="/home" />
+                <Navigate to="/login" />
               )
             }
           />
@@ -114,7 +117,7 @@ function App() {
           />
 
           <Route
-            path="/group"
+            path="/guthi"
             element={
               isAuthenticated ? (
                 <Group setAuth={setAuth} />
@@ -195,6 +198,36 @@ function App() {
             element={
               isAuthenticated ? (
                 <Settings setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/chat"
+            element={
+              isAuthenticated ? (
+                <Chat setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/guthiyar"
+            element={
+              isAuthenticated ? (
+                <GuthiyarPage setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/createGroup"
+            element={
+              isAuthenticated ? (
+                <Creategroup setAuth={setAuth} />
               ) : (
                 <Navigate to="/login" />
               )

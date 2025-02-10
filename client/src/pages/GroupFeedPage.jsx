@@ -9,7 +9,7 @@ import styles from "./GroupFeedPage.module.css"; // Ensure the correct CSS impor
 function GroupFeedPage() {
   return (
     <>
-      <Navbar activePage="group" setActivePage={() => {}} />
+      <Navbar activePage="guthi" setActivePage={() => {}} />
       <div className={styles.container}>
         <div className={styles.coverImg}>
           <CoverImage />

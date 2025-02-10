@@ -289,6 +289,35 @@ body {
   Left: 16px;
 }
 
+/* create group button */
+#GuthiyarButton {
+  /*background-color: lightpink; /* Customize Chat button */
+  font-family: 'Roboto';
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  padding-top: 15px;
+  font-size: 14px;
+  border: none;
+  font-weight: bold;
+  height: 48px;
+  margin-top: -10px;
+
+}
+
+#GuthiyarButton:hover {
+  color: #FF4500;
+}
+
+.guthiyar_icon {
+  align-items: center;
+  Width: 24px;
+  Height: 17px;
+  Top: 12px;
+  Left: 16px;
+}
+
 
 /* settings button */
 #settingsButton {
@@ -372,7 +401,7 @@ body {
 
 
 .search-container {
-  width: 1279px;
+  width: 1280px;
   height: 82px;
   margin-left: 256px;
   margin-top: 0px;
@@ -381,7 +410,7 @@ body {
   z-index: 100;
   background-color: white;
   border-bottom: 1px solid hsla(0, 0%, 20%, 0.29);
-  box-shadow: 5px 5px 5px rgba(128, 128, 128, 12);
+  box-shadow: 5px 5px 5px #aaaaaa82;
   display: flex;
   justify-content: center;
   padding: 10px 0;
@@ -529,12 +558,11 @@ body {
   border: none;
   display: flex;
   align-items: center;
-  /* gap: 35px; */
   position: absolute;
   right: 50px;
-  /* Adjust to position relative to the white box */
   top: 370px;
-  /* Center vertically */
+  border: 1px solid #82818168;
+  padding: 2px;
   transform: translateY(-350px);
   border-radius: 50%;
 
@@ -565,7 +593,8 @@ body {
   cursor: pointer;
 }
 
-/* Show sidebar-toggle on small screens */
+/* 
+
 @media (max-width: 768px) {
   .sidebar-toggle {
     display: block;
@@ -583,11 +612,10 @@ body {
   }
 
   .main-content {
-    margin-left: 0; /* No sidebar space */
+    margin-left: 0;
   }
 }
 
-/* Sidebar adjustments */
 .navbar {
   width: 250px;
   height: 100%;
@@ -598,19 +626,17 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* Sidebar logo styling */
 .navbar-logo img {
   width: 150px;
   margin: 20px auto;
 }
 
-/* Adjust sidebar for smaller screens */
 @media (max-width: 768px) {
   .navbar {
     width: 200px;
   }
 }
-/* Adjust search container for smaller screens */
+
 @media (max-width: 768px) {
   .search-container {
     width: 100%;
@@ -633,5 +659,21 @@ body {
 
   .search-input {
     font-size: 12px;
+  }
+} */
+
+/* Existing CSS code... */
+/* Hide Post and Notification buttons only on mobile screens */
+@media (max-width: 768px) {
+
+  #post-button,
+  .notification-button {
+    display: none;
+  }
+
+  /* Adjust the profile button position to fill the space */
+  #profile {
+    right: 20px;
+    /* Move profile button closer to the edge */
   }
 }

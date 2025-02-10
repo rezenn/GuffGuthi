@@ -1,0 +1,52 @@
+.container {
+    width: 500px;
+}
+
+.user {
+    padding: 10px 0 0px 5px;
+    display: grid;
+    grid-template-columns: 100px 300px 100px;
+    border: 1px solid #333;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+
+}
+
+.profileImg {
+    width: 75px;
+    height: auto;
+    margin: 1rem;
+    padding: 2px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.infoContainer {
+    margin: 10px;
+}
+
+#occupation,
+#location {
+    font-size: 1rem;
+}
+
+#username {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.followBtn {
+    margin: 10px 0 10px 70px;
+    padding: 20px 10px;
+}
+
+.follow {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #FF4500;
+    color: #fff;
+    font: 1em sans-serif;
+
+}

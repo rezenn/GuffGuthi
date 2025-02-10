@@ -1,0 +1,77 @@
+/* Chat container */
+.chat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+/* Avatar image container */
+.chat_image.avatar {
+    margin-bottom: 0.5rem;
+}
+
+.avatar_image {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.avatar_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profileMessage {
+    display: grid;
+    grid-template-columns: 10px auto;
+}
+
+/* Chat bubble */
+.chat_bubble {
+    max-width: 250px;
+    padding: 0.5rem;
+    border-radius: 0 0.75rem 0.75rem 0.75rem;
+    margin: 1rem 0 0.25rem 2.5rem;
+    background-color: #ccc;
+    color: #000;
+}
+
+/* Shake animation */
+.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Chat footer */
+.chat_footer {
+    margin-left: 17rem;
+    opacity: 0.5;
+    font-size: 0.75rem;
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+}

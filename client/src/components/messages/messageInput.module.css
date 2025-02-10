@@ -1,0 +1,49 @@
+/* Form styling */
+.message_form {
+    padding: 0.3rem 0.3rem;
+    margin: 0rem 0 0 0;
+}
+
+/* Input container */
+.input_container {
+    width: 100%;
+    position: relative;
+}
+
+/* Input field styling */
+.message_input {
+    width: 92%;
+    margin-left: 5px;
+    padding: 0.625rem;
+    border: 1px solid #ccc;
+    border-radius: 50% 0 0 50%;
+    background-color: #fff;
+    font-size: 0.875rem;
+    border-radius: 15px;
+}
+
+/* Send button styling */
+.send_button {
+    position: absolute;
+    top: 50%;
+    right: 0rem;
+    transform: translateY(-50%);
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 40%;
+    width: 40px;
+    padding: 7px 3px 3px 2px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hover effect for the button */
+.send_button:hover {
+    color: #d1d5db;
+    /* Light gray for hover effect */
+}
+
+.send_button img {
+    width: 25px;
+    height: 25px;
+}

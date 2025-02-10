@@ -10,6 +10,7 @@ import Post from "../components/postINhome/Post";
 import "./homePage.css";
 
 function Home({ setAuth }) {
+  const noPost = false;
   const [name, setName] = useState("");
 
   async function getName() {
@@ -39,11 +40,22 @@ function Home({ setAuth }) {
     <>
       <Navbar className="Navbar" activePage="home" setActivePage={() => {}} />
       <h1 className="title">Find something interesting to discuss </h1>
-      <Post />
 
+      {noPost ? <NoPost /> : <Post />}
       {/* <Chat/> */}
     </>
   );
 }
 
 export default Home;
+
+function NoPost() {
+  return (
+    <div className="noPost">
+      <p>
+        {" "}
+        No post found at the moment, follow your friends to see their post.
+      </p>
+    </div>
+  );
+}

@@ -1,109 +1,98 @@
-body {
-
-  }
-  
-  .container {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr;
-    position: absolute;
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  position: absolute;
 }
 
 .coverImg {
-    margin: 83px 0 0 256px;
-    grid-row: 1;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    position: absolute;
-    background-size: cover;
+  margin: 83px 0 0 256px;
+  grid-row: 1;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-size: cover;
 
 }
-  
-  .profile {
-    position: relative;
-    margin: 105px 0 0 1100px;
-    padding-top: 550px;
-    z-index: 2;
-    display: block;
-  }
-  
-  .viewPost {
-    margin: 50px 0 0 270px;
-    margin-left: -40px;
-    margin-top: 190px;
-    
-  }
-  
-  .GroupProfile {
-    display: flex;
-    width: 1210px;
-    height: 200px;
-    align-items: center;
-    justify-content: flex-start; 
-    position: relative;
-    top: 530px;
-    left: 280px;
-    padding: 20px;
-    border-radius: 10px;
-    /* background-color: #f9f9f9;  */
-    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
-  }
-  
-  .GroupProfile img {
-    width: 170px;
-    height: auto;
-    border-radius: 70%;
-    margin-right: 1.5in; /* Space between image and heading */
-  }
-  
-  .GroupProfile h2 {
-    font-size: 28px;
-    position: absolute;
-    left: 250px;
-  
-    
 
-  }
-  
-  .GroupProfile button {
-    position: absolute;
-   right: 50px;
-    font-family: "Afacad", serif;
-    font-size: 1.3rem;
-    line-height: 1.5;
-    background-color: #ff4500;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-  }
-  
-  .GroupProfile button:hover {
-    background-color: #e63900;
-  }
+.profile {
+  position: relative;
+  margin: 105px 0 0 1100px;
+  padding-top: 550px;
+  z-index: 2;
+  display: block;
+}
+
+.viewPost {
+  margin: 50px 0 0 270px;
+  margin-left: -40px;
+  margin-top: 190px;
+
+}
+
+.GroupProfile {
+  display: flex;
+  width: 1210px;
+  height: 200px;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  top: 530px;
+  left: 280px;
+  padding: 20px;
+  border-radius: 10px;
+  /* background-color: #f9f9f9;  */
+  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.GroupProfile img {
+  width: 170px;
+  height: auto;
+  border-radius: 70%;
+  margin-right: 1.5in;
+  /* Space between image and heading */
+}
+
+.GroupProfile h2 {
+  font-size: 28px;
+  position: absolute;
+  left: 250px;
 
 
-  .GroupBio{
-    display: flex;
-    width: 250px;
-    height: 350px;
-    position: relative;
-    top: 580px;
-    left: 1150px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #f9f9f9; 
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
+
+}
+
+.GroupProfile button {
+  position: absolute;
+  right: 50px;
+  font-family: "Afacad", serif;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  background-color: #ff4500;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.GroupProfile button:hover {
+  background-color: #ff3300b6;
+}
 
 
-  
-  
-  .GroupBio h3{
-    /* padding-top: 200px; */
-    /* padding-right: 100px; */
-  }
+.GroupBio {
+  display: flex;
+  width: 250px;
+  height: 350px;
+  position: relative;
+  top: 580px;
+  left: 1150px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}

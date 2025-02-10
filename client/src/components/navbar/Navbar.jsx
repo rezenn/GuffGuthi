@@ -1,43 +1,92 @@
 import React, { useState, useEffect } from "react";
-import "./navbar.css";
 import { useNavigate } from "react-router-dom";
+import "./navbar.css";
 
 const Navbar = ({ activePage, setActivePage, setAuth }) => {
+  const [profileImage, setProfileImage] = useState(""); // URL for display
+  const [isFetching, setIsFetching] = useState(true);
+  const [error, setError] = useState(""); // Error state
+  const [name, setName] = useState(""); // User name state
   const navigate = useNavigate();
 
+  // Fetch user data (profile image)
+  useEffect(() => {
+    const loggedInEmail = localStorage.getItem("email");
+    const token = localStorage.getItem("token");
+
+    if (!loggedInEmail || !token) {
+      alert("No logged-in user found.");
+      setIsFetching(false);
+      return;
+    }
+
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:8000/user/${loggedInEmail}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch user info");
+        }
+        const userData = await response.json();
+        setProfileImage(userData.profilepic || ""); // Ensure the key matches the API response
+      } catch (error) {
+        console.error(error.message);
+        setError("Failed to fetch user data. Please try again.");
+      } finally {
+        setIsFetching(false);
+      }
+    };
+    fetchUserData();
+  }, []);
+
+  // Fetch user name
+  useEffect(() => {
+    const getName = async () => {
+      try {
+        const token = localStorage.getItem("token"); // Ensure token exists
+        if (!token) {
+          throw new Error("No token found");
+        }
+
+        const response = await fetch("http://localhost:8000/home", {
+          method: "GET",
+          headers: { token },
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch user name");
+        }
+
+        const parseRes = await response.json();
+        setName(parseRes.user_name); // Expecting { user_name: 'Name' }
+      } catch (err) {
+        console.error(err.message);
+      }
+    };
+
+    getName();
+  }, []);
+
+  // Handle navigation
   const handleNavigation = (page) => {
     setActivePage(page); // Update active page state
     navigate(`/${page}`); // Navigate to the route
   };
 
-  const [name, setName] = useState("");
-
-  async function getName() {
-    try {
-      const token = localStorage.getItem("token"); // Ensure token exists
-      if (!token) {
-        throw new Error("No token found");
-      }
-
-      const response = await fetch("http://localhost:8000/home/", {
-        method: "GET",
-        headers: { token },
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch user name");
-      }
-
-      const parseRes = await response.json();
-      setName(parseRes.user_name); // Expecting { user_name: 'Name' }
-    } catch (err) {
-      console.error(err.message);
-    }
+  if (isFetching) {
+    return <p>Loading...</p>; // Loading indicator
   }
 
-  useEffect(() => {
-    getName();
-  }, []);
+  if (error) {
+    return <p style={{ color: "red" }}>{error}</p>; // Error message
+  }
 
   return (
     <>
@@ -85,7 +134,11 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
             onClick={() => handleNavigation("viewProfile")}
           >
             <img
-              src="./src/assets/profile.jpg"
+              src={
+                profileImage
+                  ? `http://localhost:8000${profileImage}`
+                  : "./src/assets/profile.jpg"
+              }
               alt="profile"
               className="profile"
             />
@@ -118,15 +171,27 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
 
         <button
           id="popularButton"
-          className={activePage === "group" ? "active" : ""}
-          onClick={() => handleNavigation("group")}
+          className={activePage === "guthi" ? "active" : ""}
+          onClick={() => handleNavigation("guthi")}
         >
           <img
             src="./src/assets/popularbutton.svg"
             alt="Group Icon"
             className="Popular_icon"
           />
-          Group
+          Guthi
+        </button>
+        <button
+          id="GuthiyarButton"
+          className={activePage === "guthiyar" ? "active" : ""}
+          onClick={() => handleNavigation("guthiyar")}
+        >
+          <img
+            src="./src/assets/profile-2user.svg"
+            alt="guthiyar Icon"
+            className="guthiyar_icon"
+          />
+          Guthiyar
         </button>
 
         <button

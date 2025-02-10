@@ -6,17 +6,19 @@
     box-sizing: border-box;
 }
 
-section {
+.profileSection {
     position: absolute;
     margin: 10px;
+    margin-bottom: 20px;
     margin-right: 0px;
     border: 1px solid #504e4e;
     background-color: #ffffff;
     border-radius: 20px;
     width: 332px;
-    height: 541px;
+    height: 520px;
     box-shadow: 5px 8px 5px grey;
 }
+
 
 .profileImg {
     display: flex;
@@ -30,7 +32,8 @@ section {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 1px solid #000;
+    border: 1px solid #82818168;
+    padding: 3px;
 }
 
 .intro {
@@ -60,9 +63,10 @@ section {
 
 .locationBlock {
     display: grid;
-    grid-template-columns: 0.1fr 0.1fr;
-    margin-left: 80px;
+    grid-template-columns: 0.1fr 1fr;
+    margin-left: 90px;
     align-items: center;
+    width: fit-content;
 }
 
 .locationImg {
@@ -76,6 +80,7 @@ section {
     font-size: 15px;
     font-weight: 300;
     color: #504e4e;
+    width: fit-content;
 }
 
 .followShow {
