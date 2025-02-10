@@ -13,6 +13,7 @@
     "@tailwindcss/vite": "^4.0.3",
     "audit": "^0.0.6",
     "axios": "^1.7.9",
+    "date-fns": "^4.1.0",
     "dompurify": "^3.2.3",
     "fix": "^0.0.3",
     "moment": "^2.30.1",

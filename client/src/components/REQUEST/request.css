@@ -15,6 +15,8 @@
     flex-direction: column;
 }
 
+
+
 /* Dashboard Header */
 .dashboard-header {
     display: flex;
@@ -23,6 +25,19 @@
     padding: 10px 20px;
     border-bottom: 1px solid #ccc;
 }
+
+.dashboard-header h2 {
+    display: inline-block; /* Keeps it in one line */
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Prevents overflowing text */
+    text-overflow: ellipsis; /* Adds "..." if text is too long */
+    font-size: 22px; /* Adjust size */
+    font-weight: bold;
+    margin: 0; /* Prevents unwanted spacing */
+    text-align: center; /* Centers it */
+}
+
+
 
 /* Dashboard Title */
 .dashboard-title {
@@ -92,7 +107,10 @@
     font-family: 'Afacad', sans-serif;
     font-size: 24px;
     color: #333;
+    padding-bottom: 10px;
 }
+
+
 
 .post-details div {
     font-family: 'Roboto', sans-serif;
@@ -102,6 +120,7 @@
     /* Improves readability */
     white-space: pre-wrap;
     /* Ensures text wraps and respects line breaks */
+    padding-top: 20px;
 }
 
 /* Additional Styles (Optional) */
