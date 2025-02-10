@@ -54,6 +54,14 @@ class User {
         );
         return result.rows[0];
     }
+    static async getAllUsers() {
+        const result = await pool.query(
+            "SELECT user_id, user_name, profilePic FROM users"
+        );
+        return result.rows;
+    }
+    
+
 }
 
 

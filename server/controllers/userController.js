@@ -18,6 +18,7 @@ const userController = {
         }
     },
 
+
     // Update user profile (all fields in a single request)
     async updateProfile(req, res) {
         try {
@@ -51,6 +52,26 @@ const userController = {
             res.status(500).json({ error: "Failed to update profile" });
         }
     },
+    // controllers/userController.js
+    async userMessage(req, res) {
+        try {
+            console.log("Fetching all users...");
+            const users = await User.getAllUsers();
+    
+            if (!Array.isArray(users)) {
+                return res.status(500).json({ error: "Invalid data format: expected an array." });
+            }
+    
+            console.log("Users found:", users);
+            res.json(users);  // Ensure response is an array
+        } catch (error) {
+            console.error("Error fetching users:", error.message);
+            res.status(500).json({ error: "Failed to retrieve user info." });
+        }
+    }
+    
+    
+    
 };
 
 export default userController;

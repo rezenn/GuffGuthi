@@ -42,7 +42,7 @@ export const loginUser = async (req, res) => {
         }
 
         const jwtToken = jwtGenerator(user.user_id);
-        return res.json({ jwtToken });
+        return res.json({ jwtToken, user_id: user.user_id });
     } catch (err) {
         console.error(err.message);
         res.status(500).send("Server error");

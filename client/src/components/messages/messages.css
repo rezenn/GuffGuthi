@@ -1,15 +1,8 @@
-#msgContainer {
-    width: 100%;
-    height: 900px;
-}
-
 .messages {
-    width: 100%;
-    height: 545px;
-    display: flex;
-    flex-direction: column;
+    padding: 0;
+    width: 845px;
+    min-height: 550px;
+    max-height: 550px;
+    background-color: #fff;
     border: 1px solid #ccc;
-    padding: 10px;
-    box-sizing: border-box;
-    overflow: auto;
 }

@@ -5,7 +5,6 @@ import { toast, ToastContainer } from "react-toastify";
 import { useQuery } from "react-query";
 
 import Navbar from "../components/navbar/Navbar";
-import Chat from "../components/chatINhome/Chat";
 import Post from "../components/postINhome/Post";
 import "./homePage.css";
 

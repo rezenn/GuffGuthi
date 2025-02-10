@@ -31,7 +31,6 @@
     "react-quilljs": "^2.0.5",
     "server": "^1.0.41",
     "socket.io": "^4.8.1",
-    "password": "^0.1.1",
-    "pg": "^8.13.1"
+    "stream-chat": "^8.55.0"
   }
 }

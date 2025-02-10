@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Anta&family=Basic&family=Baumans&family=Doto:wght@100..900&family=Faculty+Glyphic&family=Marmelad&family=Merienda:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#root {
+    height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.joinOuterContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    align-items: center;
+}
+
+.joinInnerContainer {
+    width: 40%;
+    height: 60%;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.joinInput {
+    border-radius: 20px;
+    margin: 15px 0px;
+    height: 50px;
+    padding: 15px 20px;
+    width: 100%;
+}
+
+.heading {
+    color: #000;
+    font-size: 2.5em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+.button {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #FF4500;
+    font-family: "Anta", serif;
+    font-weight: 500;
+    padding: 20px;
+    border-radius: 20px;
+    display: inline-block;
+    border: none;
+    width: 100%;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .joinOuterContainer {
+        height: 100%;
+    }
+
+    .joinInnerContainer {
+        width: 90%;
+    }
+
+
+}
+
+button:focus {
+    outline: 0;
+}

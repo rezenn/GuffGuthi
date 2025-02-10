@@ -1,8 +1,10 @@
-import express from "express";
-import { /* functions from likeController */ } from "../controllers/likeController.js";
+// import express from "express";
+// import { likePost, getLikes } from "../controllers/likeController.js";
+// import authenticate from "../middleware/auth_middleware.js";
 
-const router = express.Router();
+// const router = express.Router();
 
-router.get("",);
+// router.post("/like/:postId", authenticate, likePost);
+// router.get("/likes/:postId", getLikes);
 
-export default router;
+// export default router;
