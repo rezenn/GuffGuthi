@@ -1,0 +1,205 @@
+
+/* Keeping existing styles unchanged */
+.createGroup-Container {
+    position: absolute;
+    top: 96px;
+    left: 337px;
+    width: 1100px;
+    height: 645px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.create_group {
+    margin-top: -30px;
+    margin-left: 20px;
+   
+}
+
+/* New styles for input containers */
+.group-name-container {
+    margin-top: 30px;
+    margin-left: -310px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1370px;
+    margin-bottom: 4px;
+    /* left: 700px; */
+}
+
+.group-logo-container{
+    margin-left: -363px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1360px;
+    margin-bottom: 4px;
+}
+
+.group-cover-container{
+    margin-left: -353px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1360px;
+    margin-bottom: 4px;
+}
+
+.group-topic-container{
+    margin-left: -380px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1440px;
+    margin-bottom: 4px;
+}
+.group-description-container{
+    margin-left: -243px;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    width: 1300px;
+    margin-bottom: 4px;
+}
+
+/* Labels */
+.group-name-container label,
+.group-logo-container label,
+.group-cover-container label,
+.group-topic-container label,
+.group-description-container label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+    width: 30%;
+    text-align: right;
+    margin-right: 10px;
+   
+}
+
+
+
+/* Input Fields */
+.group-name-container input {
+    background-color: #f1f1f3;
+    flex: 1;
+    padding: 10px;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    margin-left: 60px;
+    height: 45px;
+    width: 725px;
+  
+}
+
+
+.group-logo-container input {
+    background-color: #f1f1f3;
+    flex: 1;
+    padding: 26px;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    margin-left: 60px;
+    height: 56px;
+    width: 725px;
+}
+
+.group-cover-container input {
+    background-color: #f1f1f3;
+    flex: 1;
+    padding: 40px;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    margin-left: 50px;
+    height: 77px;
+    width: 725px;
+}
+.group-topic-container input {
+    background-color: #f1f1f3;
+    flex: 1;
+    padding: 10px;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    margin-left: 110px;
+    height: 45px;
+    width: 725px;
+}
+.group-description-container input {
+    background-color: #f1f1f3;
+    padding-right: 800px;
+    flex: 1;
+    padding: 60px;
+    border: 0px ;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    margin-left: 17px;
+    height: 149px;
+    width: 725px;
+}
+
+
+
+/* Keeping input inside its field */
+.input-button {
+    display: flex;
+    align-items: center;
+    width: 65%;
+    gap: 10px;
+   
+}
+
+/* Buttons inside their respective container */
+.logo-button, .cover-button {
+    padding: 10px;
+    background-color: #FF4500;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.logo-button:hover, .cover-button:hover {
+    background-color: #f4784b;
+}
+
+/* Create Group Button */
+.create-button {
+    width: 50%;
+    padding: 10px;
+    background-color: #FF4500;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+    margin-left: 870px;
+    margin-top: 60px;
+}
+
+.create-button:hover {
+    background-color: #FF4500;
+}
