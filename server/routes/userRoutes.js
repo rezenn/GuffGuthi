@@ -6,6 +6,7 @@ const router = express.Router();
 
 // Get user profile
 router.get("/:email", userController.getProfile);
+router.get("/userMessage", userController.userMessage);
 
 // Update user profile (all fields in a single request)
 router.put(

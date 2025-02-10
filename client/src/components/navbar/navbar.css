@@ -331,7 +331,7 @@ body {
   border: none;
   font-weight: bold;
   height: 48px;
-  margin-top: 180px;
+  margin-top: 175px;
 }
 
 #settingsButton:hover {
@@ -367,7 +367,8 @@ body {
   border: none;
   font-weight: bold;
   height: 48px;
-  margin-top: 5px;
+  margin-top: 0px;
+  margin-bottom: 0;
 
 }
 
@@ -379,8 +380,15 @@ body {
   align-items: center;
   Width: 24px;
   Height: 17px;
-  Top: 12px;
+  Top: 10px;
   Left: 16px;
+}
+
+.copyRight {
+  font: 0.7em "Roboto";
+  padding: 0;
+  margin: 2px 0 5px 5px;
+
 }
 
 .main-content {

@@ -3,6 +3,8 @@ import { toast, ToastContainer } from "react-toastify";
 import style from "./Login.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa6";
 
 function Login({ setAuth }) {
   const [inputs, setInputs] = useState({
@@ -33,6 +35,7 @@ function Login({ setAuth }) {
 
       if (parseRes.jwtToken) {
         localStorage.setItem("email", email);
+        localStorage.setItem("user_id", parseRes.user_id); // Store user_id
         localStorage.setItem("token", parseRes.jwtToken);
         setAuth(true);
         toast.success("Logged in Successfully");
@@ -91,7 +94,11 @@ function Login({ setAuth }) {
                   className={style.togglePassword}
                   onClick={() => setShowPassword(!showPassword)}
                 >
-                  {showPassword ? "Hide" : "Show"}
+                  {showPassword ? (
+                    <FaEyeSlash className={style.eyeIcon} />
+                  ) : (
+                    <FaEye className={style.eyeIcon} />
+                  )}
                 </button>
               </div>
               <br />
