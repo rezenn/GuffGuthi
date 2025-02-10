@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: left;
-    width: 928px;
+    width: 1020px;
     height: 600px;
     position: fixed;
     top: 20px;
@@ -60,20 +60,26 @@
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    width: 100%;
-    max-width: 750px;
+    width: 860px;
+    
+}
+
+.formTitle-Des {
+    font-weight: bold;
+    margin-right: 10px;
+    margin-left: 5px;
+    width: 100px;
 }
 
 
-
-textarea {
-    height: 150px;
-    width: 750px;
-    resize: none;
-    border: 1px solid #ccc;
-    border-radius: 20px;
+.form-group-editor{
+    display: flex;
+    align-items: first baseline;
+    margin-bottom: 5px;
 
 }
+
+
 
 .post-request-btn {
     position: absolute;

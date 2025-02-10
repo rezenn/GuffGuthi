@@ -497,7 +497,7 @@ body {
 
 /* notification button */
 
-.notification-button {
+#notification-button {
   font-family: 'Roboto';
   font-weight: bold;
   display: flex;
@@ -516,7 +516,7 @@ body {
   /* cursor: pointer; */
 }
 
-.notification-button:hover {
+#notification-button:hover {
   color: #FF4500;
 }
 

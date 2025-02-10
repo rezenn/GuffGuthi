@@ -22,6 +22,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import GuthiyarPage from "./pages/GuthiyarPage";
 import Chat from "./pages/Chat";
 import Join from "./pages/Join";
+import Notification from "./pages/Notification";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
@@ -244,6 +245,19 @@ function App() {
               )
             }
           />
+
+           <Route
+            path="/notification"
+            element={
+              isAuthenticated ? (
+                <Notification setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+
+
         </Routes>
       </Router>
     </QueryClientProvider>

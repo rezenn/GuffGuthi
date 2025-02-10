@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/navbar/Navbar";
 import "./PostRequest.css";
+import DesEditor from "../components/TextEditor/DesEditor";
 
 function PostRequest() {
   const [activePage, setActivePage] = useState("postRequest");
@@ -43,9 +44,10 @@ function PostRequest() {
                 name="location"
               />
             </div>
-            <div className="form-group">
-              <label className="formTitle1">Description: </label>
-              <textarea id="description" name="description" rows="5" />
+            <div className="form-group-editor">
+              <label className="formTitle-Des">Description: </label>
+              {/* <textarea id="description" name="description" rows="5" /> */}
+              <DesEditor/>
             </div>
             <button type="submit" className="post-request-btn">
               Post Request

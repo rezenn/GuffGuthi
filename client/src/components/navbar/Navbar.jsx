@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./navbar.css";
@@ -111,7 +112,14 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
 
           <input type="text" className="search-input" placeholder="Search..." />
 
-          <button className="notification-button">
+          <button 
+          
+          id="notification-button"
+          className={activePage === "notification" ? "active" : ""}
+          onClick={() => handleNavigation("notification")}
+          >
+
+
             <img
               src="./src/assets/notification.svg"
               alt="notification Icon"
