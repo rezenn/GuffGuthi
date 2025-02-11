@@ -1,7 +1,19 @@
-
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./navbar.css";
+import searchIcon from "../../assets/search.svg";
+import notificationIcon from "../../assets/notification.svg";
+import createPostIcon from "../../assets/s_post.svg";
+import homeIcon from "../../assets/homebutton1.svg";
+import guthiIcon from "../../assets/popularbutton.svg";
+import guthiyarIcon from "../../assets/profile-2user.svg";
+import myPostIcon from "../../assets/myPost.svg";
+import communityServicesIcon from "../../assets/request.svg";
+import chatRoomIcon from "../../assets/chats.svg";
+import createGroupIcon from "../../assets/group.svg";
+import settingsIcon from "../../assets/settings.svg";
+import aboutIcon from "../../assets/about.svg";
+import logoIcon from "../../assets/logo.png";
 
 const Navbar = ({ activePage, setActivePage, setAuth }) => {
   const [profileImage, setProfileImage] = useState(""); // URL for display
@@ -103,25 +115,18 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
             className={activePage === "search" ? "active" : ""}
             onClick={() => handleNavigation("search")}
           >
-            <img
-              src="./src/assets/search.svg"
-              alt="search Icon"
-              className="search_icon"
-            />
+            <img src={searchIcon} alt="search Icon" className="search_icon" />
           </button>
 
           <input type="text" className="search-input" placeholder="Search..." />
 
-          <button 
-          
-          id="notification-button"
-          className={activePage === "notification" ? "active" : ""}
-          onClick={() => handleNavigation("notification")}
+          <button
+            id="notification-button"
+            className={activePage === "notification" ? "active" : ""}
+            onClick={() => handleNavigation("notification")}
           >
-
-
             <img
-              src="./src/assets/notification.svg"
+              src={notificationIcon}
               alt="notification Icon"
               className="notification_icon"
             />
@@ -133,11 +138,7 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
             className={activePage === "createPost" ? "active" : ""}
             onClick={() => handleNavigation("createPost")}
           >
-            <img
-              src="./src/assets/s_post.svg"
-              alt="post Icon"
-              className="Post_icon"
-            />
+            <img src={createPostIcon} alt="post Icon" className="Post_icon" />
             Post
           </button>
 
@@ -161,7 +162,7 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
 
       <div className="navbar">
         <div className="navbar-logo">
-          <img src="./src/assets/logo.png" alt="Logo" />
+          <img src={logoIcon} alt="Logo" />
         </div>
         <span className="username"> Hello, {name}</span>
 
@@ -174,11 +175,7 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
           className={activePage === "home" ? "active" : ""}
           onClick={() => handleNavigation("home")}
         >
-          <img
-            src="./src/assets/homebutton1.svg"
-            alt="Home Icon"
-            className="icon"
-          />
+          <img src={homeIcon} alt="Home Icon" className="icon" />
           Home
         </button>
 
@@ -187,11 +184,7 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
           className={activePage === "guthi" ? "active" : ""}
           onClick={() => handleNavigation("guthi")}
         >
-          <img
-            src="./src/assets/popularbutton.svg"
-            alt="Group Icon"
-            className="Popular_icon"
-          />
+          <img src={guthiIcon} alt="Group Icon" className="Popular_icon" />
           Guthi
         </button>
         <button
@@ -200,7 +193,7 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
           onClick={() => handleNavigation("guthiyar")}
         >
           <img
-            src="./src/assets/profile-2user.svg"
+            src={guthiyarIcon}
             alt="guthiyar Icon"
             className="guthiyar_icon"
           />
@@ -212,11 +205,7 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
           className={activePage === "my-posts" ? "active" : ""}
           onClick={() => handleNavigation("my-posts")}
         >
-          <img
-            src="./src/assets/myPost.svg"
-            alt="my post Icon"
-            className="MyPost_icon"
-          />
+          <img src={myPostIcon} alt="my post Icon" className="MyPost_icon" />
           My Posts
         </button>
 
@@ -226,7 +215,7 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
           onClick={() => handleNavigation("communityServices")}
         >
           <img
-            src="./src/assets/request.svg"
+            src={communityServicesIcon}
             alt="request Icon"
             className="request_icon"
           />
@@ -238,11 +227,7 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
           className={activePage === "join" ? "active" : ""}
           onClick={() => handleNavigation("join")}
         >
-          <img
-            src="./src/assets/chats.svg"
-            alt="chats Icon"
-            className="chat_icon"
-          />
+          <img src={chatRoomIcon} alt="chats Icon" className="chat_icon" />
           Chat Room
         </button>
 
@@ -251,11 +236,7 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
           className={activePage === "createGroup" ? "active" : ""}
           onClick={() => handleNavigation("createGroup")}
         >
-          <img
-            src="./src/assets/group.svg"
-            alt="group Icon"
-            className="group_icon"
-          />
+          <img src={createGroupIcon} alt="group Icon" className="group_icon" />
           Create Group
         </button>
 
@@ -265,7 +246,7 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
           onClick={() => handleNavigation("settings")}
         >
           <img
-            src="./src/assets/settings.svg"
+            src={settingsIcon}
             alt="setting Icon"
             className="settings_icon"
           />
@@ -281,11 +262,7 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
           className={activePage === "about" ? "active" : ""}
           onClick={() => handleNavigation("about")}
         >
-          <img
-            src="./src/assets/about.svg"
-            alt="about Icon"
-            className="about_icon"
-          />
+          <img src={aboutIcon} alt="about Icon" className="about_icon" />
           About
         </button>
         <span className="copyRight">
