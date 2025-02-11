@@ -3,6 +3,10 @@ import cors from "cors";
 import path from "path";
 import cookieParser from "cookie-parser";
 import { fileURLToPath } from "url";
+import dotenv from "dotenv";
+
+dotenv.config();
+
 
 import authRoutes from "./routes/authRoutes.js";
 import homeRoutes from "./routes/homeRoutes.js";
@@ -12,6 +16,9 @@ import likeRoutes from "./routes/likeRoutes.js";
 import commentRoutes from "./routes/commentRoutes.js";
 import searchRoute from "./routes/searchRoutes.js";
 import messageRoute from "./routes/messageRoutes.js"
+import communityServiceRoutes from "./routes/communityServiceRoutes.js";
+
+
 
 
 // Get the directory name from the current module's URL
@@ -42,6 +49,7 @@ app.use("/like", likeRoutes);
 app.use("/comment", commentRoutes);
 app.use("/search", searchRoute);
 app.use("/message", messageRoute);
+app.use("/api/community", communityServiceRoutes);
 
 // Centralized error handling
 app.use((err, req, res, next) => {
