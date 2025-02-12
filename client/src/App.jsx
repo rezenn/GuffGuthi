@@ -22,6 +22,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import GuthiyarPage from "./pages/GuthiyarPage";
 import Chat from "./pages/Chat";
 import Join from "./pages/Join";
+import GroupCreatePost from "./pages/GroupCreatePost";
 // import Notification from "./pages/Notification";
 
 function App() {
@@ -130,7 +131,7 @@ function App() {
           />
 
           <Route
-            path="/guthi/:groupId"
+            path="/groupFeed/:groupId"
             element={
               isAuthenticated ? (
                 <GroupFeedPage setAuth={setAuth} />
@@ -145,6 +146,16 @@ function App() {
             element={
               isAuthenticated ? (
                 <CreatePost setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/groupCreatePost/:groupId"
+            element={
+              isAuthenticated ? (
+                <GroupCreatePost setAuth={setAuth} />
               ) : (
                 <Navigate to="/login" />
               )

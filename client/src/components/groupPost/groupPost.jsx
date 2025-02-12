@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 import api from "../../api";
-import PostContent from "./PostContent";
-import "./post.css";
+import GroupPostContent from "./groupPostContext";
+import "./groupPost.css";
+import { useNavigate, useParams } from "react-router-dom";
+import likeIcon from "../../assets/star (1).png";
+import commentIcon from "../../assets/message.png";
+import sendIcon from "../../assets/send-2.svg";
 
-
-function Post() {
+function GroupPost() {
+  const { groupId } = useParams();
   const [posts, setPosts] = useState([]);
   const [username, setUsername] = useState("");
   const [profileImage, setProfileImage] = useState(""); // URL for display
   const [isFetching, setIsFetching] = useState(true); // Loading state
   const [error, setError] = useState(""); // Error state
+  const navigate = useNavigate();
 
   // Fetch user data (username and profile image)
   useEffect(() => {
@@ -48,12 +53,10 @@ function Post() {
     };
     fetchUserData();
   }, []);
-
-  // Fetch posts
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await api.get("/post");
+        const response = await api.get(`/groupFeed/${groupId}`);
         setPosts(response.data || []);
       } catch (err) {
         console.error("Error fetching posts:", err.message);
@@ -62,7 +65,7 @@ function Post() {
     };
 
     fetchPosts();
-  }, []);
+  }, [groupId]); // Ensure groupId is in dependencies
 
   if (isFetching) {
     return <p>Loading...</p>; // Loading indicator
@@ -90,7 +93,9 @@ function Post() {
               <p>{username}</p> {/* Dynamic username */}
             </div>
           </div>
-          <div className="card-title">{post.post_title || "Untitled Post"}</div>
+          <div className="card-title">
+            {post.group_post_title || "Untitled Post"}
+          </div>
           {post.img && (
             <img
               className="postImg"
@@ -99,34 +104,22 @@ function Post() {
             />
           )}
           <div className="card-content">
-            <PostContent
-              htmlContent={post.post_desc || "No description provided."}
+            <GroupPostContent
+              htmlContent={post.group_post_desc || "No description provided."}
             />
           </div>
           <div className="card-footer">
             <div className="actions">
               <span>
-                <img
-                  className="icon"
-                  src="./src/assets/star (1).png"
-                  alt="like"
-                />
+                <img className="icon" src={likeIcon} alt="like" />
                 {post.likes || 0}
               </span>
               <span>
-                <img
-                  className="icon"
-                  src="./src/assets/message.png"
-                  alt="comment"
-                />
+                <img className="icon" src={commentIcon} alt="comment" />
                 {post.comments || 0}
               </span>
               <span>
-                <img
-                  className="icon"
-                  src="./src/assets/send-2.svg"
-                  alt="share"
-                />
+                <img className="icon" src={sendIcon} alt="share" />
               </span>
             </div>
           </div>
@@ -136,4 +129,4 @@ function Post() {
   );
 }
 
-export default Post;
+export default GroupPost;

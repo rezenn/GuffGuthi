@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Alexandria:wght@100..900&family=Anta&family=Basic&family=Baumans&family=Doto:wght@100..900&family=Faculty+Glyphic&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Marmelad&family=Merienda:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+.card {
+    background-color: white;
+    width: 780px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin: 10px 0px 30px 350px;
+    overflow: hidden;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.card-header .profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 1px solid #82818168;
+}
+
+.card-header .author {
+    font-family: "Inter", serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #FF4500;
+}
+
+.card-title {
+    font-family: "Roboto", serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-bottom: 25px;
+    color: #050505;
+}
+
+.card-img {
+    border-radius: 25px;
+
+}
+
+.postImg {
+    width: 750px;
+    padding: 0px 10px 15px 0px;
+    border-radius: 25px;
+}
+
+.card-content {
+    font-family: "Afacad", serif;
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+    margin-left: 10px;
+    margin-bottom: 25px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    color: #888;
+    font-family: "Roboto", serif;
+    font-size: 0.9em;
+}
+
+.card-footer .actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.card-footer .actions span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-family: "Roboto", serif;
+
+    margin-bottom: 10px;
+}
+
+.card-footer .actions span .icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.card-footer .actions span:hover {
+    color: #222;
+}
+
+.post-content {
+    line-height: 1.6;
+    color: #333;
+}
+
+.read-more-button {
+    background: none;
+    border: none;
+    color: #FF4500;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.read-more-button:hover {
+    text-decoration: underline;
+}

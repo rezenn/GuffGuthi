@@ -14,6 +14,7 @@ import authRoutes from "./routes/authRoutes.js";
 import homeRoutes from "./routes/homeRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import postRoutes from "./routes/postRoutes.js";
+import groupPostRoutes from "./routes/groupPostRoutes.js"
 // import likeRoutes from "./routes/likeRoutes.js";
 import commentRoutes from "./routes/commentRoutes.js";
 import searchRoute from "./routes/searchRoutes.js";
@@ -111,6 +112,7 @@ app.use("/auth", authRoutes);
 app.use("/home", homeRoutes);
 app.use("/user", userRoutes);
 app.use("/post", postRoutes);
+app.use("/groupFeed", groupPostRoutes);
 // app.use("/like", likeRoutes);
 app.use("/comment", commentRoutes);
 app.use("/search", searchRoute);

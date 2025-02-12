@@ -2,12 +2,19 @@ import React, { useEffect, useState } from "react";
 import Post from "../components/postINhome/Post";
 import CoverImage from "../components/profileComponents/CoverImage";
 import styles from "./GroupFeedPage.module.css";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+
 import Navbar from "../components/navbar/Navbar";
+import GroupPost from "../components/groupPost/groupPost";
 
 function GroupFeedPage() {
+  const navigate = useNavigate();
   const { groupId } = useParams(); // Capture the groupId from the URL
   const [groupData, setGroupData] = useState(null); // State to store group data
+  const createPost = (e) => {
+    e.preventDefault();
+    navigate(`/groupCreatePost/${groupId}`);
+  };
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -62,7 +69,9 @@ function GroupFeedPage() {
           <div className={styles.GroupProfile}>
             {/* Display group profile picture */}
             <div className={styles.GroupProfileImg}>
-              <button className={styles.createPostBtn}>Create Post</button>
+              <button onClick={createPost} className={styles.createPostBtn}>
+                Create Post
+              </button>
 
               <img
                 src={`http://localhost:8000/${groupData.group_logo}`}
@@ -107,7 +116,8 @@ function GroupFeedPage() {
         </section>
 
         <div className={styles.viewPost}>
-          <Post />
+          {/* <Post /> */}
+          <GroupPost />
         </div>
       </div>
     </>

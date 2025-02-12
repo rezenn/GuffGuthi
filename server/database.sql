@@ -26,6 +26,16 @@ create table posts(
     created_at timestamp default current_timestamp
 );
 
+CREATE TABLE GroupPosts (
+    group_post_id SERIAL PRIMARY KEY NOT NULL,
+    group_post_title VARCHAR(255) NOT NULL,
+    group_post_desc TEXT NOT NULL,
+    user_id UUID REFERENCES users(user_id) ON DELETE CASCADE,
+    group_id INT REFERENCES groups(group_id) ON DELETE CASCADE NOT NULL,
+    img VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 create table comments(
     comments_id serial primary key not null,
     comments_desc text not null,

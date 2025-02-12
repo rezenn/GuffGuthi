@@ -27,7 +27,7 @@ const Group = () => {
 
   const handleNavigate = (groupId) => {
     // Navigate to the group feed for the selected group
-    navigate(`/guthi/${groupId}`);
+    navigate(`/groupFeed/${groupId}`);
   };
 
   return (
