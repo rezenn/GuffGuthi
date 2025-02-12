@@ -245,17 +245,6 @@ function App() {
               )
             }
           />
-
-          <Route
-            path="/notification"
-            element={
-              isAuthenticated ? (
-                <Notification setAuth={setAuth} />
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          />
         </Routes>
       </Router>
     </QueryClientProvider>
