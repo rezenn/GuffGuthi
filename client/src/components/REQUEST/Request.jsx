@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"; // Import axios for API calls
-import { format } from "date-fns"; // Import date-fns for formatting
+import { format } from "date-fns";
+// Import date-fns for formatting
 import "./request.css";
 
 function Request() {
@@ -46,7 +47,9 @@ function Request() {
   useEffect(() => {
     const fetchRequests = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/community/requests");
+        const response = await axios.get(
+          "http://localhost:8000/api/community/requests"
+        );
         setPosts(response.data);
         setLoading(false);
       } catch (error) {
@@ -100,11 +103,22 @@ function Request() {
           ) : selectedPost ? (
             <div className="post-details">
               <h2>{selectedPost.title}</h2>
-              <p><b>From:</b> {formatDate(selectedPost.start_date)}</p>
-              <p><b>To:</b> {formatDate(selectedPost.end_date)}</p>
-              <p><b>Time:</b> {formatTime(selectedPost.start_date)} - {formatTime(selectedPost.end_date)}</p>
-              <p><b>Location:</b> {selectedPost.location}</p>
-              <div dangerouslySetInnerHTML={{ __html: selectedPost.description }}></div>
+              <p>
+                <b>From:</b> {formatDate(selectedPost.start_date)}
+              </p>
+              <p>
+                <b>To:</b> {formatDate(selectedPost.end_date)}
+              </p>
+              <p>
+                <b>Time:</b> {formatTime(selectedPost.start_date)} -{" "}
+                {formatTime(selectedPost.end_date)}
+              </p>
+              <p>
+                <b>Location:</b> {selectedPost.location}
+              </p>
+              <div
+                dangerouslySetInnerHTML={{ __html: selectedPost.description }}
+              ></div>
             </div>
           ) : (
             <div className="post-list">

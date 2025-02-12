@@ -3,10 +3,12 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios"; // Import axios for API calls
 import Navbar from "../components/navbar/Navbar";
 import "./PostRequest.css";
-import DesEditor from "../components/TextEditor/DesEditor";
+import DesEditor from "../components/TextEditor/DesEditor"; // Make sure DesEditor component works as expected
 
 function PostRequest() {
   const navigate = useNavigate();
+  const [activePage, setActivePage] = useState("postRequest");
+
   const [formData, setFormData] = useState({
     title: "",
     start_date: "",
@@ -19,7 +21,13 @@ function PostRequest() {
 
   // Handle form input changes
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  // Handle description editor changes
+  const handleDescriptionChange = (newDescription) => {
+    setFormData((prevState) => ({ ...prevState, description: newDescription }));
   };
 
   // Handle form submission
@@ -33,7 +41,6 @@ function PostRequest() {
         "http://localhost:8000/api/community/requests",
         formData
       );
-
       navigate("/communityServices"); // Redirect after successful submission
     } catch (error) {
       console.error("Error creating request:", error);
@@ -97,13 +104,10 @@ function PostRequest() {
             </div>
             <div className="form-group">
               <label className="formTitle1">Description:</label>
-              <textarea
-                id="description"
-                name="description"
-                rows="5"
+              {/* Ensure DesEditor calls handleDescriptionChange when text is changed */}
+              <DesEditor
                 value={formData.description}
-                onChange={handleChange}
-                required
+                onChange={handleDescriptionChange}
               />
             </div>
             <button

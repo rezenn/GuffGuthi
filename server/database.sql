@@ -67,7 +67,16 @@ CREATE TABLE messages (
     conversation_id uuid NOT NULL REFERENCES conversations(id) ON DELETE CASCADE,
     created_at timestamp DEFAULT current_timestamp
 );
-
+CREATE TABLE community_requests (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW()
+);
 create table groups(
     group_id SERIAL PRIMARY KEY,
     group_name varchar(255) not null,

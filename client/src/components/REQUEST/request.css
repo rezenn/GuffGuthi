@@ -5,7 +5,7 @@
     position: absolute;
     top: 96px;
     left: 307px;
-    width: 928px;
+    width: 1128px;
     height: 690px;
     background-color: #ffffff;
     border: 1px solid #ccc;
@@ -27,14 +27,21 @@
 }
 
 .dashboard-header h2 {
-    display: inline-block; /* Keeps it in one line */
-    white-space: nowrap; /* Prevents text from wrapping */
-    overflow: hidden; /* Prevents overflowing text */
-    text-overflow: ellipsis; /* Adds "..." if text is too long */
-    font-size: 22px; /* Adjust size */
+    display: inline-block;
+    /* Keeps it in one line */
+    white-space: nowrap;
+    /* Prevents text from wrapping */
+    overflow: hidden;
+    /* Prevents overflowing text */
+    text-overflow: ellipsis;
+    /* Adds "..." if text is too long */
+    font-size: 22px;
+    /* Adjust size */
     font-weight: bold;
-    margin: 0; /* Prevents unwanted spacing */
-    text-align: center; /* Centers it */
+    margin: 0;
+    /* Prevents unwanted spacing */
+    text-align: center;
+    /* Centers it */
 }
 
 
@@ -48,7 +55,22 @@
 }
 
 /* Buttons */
-.create-button,
+.create-button {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 15px;
+    width: 164px;
+    height: 48px;
+    padding: 8px 16px;
+    margin: 0;
+    background-color: #FF4500;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+
 .back-button {
     font-family: 'Reem Kufi', sans-serif;
     font-size: 15px;
