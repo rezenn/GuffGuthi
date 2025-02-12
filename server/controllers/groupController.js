@@ -21,7 +21,7 @@ const groupController = {
             const { group_id } = req.params;
             const { topic, group_desc } = req.body;
 
-            const group_logo = req.files?.group_logo ? `uploads/group/${req.files.group_logo[0].filename}` : null;
+            const group_logo = req.files?.group_logo?.[0]?.filename ? `uploads/group/${req.files.group_logo[0].filename}` : null;
             const group_cover = req.files?.group_cover ? `uploads/group/${req.files.group_cover[0].filename}` : null;
 
             const updatedGroup = await Group.UpdateGroup(group_logo, group_cover, topic, group_desc, group_id);
@@ -52,9 +52,9 @@ const groupController = {
 
     async createGroup(req, res) {
         try {
+           
             const { group_name, topic, group_desc } = req.body;
     
-            // Handle file uploads if provided
             const group_logo = req.files?.group_logo ? `uploads/group/${req.files.group_logo[0].filename}` : null;
             const group_cover = req.files?.group_cover ? `uploads/group/${req.files.group_cover[0].filename}` : null;
     
@@ -63,12 +63,15 @@ const groupController = {
             }
     
             const newGroup = await Group.createGroup(group_name, group_logo, group_cover, topic, group_desc);
+            console.log("New Group Created:", newGroup); // Log the created group
+    
             res.status(201).json({ message: "Group created successfully", group: newGroup });
         } catch (error) {
             console.error("Error creating group:", error);
             res.status(500).json({ error: "Failed to create group.", details: error.message });
         }
     }
+    
 };
 
 export default groupController;

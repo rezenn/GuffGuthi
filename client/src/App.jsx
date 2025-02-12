@@ -130,7 +130,7 @@ function App() {
           />
 
           <Route
-            path="/groupFeed"
+            path="/guthi/:groupId"
             element={
               isAuthenticated ? (
                 <GroupFeedPage setAuth={setAuth} />
