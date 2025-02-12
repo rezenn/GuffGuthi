@@ -121,7 +121,11 @@ function Post() {
                 {post.comments || 0}
               </span>
               <span>
-                <img className="icon" src="./src/assets/send.png" alt="share" />
+                <img
+                  className="icon"
+                  src="./src/assets/send-2.svg"
+                  alt="share"
+                />
               </span>
             </div>
           </div>
