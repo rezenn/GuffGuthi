@@ -83,7 +83,7 @@ function DesEditor({ value, onChange }) {
 
   return (
     <div className="Editor">
-      <div ref={quillRef} style={{ width: "100%", height: 105 }} />
+      <div ref={quillRef} style={{ width: "100%", height: 275 }} />
     </div>
   );
 }

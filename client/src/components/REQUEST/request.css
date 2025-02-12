@@ -124,9 +124,28 @@
 }
 
 /* Post Details */
-.post-details h2 {
+/* .post-details h2 {
     margin-top: 0;
     font-family: 'Afacad', sans-serif;
+    text-transform: capitalize;
+    font-size: 24px;
+    color: #333;
+    padding-bottom: 10px;
+} */
+
+.postPreviewTitle {
+    margin-top: 0;
+    font-family: 'Afacad', sans-serif;
+    text-transform: capitalize;
+    font-size: 24px;
+    color: #333;
+    padding-bottom: 10px;
+}
+
+.postTitle {
+    margin-top: 0;
+    font-family: 'Afacad', sans-serif;
+    text-transform: capitalize;
     font-size: 24px;
     color: #333;
     padding-bottom: 10px;
@@ -134,15 +153,14 @@
 
 
 
-.post-details div {
+.post-details div,
+.postDetail {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     color: #333;
-    line-height: 1.6;
-    /* Improves readability */
+    line-height: 1.3;
     white-space: pre-wrap;
-    /* Ensures text wraps and respects line breaks */
-    padding-top: 20px;
+    padding: 10px 0 10px 20px;
 }
 
 /* Additional Styles (Optional) */

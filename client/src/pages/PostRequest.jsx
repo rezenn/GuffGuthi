@@ -102,9 +102,8 @@ function PostRequest() {
                 required
               />
             </div>
-            <div className="form-group">
-              <label className="formTitle1">Description:</label>
-              {/* Ensure DesEditor calls handleDescriptionChange when text is changed */}
+            <div className="form-group-editor">
+              <label className="formTitle-Des">Description:</label>
               <DesEditor
                 value={formData.description}
                 onChange={handleDescriptionChange}

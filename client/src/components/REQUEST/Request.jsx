@@ -87,7 +87,7 @@ function Request() {
             </>
           ) : (
             <>
-              <h2>{selectedPost.title}</h2>
+              <h2 className="postTitle">{selectedPost.title}</h2>
               <button className="back-button" onClick={handleBackClick}>
                 Back to Requests
               </button>
@@ -102,23 +102,24 @@ function Request() {
             <p className="error">{error}</p>
           ) : selectedPost ? (
             <div className="post-details">
-              <h2>{selectedPost.title}</h2>
-              <p>
-                <b>From:</b> {formatDate(selectedPost.start_date)}
-              </p>
-              <p>
-                <b>To:</b> {formatDate(selectedPost.end_date)}
-              </p>
-              <p>
-                <b>Time:</b> {formatTime(selectedPost.start_date)} -{" "}
-                {formatTime(selectedPost.end_date)}
-              </p>
-              <p>
-                <b>Location:</b> {selectedPost.location}
-              </p>
+              {/* <h2>{selectedPost.title}</h2> */}
+
               <div
                 dangerouslySetInnerHTML={{ __html: selectedPost.description }}
               ></div>
+              <p className="postDetail">
+                <b>From:</b> {formatDate(selectedPost.start_date)}
+              </p>
+              <p className="postDetail">
+                <b>To:</b> {formatDate(selectedPost.end_date)}
+              </p>
+              <p className="postDetail">
+                <b>Time:</b> {formatTime(selectedPost.start_date)} -{" "}
+                {formatTime(selectedPost.end_date)}
+              </p>
+              <p className="postDetail">
+                <b>Location:</b> {selectedPost.location}
+              </p>
             </div>
           ) : (
             <div className="post-list">
@@ -128,8 +129,8 @@ function Request() {
                   className="post-preview"
                   onClick={() => handlePostClick(post)}
                 >
-                  <h3>{post.title}</h3>
-                  <p>{truncateText(post.description, 150)}</p>
+                  <h3 className="postPreviewTitle">{post.title}</h3>
+                  <p>{truncateText(post.description, 1550)}</p>
                 </div>
               ))}
             </div>
