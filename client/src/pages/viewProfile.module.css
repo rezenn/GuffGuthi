@@ -72,13 +72,15 @@
     .profile {
         margin: 20px 0 0 0;
         width: 100%;
-        max-width: 300px; /* Adjust as needed */
+        max-width: 300px;
+        /* Adjust as needed */
     }
 
     .viewPost {
         margin: 20px 0 0 0;
         width: 100%;
-        max-width: 300px; /* Adjust as needed */
+        max-width: 300px;
+        /* Adjust as needed */
     }
 }
 
@@ -110,16 +112,22 @@
     }
 
     .profile {
-        margin: 175px 0 0 0; /* Maintain vertical position */
+        margin: 175px 0 0 0;
+        /* Maintain vertical position */
         width: 100%;
-        max-width: 300px; /* Adjust as needed */
-        text-align: center; /* Center content horizontally */
+        max-width: 300px;
+        /* Adjust as needed */
+        text-align: center;
+        /* Center content horizontally */
     }
 
     .viewPost {
-        margin: 20px 0 0 0; /* Place below profile */
+        margin: 20px 0 0 0;
+        /* Place below profile */
         width: 100%;
-        max-width: 300px; /* Adjust as needed */
-        text-align: center; /* Center content horizontally */
+        max-width: 300px;
+        /* Adjust as needed */
+        text-align: center;
+        /* Center content horizontally */
     }
 }

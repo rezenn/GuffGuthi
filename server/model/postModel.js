@@ -53,3 +53,16 @@ export const removePost = (postId, userId, callback) => {
     const query = "DELETE FROM posts WHERE post_id = $1 AND user_id = $2";
     pool.query(query, [postId, userId], callback);
 };
+export const fetchUserPosts = async (userId) => {
+    const query = `
+        SELECT * FROM posts WHERE user_id = $1 ORDER BY created_at DESC
+    `;
+    try {
+        const result = await pool.query(query, [userId]);
+        return result.rows;
+    } catch (err) {
+        console.error("Error fetching posts:", err.message);
+        throw err;
+    }
+};
+

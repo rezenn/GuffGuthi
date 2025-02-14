@@ -1,4 +1,4 @@
-import { fetchPosts, createPost, removePost } from "../model/postModel.js";
+import { fetchPosts, createPost, removePost, fetchUserPosts  } from "../model/postModel.js";
 import upload from "../middleware/ImageMulter.js";
 import multer from "multer";
 
@@ -61,7 +61,25 @@ const postController = {
         console.error("Error deleting post:", err.message);
         res.status(500).json({ error: "Failed to delete post." });
     }
-}
+},
+async getUserPosts(req, res) {
+    try {
+        const userId = req.userInfo; // Extract user ID from token
+        if (!userId) {
+            return res.status(401).json({ error: "Unauthorized access" });
+        }
+
+        const posts = await fetchUserPosts(userId);
+        if (!posts.length) {
+            return res.status(404).json({ message: "No posts found" });
+        }
+
+        res.status(200).json(posts);
+    } catch (error) {
+        console.error("Error fetching posts:", error.message);
+        res.status(500).json({ error: "Failed to retrieve posts" });
+    }
+},
 };
 
 export default postController;
