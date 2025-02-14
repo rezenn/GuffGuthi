@@ -49,7 +49,7 @@ const userController = {
             res.status(500).json({ error: "Failed to update profile" });
         }
     },
-    // controllers/userController.js
+
     async userMessage(req, res) {
         try {
             console.log("Fetching all users...");
@@ -65,8 +65,17 @@ const userController = {
             console.error("Error fetching users:", error.message);
             res.status(500).json({ error: "Failed to retrieve user info." });
         }
-    }
-    
+    },
+    async getAllUser(req, res) {
+        try {
+            const users = await User.getAllUser();
+            res.status(200).json(users);
+        } catch (error) {
+            console.error(error.message);
+            res.status(500).json({ error: "Failed to retrieve users." });
+        }
+    },
+
     
     
 };

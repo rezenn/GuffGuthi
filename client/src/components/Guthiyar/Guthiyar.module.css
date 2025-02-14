@@ -1,52 +1,94 @@
+/* Container styling */
 .container {
-    width: 500px;
+    width: 90%;
+    margin: 0px;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .user {
-    padding: 10px 0 0px 5px;
     display: grid;
-    grid-template-columns: 100px 300px 100px;
-    border: 1px solid #333;
-    border-radius: 20px;
-    background-color: rgb(255, 255, 255);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
 
+/* Individual user button */
+.userBtn {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    justify-items: 1fr auto;
+
+}
+
+.userBtn:hover {
+    background-color: #f3f3f3;
+    transform: scale(1.02);
+}
+
+/* Profile Image */
+.profileContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .profileImg {
-    width: 75px;
-    height: auto;
-    margin: 1rem;
-    padding: 2px;
-    border: 1px solid #333;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    display: inline-block;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    padding: 2px;
 }
 
+/* User Information */
 .infoContainer {
-    margin: 10px;
+    flex-grow: 1;
+    margin-left: 15px;
 }
 
-#occupation,
-#location {
-    font-size: 1rem;
+.userInfo {
+    margin: 4px 0;
+    color: #333;
 }
 
+/* Name */
 #username {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: bold;
 }
 
+/* Occupation & Location */
+#occupation,
+#location {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Follow Button */
 .followBtn {
-    margin: 10px 0 10px 70px;
-    padding: 20px 10px;
+    margin-left: auto;
 }
 
 .follow {
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 20px;
     border: none;
     background-color: #FF4500;
-    color: #fff;
-    font: 1em sans-serif;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+}
 
+.follow:hover {
+    background-color: #e03e00;
 }
