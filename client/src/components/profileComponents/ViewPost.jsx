@@ -20,11 +20,14 @@ function ViewPost() {
 
     const fetchUserPosts = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/post/user", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          `http://localhost:8000/post/loggedIn`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         setUserPosts(response.data);
       } catch (error) {
         console.error("Error fetching posts:", error.message);

@@ -26,6 +26,7 @@ function Settings({ setAuth }) {
     <>
       <Navbar className="Navbar" activePage="home" setActivePage={() => {}} />
       <div className="container">
+        <h2 className="settingsHeadeing">Settings</h2>
         <button onClick={logout} className="logout-button">
           <img src={logoutIcon} alt="Logout Icon" className="logout_icon" />
           Logout

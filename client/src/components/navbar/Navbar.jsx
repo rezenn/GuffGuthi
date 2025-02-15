@@ -202,8 +202,8 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
 
         <button
           id="myPostsButton"
-          className={activePage === "my-posts" ? "active" : ""}
-          onClick={() => handleNavigation("my-posts")}
+          className={activePage === "myPosts" ? "active" : ""}
+          onClick={() => handleNavigation("myPosts")}
         >
           <img src={myPostIcon} alt="my post Icon" className="MyPost_icon" />
           My Posts

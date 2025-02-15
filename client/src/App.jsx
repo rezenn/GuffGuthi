@@ -24,6 +24,7 @@ import Chat from "./pages/Chat";
 import Join from "./pages/Join";
 import GroupCreatePost from "./pages/GroupCreatePost";
 import UserProfile from "./pages/UserProfile";
+import MyPost from "./pages/MyPost";
 // import Notification from "./pages/Notification";
 
 function App() {
@@ -200,6 +201,16 @@ function App() {
             element={
               isAuthenticated ? (
                 <CommunityServices setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/myPosts"
+            element={
+              isAuthenticated ? (
+                <MyPost setAuth={setAuth} />
               ) : (
                 <Navigate to="/login" />
               )

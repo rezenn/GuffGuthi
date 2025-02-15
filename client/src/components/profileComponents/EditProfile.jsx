@@ -6,13 +6,11 @@ import { useNavigate } from "react-router-dom";
 function EditProfile() {
   const navigate = useNavigate();
 
-  // State for form fields
   const [username, setUsername] = useState("");
   const [bio, setBio] = useState("");
   const [occupation, setOccupation] = useState("");
   const [location, setLocation] = useState("");
 
-  // State for profile and cover images
   const [profileImageFile, setProfileImageFile] = useState(null); // File object for upload
   const [profileImage, setProfileImage] = useState(""); // URL for display
   const [coverImageFile, setCoverImageFile] = useState(null); // File object for upload

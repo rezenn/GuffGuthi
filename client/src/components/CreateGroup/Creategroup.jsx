@@ -13,38 +13,40 @@ const Creategroup = () => {
   const [logoImage, setLogoImage] = useState("");
   const [coverImageFile, setCoverImageFile] = useState(null);
   const [coverImage, setCoverImage] = useState("");
+  const [logoClass, setLogoClass] = useState("default-logo");
+  const [coverClass, setCoverClass] = useState("default-cover");
 
-  // Loading and error states
   const [isLoading, setIsLoading] = useState(false);
-  const [isFetching, setIsFetching] = useState(true);
   const [error, setError] = useState("");
 
   const fileInputRefLogo = useRef(null);
   const fileInputRefCover = useRef(null);
 
+  // Handle Logo Image Upload
   const handleButtonClickLogo = () => {
-    fileInputRefLogo.current.click(); // Trigger the hidden file input
+    fileInputRefLogo.current.click();
   };
 
   const handleImageChangeLogo = (event) => {
     const file = event.target.files[0];
     if (file) {
       setLogoImageFile(file);
-      setLogoImage(URL.createObjectURL(file)); // Temporary URL
+      setLogoImage(URL.createObjectURL(file));
+      setLogoClass("uploaded-logo");
     }
   };
 
-  // Handle cover image upload
+  // Handle Cover Image Upload
   const handleButtonClickCover = () => {
-    fileInputRefCover.current.click(); // Trigger the hidden file input
+    fileInputRefCover.current.click();
   };
 
   const handleImageChangeCover = (event) => {
     const file = event.target.files[0];
     if (file) {
-      const imageUrl = URL.createObjectURL(file); // Create a temporary URL for the file
-      setCoverImageFile(file); // Store the file object for upload
-      setCoverImage(imageUrl); // Store the URL for display
+      setCoverImageFile(file);
+      setCoverImage(URL.createObjectURL(file));
+      setCoverClass("uploaded-cover");
     }
   };
 
@@ -52,12 +54,10 @@ const Creategroup = () => {
     const fetchGroup = async () => {
       try {
         const response = await fetch("http://localhost:8000/group/", {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
 
-        if (!response.ok) throw new Error("Failed to get token");
+        if (!response.ok) throw new Error("Failed to fetch group data.");
 
         const groupData = await response.json();
         setLogoImage(groupData.groupLogo || "");
@@ -66,15 +66,13 @@ const Creategroup = () => {
         setTopic(groupData.topic || "");
         setGroupDesc(groupData.groupDesc || "");
       } catch (error) {
-        console.error(error.message);
-        setError("Failed to fetch group data. Please try again.");
-      } finally {
-        setIsFetching(false);
+        setError(error.message);
       }
     };
 
     fetchGroup();
   }, []);
+
   const handleCreateGroup = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -89,21 +87,15 @@ const Creategroup = () => {
     try {
       const response = await fetch("http://localhost:8000/group", {
         method: "POST",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         body: formData,
       });
 
-      const responseData = await response.json();
-
-      if (!response.ok)
-        throw new Error(responseData.error || "Failed to create group");
+      if (!response.ok) throw new Error("Failed to create group");
 
       alert("Group created successfully!");
       navigate("/guthi");
     } catch (error) {
-      console.error("Error:", error.message);
       setError(error.message);
     } finally {
       setIsLoading(false);
@@ -120,7 +112,7 @@ const Creategroup = () => {
 
             {/* Group Name */}
             <div className="group-name-container">
-              <label className="groupname">Group Name:</label>
+              <label>Group Name:</label>
               <input
                 type="text"
                 value={groupName}
@@ -131,11 +123,11 @@ const Creategroup = () => {
 
             {/* Group Logo */}
             <div className="group-logo-container">
-              <label className="grouplogo">Logo:</label>
+              <label>Logo:</label>
               <div className="input-button">
                 <button
+                  className="createBtn"
                   type="button"
-                  className="changeLogo"
                   onClick={handleButtonClickLogo}
                 >
                   Choose Logo
@@ -147,19 +139,22 @@ const Creategroup = () => {
                   onChange={handleImageChangeLogo}
                   style={{ display: "none" }}
                 />
+                {logoImage && (
+                  <img src={logoImage} alt="Group Logo" className={logoClass} />
+                )}
               </div>
             </div>
 
             {/* Group Cover */}
             <div className="group-cover-container">
-              <label className="groupcover">Cover:</label>
+              <label>Cover:</label>
               <div className="input-button">
                 <button
+                  className="createBtn"
                   type="button"
-                  className="changeCover"
                   onClick={handleButtonClickCover}
                 >
-                  Choose cover
+                  Choose Cover
                 </button>
                 <input
                   type="file"
@@ -168,12 +163,19 @@ const Creategroup = () => {
                   onChange={handleImageChangeCover}
                   style={{ display: "none" }}
                 />
+                {coverImage && (
+                  <img
+                    src={coverImage}
+                    alt="Group Cover"
+                    className={coverClass}
+                  />
+                )}
               </div>
             </div>
 
             {/* Group Topic */}
             <div className="group-topic-container">
-              <label className="topic">Topic:</label>
+              <label>Topic:</label>
               <input
                 type="text"
                 value={topic}
@@ -184,17 +186,21 @@ const Creategroup = () => {
 
             {/* Group Description */}
             <div className="group-description-container">
-              <label className="groupdescription">Group Description:</label>
-              <input
-                type="text"
+              <label>Description:</label>
+              <textarea
                 value={groupDesc}
                 onChange={(e) => setGroupDesc(e.target.value)}
                 required
               />
             </div>
 
+            {/* Error Message */}
+            {error && <p className="error-message">{error}</p>}
+
             {/* Create Group Button */}
-            <button className="create-button">Create Group</button>
+            <button className="createBtn" type="submit" disabled={isLoading}>
+              {isLoading ? "Creating..." : "Create Group"}
+            </button>
           </form>
         </div>
       </div>
