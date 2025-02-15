@@ -54,9 +54,7 @@ export const removePost = (postId, userId, callback) => {
     pool.query(query, [postId, userId], callback);
 };
 export const fetchUserPosts = async (userId) => {
-    const query = `
-        SELECT * FROM posts WHERE user_id = $1 ORDER BY created_at DESC
-    `;
+    const query = `SELECT * FROM posts WHERE user_id = $1 ORDER BY created_at DESC`;
     try {
         const result = await pool.query(query, [userId]);
         return result.rows;

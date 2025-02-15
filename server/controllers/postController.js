@@ -64,22 +64,19 @@ const postController = {
 },
 async getUserPosts(req, res) {
     try {
-        const userId = req.userInfo; // Extract user ID from token
+        const userId = req.params.userId; // Get userId from URL params
         if (!userId) {
-            return res.status(401).json({ error: "Unauthorized access" });
+            return res.status(400).json({ error: "User ID is required" });
         }
 
         const posts = await fetchUserPosts(userId);
-        if (!posts.length) {
-            return res.status(404).json({ message: "No posts found" });
-        }
-
         res.status(200).json(posts);
     } catch (error) {
         console.error("Error fetching posts:", error.message);
         res.status(500).json({ error: "Failed to retrieve posts" });
     }
 },
+
 };
 
 export default postController;

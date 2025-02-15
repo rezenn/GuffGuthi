@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Alexandria:wght@100..900&family=Anta&family=Basic&family=Baumans&family=Doto:wght@100..900&family=Faculty+Glyphic&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Marmelad&family=Merienda:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.ViewPost {
+    margin: 10px;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.ViewPost h2 {
+    color: #242760;
+    font-size: 1rem;
+    font-weight: 800;
+    margin-left: 28px;
+}
+
+hr {
+    width: 123px;
+    margin: 6px;
+    border: 1px solid #242760;
+}
+
+.postContainer {
+    width: auto;
+    height: 380px;
+    padding: 10px;
+    padding-top: 0;
+    overflow-y: scroll;
+}
+
+.postContainer::-webkit-scrollbar {
+    width: 8px;
+
+}
+
+.postContainer::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: #ccc;
+}
+
+
+.card {
+    width: 590px;
+    height: auto;
+    border: 1px solid #333;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 5px 8px 5px grey;
+    margin: 5px 0;
+    padding: 10px;
+}
+
+.card h3 {
+    margin: 0px 0;
+    font-family: 'Afacad', serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.card p {
+    margin-top: 0px;
+    font-family: 'Afacad', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #555;
+}
+
+.postImg {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+
+.loading-spinner {
+    margin: 50px 0;
+    font-size: 1.5rem;
+    color: #555;
+    text-align: center;
+}

@@ -6,6 +6,7 @@ const router = express.Router();
 
 // Get user profile
 router.get("/:email", userController.getProfile);
+router.get("/profile/:userId", userController.getUser);
 router.get("/userMessage", userController.userMessage);
 router.get("/", userController.getAllUser);
 

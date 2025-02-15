@@ -23,6 +23,7 @@ import GuthiyarPage from "./pages/GuthiyarPage";
 import Chat from "./pages/Chat";
 import Join from "./pages/Join";
 import GroupCreatePost from "./pages/GroupCreatePost";
+import UserProfile from "./pages/UserProfile";
 // import Notification from "./pages/Notification";
 
 function App() {
@@ -162,6 +163,16 @@ function App() {
             }
           />
 
+          <Route
+            path="/guthiyar/:userId"
+            element={
+              isAuthenticated ? (
+                <UserProfile setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
           <Route
             path="/viewProfile"
             element={

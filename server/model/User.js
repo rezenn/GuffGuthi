@@ -29,6 +29,14 @@ class User {
         );
         return result.rows[0];
     }
+    static async getUser({ userId }) {
+        const result = await pool.query(
+          "SELECT user_name, bio, occupation, location, profilePic, coverPic FROM users WHERE user_id = $1",
+          [userId]
+        );
+        return result.rows[0];
+      }
+    
 
     static async updateProfile({ user_name, bio, occupation, location, profilePic, coverPic, email }) {
         const currentUser = await pool.query(
@@ -60,7 +68,7 @@ class User {
         return result.rows;
     }
     static async getAllUser() {
-        const result = await pool.query("SELECT user_id, user_name, profilePic,coverPic, bio, occupation, location FROM users");
+        const result = await pool.query("SELECT user_id, user_name, profilePic,coverPic bio, occupation, location FROM users");
         return result.rows;
     }
     

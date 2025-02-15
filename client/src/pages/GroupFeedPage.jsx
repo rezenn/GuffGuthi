@@ -11,6 +11,8 @@ function GroupFeedPage() {
   const navigate = useNavigate();
   const { groupId } = useParams(); // Capture the groupId from the URL
   const [groupData, setGroupData] = useState(null); // State to store group data
+  const [isFetching, setIsFetching] = useState(true); // Loading state
+
   const createPost = (e) => {
     e.preventDefault();
     navigate(`/groupCreatePost/${groupId}`);
