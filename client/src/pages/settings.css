@@ -31,20 +31,21 @@
     align-items: start;
     gap: 35px;
     padding-top: 15px;
-    padding-right: 5px;
+    padding-right: 8px;
     font-size: 14px;
     border: none;
     font-weight: bold;
     height: 48px;
     width: fit-content;
     margin: 20px 20px 320px 20px;
-    background-color: #FF4500;
+    background-color: #ccc;
+    border: 1px soild #ccc;
     border-radius: 15px;
 
 }
 
 .logout-button:hover {
-    background-color: #ff3300b6;
+    background-color: #ccccccb1;
 }
 
 .logout_icon {

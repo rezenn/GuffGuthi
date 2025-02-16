@@ -20,7 +20,7 @@ import commentRoutes from "./routes/commentRoutes.js";
 import searchRoute from "./routes/searchRoutes.js";
 import groupRoute from "./routes/groupRoutes.js";
 import communityServiceRoutes from "./routes/communityServiceRoutes.js";
-
+import followRoutes from "./routes/followRoutes.js"
 
 
 import { addUser, getUser, removeUser, getUsersInRoom } from "./User.js";
@@ -118,6 +118,7 @@ app.use("/comment", commentRoutes);
 app.use("/search", searchRoute);
 app.use("/group", groupRoute);
 app.use("/api/community", communityServiceRoutes);
+app.use("/follow",followRoutes)
 
 // Centralized error handling
 app.use((err, req, res, next) => {

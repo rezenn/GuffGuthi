@@ -1,11 +1,12 @@
-// import express from "express";
-// import { followUser, unfollowUser, getFollowers, getFollowing } from "../controllers/followController.js";
+import express from "express";
+import { followUser, unfollowUser, getFollowers, getFollowing } from "../controllers/followContoller.js";
+import postMiddleware from "../middleware/postMiddleware.js";
 
-// const router = express.Router();
+const router = express.Router();
 
-// router.post("/follow", followUser);
-// router.delete("/unfollow", unfollowUser);
-// router.get("/followers/:userId", getFollowers);
-// router.get("/following/:userId", getFollowing);
+router.post("/follow", followUser);
+router.delete("/unfollow", unfollowUser);
+router.get("/followers/:userId", getFollowers);
+router.get("/following/:userId", getFollowing);
 
-// export default router;
+export default router;

@@ -3,7 +3,6 @@ import api from "../../api";
 import PostContent from "./PostContent";
 import "./post.css";
 
-
 function Post() {
   const [posts, setPosts] = useState([]);
   const [username, setUsername] = useState("");
@@ -39,6 +38,7 @@ function Post() {
         const userData = await response.json();
         setUsername(userData.user_name || "");
         setProfileImage(userData.profilepic || "");
+        console.log(posts);
       } catch (error) {
         console.error(error.message);
         setError("Failed to fetch user data. Please try again.");
@@ -80,14 +80,14 @@ function Post() {
             <img
               className="profile"
               src={
-                profileImage
-                  ? `http://localhost:8000${profileImage}`
+                post.profilepic
+                  ? `http://localhost:8000${post.profilepic}`
                   : "./src/assets/profile.jpg"
               }
               alt="Profile"
             />
             <div className="author">
-              <p>{username}</p> {/* Dynamic username */}
+              <p>{post.name}</p>
             </div>
           </div>
           <div className="card-title">{post.post_title || "Untitled Post"}</div>

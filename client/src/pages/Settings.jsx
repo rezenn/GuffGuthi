@@ -24,7 +24,11 @@ function Settings({ setAuth }) {
 
   return (
     <>
-      <Navbar className="Navbar" activePage="home" setActivePage={() => {}} />
+      <Navbar
+        className="Navbar"
+        activePage="settings"
+        setActivePage={() => {}}
+      />
       <div className="container">
         <h2 className="settingsHeadeing">Settings</h2>
         <button onClick={logout} className="logout-button">
