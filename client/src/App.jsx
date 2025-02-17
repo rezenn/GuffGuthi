@@ -21,6 +21,7 @@ import GroupFeedPage from "./pages/GroupFeedPage";
 import { QueryClient, QueryClientProvider } from "react-query";
 import GuthiyarPage from "./pages/GuthiyarPage";
 import Chat from "./pages/Chat";
+import Aboutus from "./components/AboutUs/Aboutus";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
@@ -228,6 +229,17 @@ function App() {
             element={
               isAuthenticated ? (
                 <Creategroup setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+
+          <Route
+            path="/about"
+            element={
+              isAuthenticated ? (
+                <Aboutus setAuth={setAuth} />
               ) : (
                 <Navigate to="/login" />
               )

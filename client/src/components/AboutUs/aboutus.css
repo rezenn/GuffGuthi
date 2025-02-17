@@ -1,0 +1,17 @@
+.aboutDesc {
+    /* margin-left: 600px;
+    height: 400px;
+    width: 800px;
+    background-color: aqua; */
+    position: absolute;
+    top: 96px;
+    left: 337px;
+    width: 1100px;
+    height: 645px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
