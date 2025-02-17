@@ -77,24 +77,39 @@ form {
     margin-bottom: 10px;
 }
 
+.passwordContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.passwordContainer input {
+    width: 100%;
+    padding-right: 40px;
+    /* Space for eye icon */
+}
+
 .togglePassword {
     position: absolute;
-    top: 1.5rem;
-    right: 1.2rem;
+    right: 20px;
+    background: none;
     border: none;
-    background-color: transparent;
     cursor: pointer;
-
+    font-size: 18px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .togglePassword:hover {
     background-color: transparent;
 }
 
-.eyeIcon {
-    width: 24px;
-    height: auto;
+.togglePassword:focus {
+    outline: none;
 }
+
 
 .createAccount {
     font-family: Poppins;

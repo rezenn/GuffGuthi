@@ -3,15 +3,19 @@ import { toast, ToastContainer } from "react-toastify";
 import style from "./Login.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 function ForgotPassword({ setAuth }) {
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false); // Toggle New Password
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // Toggle Confirm Password
+
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
     confirmPassword: "",
   });
-  const [loading, setLoading] = useState(false); // Loading state
+  const [loading, setLoading] = useState(false);
   const { email, password, confirmPassword } = inputs;
 
   const onChange = (e) =>
@@ -24,7 +28,7 @@ function ForgotPassword({ setAuth }) {
       return;
     }
 
-    setLoading(true); // Start loading
+    setLoading(true);
 
     try {
       const body = { email, newPassword: password };
@@ -43,14 +47,13 @@ function ForgotPassword({ setAuth }) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const parseRes = await response.json();
       toast.success("Password reset successful!");
       navigate("/login");
     } catch (error) {
       console.error(error.message);
       toast.error("An error occurred. Please try again.");
     } finally {
-      setLoading(false); // Stop loading
+      setLoading(false);
     }
   };
 
@@ -67,8 +70,8 @@ function ForgotPassword({ setAuth }) {
 
             <h2>Reset your account password</h2>
             <form onSubmit={onSubmitForm}>
+              {/* Email Field */}
               <label className={style.label}>Email</label>
-              <br />
               <input
                 className={style.input}
                 type="email"
@@ -78,31 +81,50 @@ function ForgotPassword({ setAuth }) {
                 onChange={onChange}
                 required
               />
-              <br />
+
+              {/* Password Field with Individual Toggle */}
               <label className={style.label}>New Password</label>
-              <br />
-              <input
-                className={style.input}
-                type="password"
-                placeholder="Password"
-                name="password"
-                value={password}
-                onChange={onChange}
-                required
-              />
-              <br />
+              <div className={style.passwordContainer}>
+                <input
+                  className={style.input}
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  name="password"
+                  value={password}
+                  onChange={onChange}
+                  required
+                />
+                <button
+                  type="button"
+                  className={style.togglePassword}
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </div>
+
+              {/* Confirm Password Field with Separate Toggle */}
               <label className={style.label}>Confirm Password</label>
-              <br />
-              <input
-                className={style.input}
-                type="password"
-                placeholder="Confirm Password"
-                name="confirmPassword"
-                value={confirmPassword}
-                onChange={onChange}
-                required
-              />
-              <br />
+              <div className={style.passwordContainer}>
+                <input
+                  className={style.input}
+                  type={showConfirmPassword ? "text" : "password"}
+                  placeholder="Confirm Password"
+                  name="confirmPassword"
+                  value={confirmPassword}
+                  onChange={onChange}
+                  required
+                />
+                <button
+                  type="button"
+                  className={style.togglePassword}
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                >
+                  {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </div>
+
+              {/* Submit Button */}
               <button
                 className={style.createAccount}
                 type="submit"
@@ -111,9 +133,9 @@ function ForgotPassword({ setAuth }) {
                 {loading ? "Resetting..." : "Change Password"}
               </button>
             </form>
+
             <p>
-              Password Changed?
-              <Link to="/Login"> Login now</Link>
+              Password Changed? <Link to="/Login"> Login now</Link>
             </p>
           </div>
         </div>

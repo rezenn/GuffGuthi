@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import style from "./Login.module.css";
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import icons
 
 function Register({ setAuth }) {
   const [inputs, setInputs] = useState({
@@ -9,8 +10,9 @@ function Register({ setAuth }) {
     password: "",
   });
 
+  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
   const { name, email, password } = inputs;
-  const navigate = useNavigate(); // Use the navigate function
+  const navigate = useNavigate();
 
   const onChange = (e) =>
     setInputs({ ...inputs, [e.target.name]: e.target.value });
@@ -30,10 +32,7 @@ function Register({ setAuth }) {
       const parseRes = await response.json();
 
       if (parseRes.jwtToken) {
-        // Optionally, you can store the token if needed
         localStorage.setItem("token", parseRes.jwtToken);
-
-        // Redirect to the login page after successful registration
         navigate("/login");
       } else {
         console.error("No token in the response.");
@@ -57,7 +56,6 @@ function Register({ setAuth }) {
             <h2>Create your free Account</h2>
             <form onSubmit={onSubmitForm}>
               <label className={style.label}>Username</label>
-              <br />
               <input
                 className={style.input}
                 type="text"
@@ -65,33 +63,40 @@ function Register({ setAuth }) {
                 name="name"
                 value={name}
                 required
-                onChange={(e) => onChange(e)}
+                onChange={onChange}
               />
-              <br />
+
               <label className={style.label}>Email</label>
-              <br />
               <input
                 className={style.input}
                 type="email"
                 placeholder="Email Address"
                 name="email"
                 value={email}
-                onChange={(e) => onChange(e)}
+                onChange={onChange}
                 required
               />
-              <br />
+
               <label className={style.label}>Password</label>
-              <br />
-              <input
-                className={style.input}
-                type="password"
-                placeholder="Password"
-                name="password"
-                value={password}
-                onChange={(e) => onChange(e)}
-                required
-              />
-              <br />
+              <div className={style.passwordContainer}>
+                <input
+                  className={style.input}
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  name="password"
+                  value={password}
+                  onChange={onChange}
+                  required
+                />
+                <button
+                  type="button"
+                  className={style.togglePassword}
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </div>
+
               <button className={style.createAccount} type="submit">
                 Create Account
               </button>
