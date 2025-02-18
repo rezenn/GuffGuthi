@@ -27,6 +27,7 @@ import UserProfile from "./pages/UserProfile";
 import MyPost from "./pages/MyPost";
 // import Notification from "./pages/Notification";
 import Aboutus from "./components/AboutUs/Aboutus";
+import SearchResults from "./components/SearchResult";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
@@ -149,6 +150,16 @@ function App() {
             element={
               isAuthenticated ? (
                 <CreatePost setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/search"
+            element={
+              isAuthenticated ? (
+                <SearchResults setAuth={setAuth} />
               ) : (
                 <Navigate to="/login" />
               )

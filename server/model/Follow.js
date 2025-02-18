@@ -36,6 +36,26 @@ class Follow {
         );
         return result.rows;
     }
+
+    // Count total followers of a user
+    static async countFollowers(userId) {
+        const result = await pool.query(
+            `SELECT COUNT(*) AS follower_count FROM follow 
+             WHERE followedUser_id = $1`,
+            [userId]
+        );
+        return result.rows[0].follower_count;
+    }
+
+    // Count total following of a user
+    static async countFollowing(userId) {
+        const result = await pool.query(
+            `SELECT COUNT(*) AS following_count FROM follow 
+             WHERE followerUser_id = $1`,
+            [userId]
+        );
+        return result.rows[0].following_count;
+    }
 }
 
 export default Follow;

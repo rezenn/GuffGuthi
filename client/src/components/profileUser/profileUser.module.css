@@ -85,18 +85,18 @@
 
 .followShow {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-left: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 80px;
     gap: 30px;
 }
 
 .followerCount,
-.followingCount,
-.likeCount {
+.followingCount {
     color: #242760;
     font-family: "Inter", serif;
     font-weight: bold;
     font-size: 36px;
+    margin-left: 20px;
 }
 
 .followers,

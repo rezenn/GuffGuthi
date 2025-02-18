@@ -38,7 +38,6 @@ function Post() {
         const userData = await response.json();
         setUsername(userData.user_name || "");
         setProfileImage(userData.profilepic || "");
-        console.log(posts);
       } catch (error) {
         console.error(error.message);
         setError("Failed to fetch user data. Please try again.");
@@ -49,12 +48,21 @@ function Post() {
     fetchUserData();
   }, []);
 
-  // Fetch posts
+  // Fetch posts and remove duplicates by post_id
   useEffect(() => {
     const fetchPosts = async () => {
       try {
         const response = await api.get("/post");
-        setPosts(response.data || []);
+        const fetchedPosts = response.data || [];
+
+        // Remove duplicates by post_id
+        const uniquePosts = [
+          ...new Map(fetchedPosts.map((post) => [post.post_id, post])).values(),
+        ];
+
+        // Log the posts to check if duplicates are removed
+
+        setPosts(uniquePosts); // Set the unique posts
       } catch (err) {
         console.error("Error fetching posts:", err.message);
         setError("Failed to fetch posts. Please try again.");
@@ -74,8 +82,8 @@ function Post() {
 
   return (
     <>
-      {posts.map((post, index) => (
-        <div className="card" key={post.id || index}>
+      {posts.map((post) => (
+        <div className="card" key={post.post_id}>
           <div className="card-header">
             <img
               className="profile"
@@ -136,5 +144,4 @@ function Post() {
   );
 }
 
-//to push code
 export default Post;

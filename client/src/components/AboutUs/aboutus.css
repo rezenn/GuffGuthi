@@ -1,17 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Anta&family=Basic&family=Baumans&family=Doto:wght@100..900&family=Faculty+Glyphic&family=Marmelad&family=Merienda:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 .aboutDesc {
-    /* margin-left: 600px;
-    height: 400px;
-    width: 800px;
-    background-color: aqua; */
     position: absolute;
     top: 96px;
-    left: 337px;
+    left: 57%;
+    transform: translateX(-50%);
     width: 1100px;
-    height: 645px;
+    height: auto;
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    padding: 30px;
+}
+
+.about {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: #333;
+}
+
+.about-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.about-text {
+    font-size: 18px;
+    text-indent: 20px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify;
+    color: #555;
+}
+
+.about-subtitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0e4467;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.about-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-list li {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.about-list li:hover {
+    background: #eaeaea;
+}
+
+.about-list li b {
+    color: #e74c3c;
 }

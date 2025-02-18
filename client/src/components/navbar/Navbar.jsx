@@ -20,6 +20,8 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
   const [isFetching, setIsFetching] = useState(true);
   const [error, setError] = useState(""); // Error state
   const [name, setName] = useState(""); // User name state
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]); // Search results state
   const navigate = useNavigate();
 
   function getYear() {
@@ -27,6 +29,7 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
     const year = today.getFullYear();
     return year;
   }
+
   // Fetch user data (profile image)
   useEffect(() => {
     const loggedInEmail = localStorage.getItem("email");
@@ -98,6 +101,31 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
     navigate(`/${page}`); // Navigate to the route
   };
 
+  // Handle search input change
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  // Handle search query
+  const handleSearch = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:8000/search?q=${searchQuery}`
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch search results");
+      }
+
+      const results = await response.json();
+      setSearchResults(results);
+      navigate(`/search-results`);
+    } catch (error) {
+      console.error(error.message);
+      setError("Failed to fetch search results.");
+    }
+  };
+
   if (isFetching) {
     return <p>Loading...</p>; // Loading indicator
   }
@@ -113,12 +141,21 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
           <button
             id="searchButton"
             className={activePage === "search" ? "active" : ""}
-            onClick={() => handleNavigation("search")}
+            onClick={() => {
+              // You can directly navigate to the search results page with the query
+              navigate(`/search?query=${searchQuery}`);
+            }}
           >
             <img src={searchIcon} alt="search Icon" className="search_icon" />
           </button>
 
-          <input type="text" className="search-input" placeholder="Search..." />
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)} // Update state on input change
+          />
 
           <button
             id="notification-button"
