@@ -26,6 +26,7 @@ import GroupCreatePost from "./pages/GroupCreatePost";
 import UserProfile from "./pages/UserProfile";
 import MyPost from "./pages/MyPost";
 // import Notification from "./pages/Notification";
+import Aboutus from "./components/AboutUs/Aboutus";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
@@ -273,6 +274,17 @@ function App() {
             element={
               isAuthenticated ? (
                 <Creategroup setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+
+          <Route
+            path="/about"
+            element={
+              isAuthenticated ? (
+                <Aboutus setAuth={setAuth} />
               ) : (
                 <Navigate to="/login" />
               )
