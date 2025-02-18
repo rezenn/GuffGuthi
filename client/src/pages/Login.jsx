@@ -3,16 +3,16 @@ import { toast, ToastContainer } from "react-toastify";
 import style from "./Login.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; // Unified import
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa6";
 
 function Login({ setAuth }) {
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
   });
-
-  const [loading, setLoading] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false); // Loading state
+  const [showPassword, setShowPassword] = useState(false); // Toggle password visibility
   const { email, password } = inputs;
   const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ function Login({ setAuth }) {
 
   const onSubmitForm = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setLoading(true); // Start loading
 
     try {
       const body = { email, password };
@@ -35,20 +35,20 @@ function Login({ setAuth }) {
 
       if (parseRes.jwtToken) {
         localStorage.setItem("email", email);
-        localStorage.setItem("user_id", parseRes.user_id);
+        localStorage.setItem("user_id", parseRes.user_id); // Store user_id
         localStorage.setItem("token", parseRes.jwtToken);
         setAuth(true);
-        toast.success("Logged in Successfully!");
-        navigate("/home");
+        toast.success("Logged in Successfully");
+        navigate("/home"); // Redirect to home after login
       } else {
         setAuth(false);
-        toast.error(parseRes.error || "Invalid email or password.");
+        toast.error(parseRes.error || "Login failed. Please try again.");
       }
     } catch (err) {
-      console.error("Login error:", err);
-      toast.error("An unexpected error occurred. Please try again.");
+      console.error(err.message);
+      toast.error("An error occurred. Please try again.");
     } finally {
-      setLoading(false);
+      setLoading(false); // Stop loading
     }
   };
 
@@ -66,6 +66,7 @@ function Login({ setAuth }) {
             <h2>Login to your Account</h2>
             <form onSubmit={onSubmitForm}>
               <label className={style.label}>Email</label>
+              <br />
               <input
                 className={style.input}
                 type="email"
@@ -75,8 +76,9 @@ function Login({ setAuth }) {
                 onChange={onChange}
                 required
               />
-
+              <br />
               <label className={style.label}>Password</label>
+              <br />
               <div className={style.passwordContainer}>
                 <input
                   className={style.input}
@@ -91,7 +93,6 @@ function Login({ setAuth }) {
                   type="button"
                   className={style.togglePassword}
                   onClick={() => setShowPassword(!showPassword)}
-                  aria-label="Toggle password visibility"
                 >
                   {showPassword ? (
                     <FaEyeSlash className={style.eyeIcon} />
@@ -100,11 +101,10 @@ function Login({ setAuth }) {
                   )}
                 </button>
               </div>
-
+              <br />
               <Link className={style.forgotPassword} to="/ForgotPassword">
                 Forgot password?
               </Link>
-
               <button
                 className={style.createAccount}
                 type="submit"

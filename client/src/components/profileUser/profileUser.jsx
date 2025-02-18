@@ -10,10 +10,78 @@ function ProfileUser() {
   const [userData, setUserData] = useState(null);
   const [isFetching, setIsFetching] = useState(true);
   const [error, setError] = useState("");
+  const [isFollowing, setIsFollowing] = useState(false);
+
+  const token = localStorage.getItem("token");
+  const followerUserId = localStorage.getItem("user_id");
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    if (followerUserId && userId) {
+      console.log(followerUserId, userId);
+    }
+  }, [followerUserId, userId]);
 
+  const handleFollow = async () => {
+    if (!followerUserId || !userId) {
+      console.error("Follower or Followed User ID is missing.");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:8000/follow/follow", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          followerUserId,
+          followedUserId: userId,
+        }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setIsFollowing(true);
+      } else {
+        console.error("Failed to follow:", data);
+      }
+    } catch (error) {
+      console.error("Error in follow request:", error);
+    }
+  };
+
+  const handleUnfollow = async () => {
+    if (!followerUserId || !userId) {
+      console.error("Follower or Followed User ID is missing.");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:8000/follow/unfollow", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          followerUserId,
+          followedUserId: userId,
+        }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setIsFollowing(false);
+      } else {
+        console.error("Failed to unfollow:", data);
+      }
+    } catch (error) {
+      console.error("Error in unfollow request:", error);
+    }
+  };
+
+  useEffect(() => {
     if (!token) {
       alert("No logged-in user found.");
       setIsFetching(false);
@@ -48,11 +116,7 @@ function ProfileUser() {
     };
 
     fetchUserData();
-  }, [userId]);
-
-  const handleNavigate = () => {
-    navigate("/EditProfile");
-  };
+  }, [userId, token]);
 
   if (isFetching) {
     return <p>Loading...</p>;
@@ -116,8 +180,11 @@ function ProfileUser() {
             <p className={styles.likes}>Likes</p>
           </div>
         </div>
-        <button onClick={handleNavigate} className={styles.editProfile}>
-          Follow
+        <button
+          className={styles.followBtn}
+          onClick={isFollowing ? handleUnfollow : handleFollow}
+        >
+          {isFollowing ? "Unfollow" : "Follow"}
         </button>
       </section>
     </>
