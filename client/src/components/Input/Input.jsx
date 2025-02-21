@@ -18,11 +18,11 @@ function Input({ message, setMessage, sendMessage }) {
         />
         <button className="sendButton" onClick={(e) => sendMessage(e)}>
           <div className="iconContainer">
-          <img
-            className="sendIcon"
-            src="./src/assets/paper-plane.png"
-            alt="send"
-          />
+            <img
+              className="sendIcon"
+              src="./src/assets/paper-plane.png"
+              alt="send"
+            />
           </div>
         </button>
       </form>

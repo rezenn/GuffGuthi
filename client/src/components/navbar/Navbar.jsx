@@ -109,6 +109,7 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
   // Handle search query
   const handleSearch = async () => {
     try {
+      if (!searchQuery) return; // Don't search if the query is empty
       const response = await fetch(
         `http://localhost:8000/search?q=${searchQuery}`
       );
@@ -141,10 +142,7 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
           <button
             id="searchButton"
             className={activePage === "search" ? "active" : ""}
-            onClick={() => {
-              // You can directly navigate to the search results page with the query
-              navigate(`/search?query=${searchQuery}`);
-            }}
+            onClick={handleSearch} // Trigger search on button click
           >
             <img src={searchIcon} alt="search Icon" className="search_icon" />
           </button>
@@ -154,7 +152,7 @@ const Navbar = ({ activePage, setActivePage, setAuth }) => {
             className="search-input"
             placeholder="Search..."
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)} // Update state on input change
+            onChange={handleSearchChange} // Update state on input change
           />
 
           <button

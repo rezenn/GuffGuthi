@@ -98,6 +98,7 @@ function ForgotPassword({ setAuth }) {
                   type="button"
                   className={style.togglePassword}
                   onClick={() => setShowPassword(!showPassword)}
+                  aria-label="Toggle password visibility" // Add this line
                 >
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </button>
@@ -118,6 +119,7 @@ function ForgotPassword({ setAuth }) {
                 <button
                   type="button"
                   className={style.togglePassword}
+                  aria-label="Toggle password visibility" // Add this line
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 >
                   {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}

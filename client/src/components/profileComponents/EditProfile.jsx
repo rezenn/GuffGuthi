@@ -65,6 +65,7 @@ function EditProfile() {
     }
 
     const fetchUserData = async () => {
+      setIsFetching(true); // Start loading
       try {
         const response = await fetch(
           `http://localhost:8000/user/${loggedInEmail}`,
@@ -89,9 +90,10 @@ function EditProfile() {
         console.error(error.message);
         setError("Failed to fetch user data. Please try again.");
       } finally {
-        setIsFetching(false);
+        setIsFetching(false); // End loading
       }
     };
+
     fetchUserData();
   }, []);
 

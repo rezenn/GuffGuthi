@@ -93,6 +93,7 @@ function Login({ setAuth }) {
                   type="button"
                   className={style.togglePassword}
                   onClick={() => setShowPassword(!showPassword)}
+                  aria-label="Toggle password visibility" // Add this line
                 >
                   {showPassword ? (
                     <FaEyeSlash className={style.eyeIcon} />

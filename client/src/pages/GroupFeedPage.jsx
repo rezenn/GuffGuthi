@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Post from "../components/postINhome/Post";
-import CoverImage from "../components/profileComponents/CoverImage";
 import styles from "./GroupFeedPage.module.css";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -59,7 +57,6 @@ function GroupFeedPage() {
       <Navbar className="Navbar" activePage="guthi" setActivePage={() => {}} />
       <div className={styles.container}>
         <div className={styles.coverImg}>
-          {/* <CoverImage /> */}
           <img
             className={styles.grouplogo}
             src={`http://localhost:8000/${groupData.group_cover}`}
@@ -69,7 +66,6 @@ function GroupFeedPage() {
 
         <div>
           <div className={styles.GroupProfile}>
-            {/* Display group profile picture */}
             <div className={styles.GroupProfileImg}>
               <button onClick={createPost} className={styles.createPostBtn}>
                 Create Post
@@ -98,12 +94,7 @@ function GroupFeedPage() {
               </span>
               <span>{groupData.group_desc}</span>
             </li>
-            {/* <li className={styles.GroupDescLi}>
-              <span>
-                <strong>Created At: </strong>
-              </span>
-              <span>{groupData.created_at}</span>
-            </li> */}
+
             <li className={styles.GroupDescLi}>
               <span>
                 <strong>Rules: </strong>
@@ -118,7 +109,6 @@ function GroupFeedPage() {
         </section>
 
         <div className={styles.viewPost}>
-          {/* <Post /> */}
           <GroupPost />
         </div>
       </div>

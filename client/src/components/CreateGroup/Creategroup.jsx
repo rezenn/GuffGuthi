@@ -22,31 +22,15 @@ const Creategroup = () => {
   const fileInputRefLogo = useRef(null);
   const fileInputRefCover = useRef(null);
 
-  // Handle Logo Image Upload
-  const handleButtonClickLogo = () => {
-    fileInputRefLogo.current.click();
-  };
+  const handleButtonClickLogo = () => fileInputRefLogo.current.click();
+  const handleButtonClickCover = () => fileInputRefCover.current.click();
 
-  const handleImageChangeLogo = (event) => {
+  const handleImageChange = (event, setImage, setFile, setClass, className) => {
     const file = event.target.files[0];
     if (file) {
-      setLogoImageFile(file);
-      setLogoImage(URL.createObjectURL(file));
-      setLogoClass("uploaded-logo");
-    }
-  };
-
-  // Handle Cover Image Upload
-  const handleButtonClickCover = () => {
-    fileInputRefCover.current.click();
-  };
-
-  const handleImageChangeCover = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setCoverImageFile(file);
-      setCoverImage(URL.createObjectURL(file));
-      setCoverClass("uploaded-cover");
+      setFile(file);
+      setImage(URL.createObjectURL(file));
+      setClass(className);
     }
   };
 
@@ -108,12 +92,13 @@ const Creategroup = () => {
       <div className="createGroup-Container">
         <div className="create_group">
           <form onSubmit={handleCreateGroup}>
-            <h1>Create Group</h1>
+            <h1 aria-label="Create Group Heading">Create Group</h1>
 
             {/* Group Name */}
             <div className="group-name-container">
-              <label>Group Name:</label>
+              <label htmlFor="group-name">Group Name:</label>
               <input
+                id="group-name"
                 type="text"
                 value={groupName}
                 onChange={(e) => setGroupName(e.target.value)}
@@ -136,7 +121,15 @@ const Creategroup = () => {
                   type="file"
                   accept="image/*"
                   ref={fileInputRefLogo}
-                  onChange={handleImageChangeLogo}
+                  onChange={(e) =>
+                    handleImageChange(
+                      e,
+                      setLogoImage,
+                      setLogoImageFile,
+                      setLogoClass,
+                      "uploaded-logo"
+                    )
+                  }
                   style={{ display: "none" }}
                 />
                 {logoImage && (
@@ -160,12 +153,20 @@ const Creategroup = () => {
                   type="file"
                   accept="image/*"
                   ref={fileInputRefCover}
-                  onChange={handleImageChangeCover}
+                  onChange={(e) =>
+                    handleImageChange(
+                      e,
+                      setCoverImage,
+                      setCoverImageFile,
+                      setCoverClass,
+                      "uploaded-cover"
+                    )
+                  }
                   style={{ display: "none" }}
                 />
                 {coverImage && (
                   <img
-                    src={coverImage}
+                    src={coverImage || "./src/assets/logo.png"}
                     alt="Group Cover"
                     className={coverClass}
                   />
@@ -175,8 +176,9 @@ const Creategroup = () => {
 
             {/* Group Topic */}
             <div className="group-topic-container">
-              <label>Topic:</label>
+              <label htmlFor="topic">Topic:</label>
               <input
+                id="topic"
                 type="text"
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
@@ -186,19 +188,23 @@ const Creategroup = () => {
 
             {/* Group Description */}
             <div className="group-description-container">
-              <label>Description:</label>
+              <label htmlFor="description">Description:</label>
               <textarea
+                id="description"
                 value={groupDesc}
                 onChange={(e) => setGroupDesc(e.target.value)}
                 required
               />
             </div>
 
-            {/* Error Message */}
             {error && <p className="error-message">{error}</p>}
 
-            {/* Create Group Button */}
-            <button className="createBtn" type="submit" disabled={isLoading}>
+            <button
+              className="createBtn"
+              type="submit"
+              disabled={isLoading}
+              aria-label="Submit Create Group"
+            >
               {isLoading ? "Creating..." : "Create Group"}
             </button>
           </form>

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios"; // Import axios for API calls
 import Navbar from "../components/navbar/Navbar";
 import "./PostRequest.css";
-import DesEditor from "../components/TextEditor/DesEditor"; // Make sure DesEditor component works as expected
+import DesEditor from "../components/TextEditor/DesEditor"; // Ensure this is correct
 
 function PostRequest() {
   const navigate = useNavigate();
@@ -59,8 +59,11 @@ function PostRequest() {
           {error && <p className="error">{error}</p>}
           <form className="postRequestForm" onSubmit={handleSubmit}>
             <div className="form-group">
-              <label className="formTitle1">Title:</label>
+              <label htmlFor="title" className="formTitle1">
+                Title:
+              </label>
               <input
+                id="title"
                 className="inputTitle1"
                 type="text"
                 name="title"
@@ -70,8 +73,11 @@ function PostRequest() {
               />
             </div>
             <div className="form-group">
-              <label className="formTitle1">From:</label>
+              <label htmlFor="start_date" className="formTitle1">
+                From:
+              </label>
               <input
+                id="start_date"
                 className="inputTitle1"
                 type="date"
                 name="start_date"
@@ -81,8 +87,11 @@ function PostRequest() {
               />
             </div>
             <div className="form-group">
-              <label className="formTitle1">To:</label>
+              <label htmlFor="end_date" className="formTitle1">
+                To:
+              </label>
               <input
+                id="end_date"
                 className="inputTitle1"
                 type="date"
                 name="end_date"
@@ -92,8 +101,11 @@ function PostRequest() {
               />
             </div>
             <div className="form-group">
-              <label className="formTitle1">Location:</label>
+              <label htmlFor="location" className="formTitle1">
+                Location:
+              </label>
               <input
+                id="location"
                 className="inputTitle1"
                 type="text"
                 name="location"
@@ -103,8 +115,11 @@ function PostRequest() {
               />
             </div>
             <div className="form-group-editor">
-              <label className="formTitle-Des">Description:</label>
+              <label htmlFor="description" className="formTitle-Des">
+                Description:
+              </label>
               <DesEditor
+                id="description"
                 value={formData.description}
                 onChange={handleDescriptionChange}
               />
