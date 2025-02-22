@@ -9,6 +9,7 @@ function Post() {
   const [profileImage, setProfileImage] = useState(""); // URL for display
   const [isFetching, setIsFetching] = useState(true); // Loading state
   const [error, setError] = useState(""); // Error state
+  const [likedPosts, setLikedPosts] = useState({}); // Track liked status of posts
 
   // Fetch user data (username and profile image)
   useEffect(() => {
@@ -60,8 +61,6 @@ function Post() {
           ...new Map(fetchedPosts.map((post) => [post.post_id, post])).values(),
         ];
 
-        // Log the posts to check if duplicates are removed
-
         setPosts(uniquePosts); // Set the unique posts
       } catch (err) {
         console.error("Error fetching posts:", err.message);
@@ -71,6 +70,14 @@ function Post() {
 
     fetchPosts();
   }, []);
+
+  // Toggle like status for a post
+  const toggleLike = (postId) => {
+    setLikedPosts((prevLikedPosts) => ({
+      ...prevLikedPosts,
+      [postId]: !prevLikedPosts[postId],
+    }));
+  };
 
   if (isFetching) {
     return <p>Loading...</p>; // Loading indicator
@@ -113,10 +120,14 @@ function Post() {
           </div>
           <div className="card-footer">
             <div className="actions">
-              <span>
+              <span onClick={() => toggleLike(post.post_id)}>
                 <img
                   className="icon"
-                  src="./src/assets/star (1).png"
+                  src={
+                    likedPosts[post.post_id]
+                      ? "./src/assets/star (1).png" // Liked state
+                      : "./src/assets/star.png" // Default state
+                  }
                   alt="like"
                 />
                 {post.likes || 0}
