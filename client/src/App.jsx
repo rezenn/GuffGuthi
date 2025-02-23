@@ -24,6 +24,7 @@ import Chat from "./pages/Chat";
 import Join from "./pages/Join";
 // import Notification from "./pages/Notification";
 
+
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
     return !!localStorage.getItem("token"); // Check if token exists on initialization
@@ -245,6 +246,17 @@ function App() {
               )
             }
           />
+
+             {/* <Route
+            path="/notification"
+            element={
+              isAuthenticated ? (
+                <Notification setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          /> */}
         </Routes>
       </Router>
     </QueryClientProvider>
