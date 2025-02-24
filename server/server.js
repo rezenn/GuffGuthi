@@ -15,7 +15,7 @@ import homeRoutes from "./routes/homeRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import postRoutes from "./routes/postRoutes.js";
 import groupPostRoutes from "./routes/groupPostRoutes.js"
-// import likeRoutes from "./routes/likeRoutes.js";
+import likeRoutes from "./routes/likeRoutes.js";
 import commentRoutes from "./routes/commentRoutes.js";
 import searchRoute from "./routes/searchRoutes.js";
 import groupRoute from "./routes/groupRoutes.js";
@@ -114,7 +114,7 @@ app.use("/home", homeRoutes);
 app.use("/user", userRoutes);
 app.use("/post", postRoutes);
 app.use("/groupFeed", groupPostRoutes);
-// app.use("/like", likeRoutes);
+app.use("/like", likeRoutes);
 app.use("/comment", commentRoutes);
 app.use("/search", searchRoute);
 app.use("/group", groupRoute);
@@ -124,8 +124,9 @@ app.use("/follow",followRoutes)
 // Centralized error handling
 app.use((err, req, res, next) => {
     console.error(err.stack);
+    console.log(err)
     res.status(500).json({ error: "Internal Server Error" });
-});
+}); 
 
 const PORT = process.env.PORT || 5000;
 
