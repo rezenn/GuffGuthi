@@ -78,11 +78,11 @@ function Post() {
   };
 
   const toggleComments = (postId) => {
-    setShowComments(prev => ({
+    setShowComments((prev) => ({
       ...prev,
-      [postId]: !prev[postId]
+      [postId]: !prev[postId],
     }));
-    
+
     if (!comments[postId]) {
       fetchComments(postId);
     }
@@ -91,9 +91,9 @@ function Post() {
   const fetchComments = async (postId) => {
     try {
       const response = await api.get(`/post/${postId}/comments`);
-      setComments(prev => ({
+      setComments((prev) => ({
         ...prev,
-        [postId]: response.data || []
+        [postId]: response.data || [],
       }));
     } catch (error) {
       console.error("Error fetching comments:", error);
@@ -101,9 +101,9 @@ function Post() {
   };
 
   const handleCommentChange = (postId, text) => {
-    setNewComments(prev => ({
+    setNewComments((prev) => ({
       ...prev,
-      [postId]: text
+      [postId]: text,
     }));
   };
 
@@ -117,20 +117,20 @@ function Post() {
         `/post/${postId}/comments`,
         { content: commentText },
         {
-          headers: { Authorization: `Bearer ${token}` }
+          headers: { Authorization: `Bearer ${token}` },
         }
       );
-      
+
       // Update comments state with new comment
-      setComments(prev => ({
+      setComments((prev) => ({
         ...prev,
-        [postId]: [...(prev[postId] || []), response.data]
+        [postId]: [...(prev[postId] || []), response.data],
       }));
 
       // Clear the input field
-      setNewComments(prev => ({
+      setNewComments((prev) => ({
         ...prev,
-        [postId]: ''
+        [postId]: "",
       }));
     } catch (error) {
       console.error("Error adding comment:", error);
@@ -139,7 +139,7 @@ function Post() {
 
   const sharePost = async (postId) => {
     const postUrl = `${window.location.origin}/post/${postId}`;
-    
+
     try {
       await navigator.clipboard.writeText(postUrl);
       alert("Link copied to clipboard!");
@@ -200,7 +200,7 @@ function Post() {
                   }
                   alt="like"
                 />
-                {post.likes || 0}
+                {post.likes}
               </span>
               <span onClick={() => toggleComments(post.post_id)}>
                 <img
@@ -208,7 +208,7 @@ function Post() {
                   src="./src/assets/message.png"
                   alt="comment"
                 />
-                {comments[post.post_id]?.length || post.comments || 0}
+                {comments[post.post_id]?.length || post.comments}
               </span>
               <span onClick={() => sharePost(post.post_id)}>
                 <img
@@ -219,7 +219,7 @@ function Post() {
               </span>
             </div>
           </div>
-          
+
           {/* Comments Section */}
           {showComments[post.post_id] && (
             <div className="comments-section">
@@ -246,10 +246,12 @@ function Post() {
                 <input
                   type="text"
                   placeholder="Add a comment..."
-                  value={newComments[post.post_id] || ''}
-                  onChange={(e) => handleCommentChange(post.post_id, e.target.value)}
+                  value={newComments[post.post_id] || ""}
+                  onChange={(e) =>
+                    handleCommentChange(post.post_id, e.target.value)
+                  }
                 />
-                <button 
+                <button
                   className="post-comment-btn"
                   onClick={() => handlePostComment(post.post_id)}
                   disabled={!newComments[post.post_id]?.trim()}

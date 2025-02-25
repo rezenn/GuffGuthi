@@ -21,13 +21,7 @@ import GroupFeedPage from "./pages/GroupFeedPage";
 import { QueryClient, QueryClientProvider } from "react-query";
 import GuthiyarPage from "./pages/GuthiyarPage";
 import Chat from "./pages/Chat";
-import Join from "./pages/Join";
-import GroupCreatePost from "./pages/GroupCreatePost";
-import UserProfile from "./pages/UserProfile";
-import MyPost from "./pages/MyPost";
-// import Notification from "./pages/Notification";
 import Aboutus from "./components/AboutUs/Aboutus";
-import SearchResults from "./components/SearchResult";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
@@ -135,7 +129,7 @@ function App() {
           />
 
           <Route
-            path="/groupFeed/:groupId"
+            path="/groupFeed"
             element={
               isAuthenticated ? (
                 <GroupFeedPage setAuth={setAuth} />
@@ -155,37 +149,7 @@ function App() {
               )
             }
           />
-          <Route
-            path="/search"
-            element={
-              isAuthenticated ? (
-                <SearchResults setAuth={setAuth} />
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          />
-          <Route
-            path="/groupCreatePost/:groupId"
-            element={
-              isAuthenticated ? (
-                <GroupCreatePost setAuth={setAuth} />
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          />
 
-          <Route
-            path="/guthiyar/:userId"
-            element={
-              isAuthenticated ? (
-                <UserProfile setAuth={setAuth} />
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          />
           <Route
             path="/viewProfile"
             element={
@@ -213,16 +177,6 @@ function App() {
             element={
               isAuthenticated ? (
                 <CommunityServices setAuth={setAuth} />
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          />
-          <Route
-            path="/myPosts"
-            element={
-              isAuthenticated ? (
-                <MyPost setAuth={setAuth} />
               ) : (
                 <Navigate to="/login" />
               )
@@ -261,16 +215,6 @@ function App() {
             }
           />
           <Route
-            path="/join"
-            element={
-              isAuthenticated ? (
-                <Join setAuth={setAuth} />
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          />
-          <Route
             path="/guthiyar"
             element={
               isAuthenticated ? (
@@ -290,6 +234,7 @@ function App() {
               )
             }
           />
+
           <Route
             path="/about"
             element={
