@@ -35,9 +35,7 @@ function PostUser() {
         setIsFetching(false);
       }
     };
-    if (isLoading) {
-      return <div>Loading...</div>;
-    }
+
     if (userId) {
       fetchUserPosts();
     }
