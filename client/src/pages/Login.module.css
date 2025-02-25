@@ -18,13 +18,14 @@
     display: grid;
     height: 100%;
     min-height: 100%;
+    justify-content: center;
+    align-items: center;
     grid-template-columns: auto auto;
     margin: 0 600px;
 }
 
-
 #login .logo {
-    align-items: start;
+    align-items: center;
     width: 175px;
     height: 81px;
     margin-top: 20px;
@@ -36,6 +37,8 @@
     border-radius: 20px;
     padding-bottom: 51px;
     padding-right: 55px;
+    padding-left: 55px;
+    /* Added padding-left to shift content to the right */
     z-index: 1000;
 }
 
@@ -44,7 +47,8 @@
     font-weight: 500;
     font-size: 1.5rem;
     width: 485px;
-    padding-left: 95px;
+    padding-left: 40px;
+    /* Adjusted padding to align with the new padding-left */
     padding-top: 20px;
 }
 
@@ -125,7 +129,7 @@ form {
     margin-bottom: 20px;
 }
 
-.createAccount {
+.createAccount:hover {
     background-color: #ff3300b6;
 }
 
@@ -159,53 +163,63 @@ form {
     color: #ff3300b6;
 }
 
-
-
 /* Mobile and Tablet responsiveness */
 @media (max-width: 768px) {
     #regLog {
         margin: 0 20px;
         grid-template-columns: 1fr;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
     }
 
     #login {
         width: 100%;
-        padding: 40px 20px;
+        max-width: 500px;
+        padding: 40px 30px;
+        /* Adjusted padding for mobile view */
+        text-align: center;
     }
 
     #login h2 {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         padding-left: 0;
         text-align: center;
+        width: 100%;
+        margin-bottom: 20px;
     }
 
     #login .logo {
         width: 150px;
         height: 70px;
-        margin: 0 auto;
+        margin: 0 auto 20px;
         display: block;
     }
 
     form {
         margin-top: 20px;
         font-size: 1.3rem;
+        text-align: left;
+        /* Align form text to the left */
     }
 
     .input {
         width: 100%;
-        max-width: 500px;
-        margin: 0 auto;
+        max-width: 100%;
+        margin: 0 auto 20px;
     }
 
     .createAccount {
         width: 100%;
-        max-width: 340px;
+        max-width: 100%;
         margin: 20px auto;
     }
 
     #login p {
         font-size: 1rem;
         text-align: center;
+        padding-left: 0;
     }
 
     #login a {
@@ -213,28 +227,35 @@ form {
     }
 
     #login .forgotPassword {
-        margin: 0;
+        font-size: 1rem;
         padding-left: 0;
-        text-align: center;
     }
 }
 
 @media (max-width: 480px) {
+
+    /* Remove background image in mobile view */
+    #body {
+        background-image: none;
+        background-color: #fff;
+        /* Optional: Add a fallback background color */
+    }
+
     #login .logo {
         width: 120px;
         height: 60px;
     }
 
     #login h2 {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 
     .input {
-        width: 90%;
+        width: 100%;
     }
 
     .createAccount {
-        width: 90%;
+        width: 100%;
     }
 
     #login p {
