@@ -23,3 +23,38 @@
 // }
 
 // export default Like;
+import pool from "../database/databaseConnect.js";
+
+class Like {
+  static async toggleLike(postId, userId) {
+    try {
+      const [existingLike] = await pool.query(
+        "SELECT * FROM likes WHERE post_id = ? AND user_id = ?",
+        [postId, userId]
+      );
+
+      if (existingLike.length > 0) {
+        await pool.query("DELETE FROM likes WHERE post_id = ? AND user_id = ?", [postId, userId]);
+        return { liked: false };
+      } else {
+        await pool.query("INSERT INTO likes (post_id, user_id) VALUES (?, ?)", [postId, userId]);
+        return { liked: true };
+      }
+    } catch (error) {
+      console.error("Error toggling like:", error);
+      throw error;
+    }
+  }
+
+  static async getLikesCount(postId) {
+    try {
+      const [rows] = await pool.query("SELECT COUNT(*) AS likeCount FROM likes WHERE post_id = ?", [postId]);
+      return rows[0].likeCount;
+    } catch (error) {
+      console.error("Error getting likes count:", error);
+      throw error;
+    }
+  }
+}
+
+export default Like;
