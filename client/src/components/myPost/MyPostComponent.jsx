@@ -6,6 +6,10 @@ import PostContent from "../postINhome/PostContent";
 
 function MyPostComponent() {
   const [userPosts, setUserPosts] = useState([]);
+  const [likedPosts, setLikedPosts] = useState({});
+  const [comments, setComments] = useState({});
+  const [showComments, setShowComments] = useState({});
+  const [newComments, setNewComments] = useState({}); // Track new comment text for each post
   const [isFetching, setIsFetching] = useState(true);
   const navigate = useNavigate();
 
@@ -38,6 +42,86 @@ function MyPostComponent() {
 
     fetchUserPosts();
   }, []);
+
+  const toggleLike = (postId) => {
+    setLikedPosts((prevLikedPosts) => ({
+      ...prevLikedPosts,
+      [postId]: !prevLikedPosts[postId],
+    }));
+  };
+
+  const toggleComments = (postId) => {
+    setShowComments((prev) => ({
+      ...prev,
+      [postId]: !prev[postId],
+    }));
+
+    if (!comments[postId]) {
+      fetchComments(postId);
+    }
+  };
+
+  const fetchComments = async (postId) => {
+    try {
+      const response = await axios.get(`/post/${postId}/comments`);
+      setComments((prev) => ({
+        ...prev,
+        [postId]: response.data || [],
+      }));
+    } catch (error) {
+      console.error("Error fetching comments:", error);
+    }
+  };
+
+  const handleCommentChange = (postId, text) => {
+    setNewComments((prev) => ({
+      ...prev,
+      [postId]: text,
+    }));
+  };
+
+  const handlePostComment = async (postId) => {
+    const commentText = newComments[postId]?.trim();
+    if (!commentText) return;
+
+    try {
+      const token = localStorage.getItem("token");
+      const response = await axios.post(
+        `/post/${postId}/comments`,
+        { content: commentText },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+
+      // Update comments state with new comment
+      setComments((prev) => ({
+        ...prev,
+        [postId]: [...(prev[postId] || []), response.data],
+      }));
+
+      // Clear the input field
+      setNewComments((prev) => ({
+        ...prev,
+        [postId]: "",
+      }));
+    } catch (error) {
+      console.error("Error adding comment:", error);
+    }
+  };
+
+  const sharePost = async (postId) => {
+    const postUrl = `${window.location.origin}/post/${postId}`;
+
+    try {
+      await navigator.clipboard.writeText(postUrl);
+      alert("Link copied to clipboard!");
+    } catch (err) {
+      console.error("Failed to copy link:", err);
+      alert("Failed to copy link. Please try again.");
+    }
+  };
+
   return (
     <>
       <div className={styles.ViewPost}>
@@ -57,26 +141,23 @@ function MyPostComponent() {
                 )}
                 <PostContent
                   htmlContent={post.post_desc || "No description provided."}
-                />{" "}
+                />
                 <div className="card-footer">
                   <div className="actions">
-                    <span>
+                    <span onClick={() => toggleLike(post.post_id)}>
                       <img
                         className="icon"
-                        src="./src/assets/star (1).png"
+                        src={
+                          likedPosts[post.post_id]
+                            ? "./src/assets/star (1).png"
+                            : "./src/assets/star.png"
+                        }
                         alt="like"
                       />
-                      {post.likes || 0}
+                      {post.likes}
                     </span>
-                    <span>
-                      <img
-                        className="icon"
-                        src="./src/assets/message.png"
-                        alt="comment"
-                      />
-                      {post.comments || 0}
-                    </span>
-                    <span>
+
+                    <span onClick={() => sharePost(post.post_id)}>
                       <img
                         className="icon"
                         src="./src/assets/send-2.svg"

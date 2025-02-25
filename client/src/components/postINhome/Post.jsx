@@ -200,7 +200,7 @@ function Post() {
                   }
                   alt="like"
                 />
-                {post.likes || 0}
+                {post.likes}
               </span>
               <span onClick={() => toggleComments(post.post_id)}>
                 <img
@@ -208,7 +208,7 @@ function Post() {
                   src="./src/assets/message.png"
                   alt="comment"
                 />
-                {comments[post.post_id]?.length || post.comments || 0}
+                {comments[post.post_id]?.length || post.comments}
               </span>
               <span onClick={() => sharePost(post.post_id)}>
                 <img
